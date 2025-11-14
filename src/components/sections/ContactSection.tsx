@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,8 @@ type ContactSectionProps = {
 };
 
 export default function ContactSection({ texts }: ContactSectionProps) {
+	const router = useRouter();
+	
 	const [form, setForm] = useState({
 			name: "",
 			email: "",
@@ -42,7 +45,7 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		
-		// 必須チェック（ここで弾くので、空のまま送信されません）
+		// 必須チェック
 		if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
 			setError("お名前・メールアドレス・メッセージを入力してください。");
 			setStatus("idle");
@@ -68,8 +71,12 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 			});
 			
 			if (res.ok) {
+				// 一応内部状態もリセット
 				setStatus("success");
 				setForm({ name: "", email: "", subject: "", message: "" });
+				
+				// 🎯 サンクスページへリダイレクト
+				router.push("/thanks");
 			} else {
 				setStatus("error");
 			}
@@ -132,12 +139,7 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 				</p>
 		)}
 		
-		{/* 送信結果メッセージ */}
-		{status === "success" && (
-				<p className="mt-2 text-sm text-green-700">
-				送信が完了しました。お問い合わせありがとうございます。
-				</p>
-		)}
+		{/* エラー時だけ画面に出す（成功時はサンクスページに飛ぶ） */}
 		{status === "error" && (
 				<p className="mt-2 text-sm text-red-600">
 				送信中にエラーが発生しました。時間をおいて再度お試しください。
