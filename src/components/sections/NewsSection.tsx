@@ -15,7 +15,7 @@ type NewsItem = {
 
 type NewsTexts = {
 	title: string;
-	items: NewsItem[];
+	items: readonly NewsItem[];
 };
 
 type NewsSectionProps = {
