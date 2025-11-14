@@ -426,27 +426,6 @@ const NEWS_ITEMS = [
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [notice, setNotice] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
-  const emailOk = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  const submitContact = () => {
-    if (!form.name.trim() || !form.message.trim()) {
-      setNotice({ type: "err", msg: lang === "ja" ? "お名前とメッセージを入力してください。" : "Please enter your name and message." });
-      return;
-    }
-    if (!emailOk(form.email)) {
-      setNotice({ type: "err", msg: lang === "ja" ? "有効なメールアドレスを入力してください。" : "Please enter a valid email address." });
-      return;
-    }
-    setNotice({ type: "ok", msg: lang === "ja" ? "送信（ダミー）：ありがとうございます！" : "Sent (demo): Thank you!" });
-    setForm({ name: "", email: "", message: "" });
-  };
-	const handleContactChange = (
-		field: "name" | "email" | "message",
-		value: string
-	) => {
-		setForm((f) => ({ ...f, [field]: value }));
-	};
 
   const openGallery = (cat: number, index = 0) => {
     if (!Array.isArray(gallerySources[cat])) return;
@@ -551,13 +530,7 @@ const NEWS_ITEMS = [
 
 		<Section id="contact">
 		<H2>{t.contact.title}</H2>
-		<ContactSection
-		texts={t.contact}
-		form={form}
-		onChange={handleContactChange}
-		onSubmit={submitContact}
-		notice={notice}
-		/>
+		<ContactSection texts={t.contact} />
 		</Section>
 
 		{lbOpen && Array.isArray(gallerySources[lbCat]) && gallerySources[lbCat][lbIndex] && (
