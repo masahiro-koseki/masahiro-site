@@ -1,5 +1,7 @@
 // src/components/sections/ContactSection.tsx
-import type { FormEvent } from "react";
+"use client";
+
+import { useState } from "react";
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,90 +16,144 @@ type ContactTexts = {
 	send: string;
 };
 
-type NoticeState = { type: "ok" | "err"; msg: string } | null;
-
 type ContactSectionProps = {
 	texts: ContactTexts;
-	form: { name: string; email: string; message: string };
-	onChange: (field: "name" | "email" | "message", value: string) => void;
-	onSubmit: () => void;
-	notice: NoticeState;
 };
 
-export default function ContactSection({
-		texts,
-		form,
-		onChange,
-		onSubmit,
-		notice,
-}: ContactSectionProps) {
-	// Formspree 用の submit ハンドラ（ブラウザのデフォルト送信はそのまま）
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-		// e.preventDefault() は呼ばない：Formspree にそのまま POST するため
-		onSubmit(); // 必要ならここで notice の状態更新などを行う
+export default function ContactSection({ texts }: ContactSectionProps) {
+	const [form, setForm] = useState({
+			name: "",
+			email: "",
+			subject: "",
+			message: "",
+	});
+	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+		"idle",
+	);
+	const [error, setError] = useState("");
+	
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+	) => {
+		const { name, value } = e.target;
+		setForm((prev) => ({ ...prev, [name]: value }));
+	};
+	
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		
+		// 必須チェック（ここで弾くので、空のまま送信されません）
+		if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+			setError("お名前・メールアドレス・メッセージを入力してください。");
+			setStatus("idle");
+			return;
+		}
+		
+		setError("");
+		setStatus("sending");
+		
+		try {
+			const formData = new FormData();
+			formData.append("name", form.name);
+			formData.append("email", form.email);
+			formData.append("subject", form.subject);
+			formData.append("message", form.message);
+			
+			const res = await fetch("https://formspree.io/f/xdkyaree", {
+					method: "POST",
+					headers: {
+						Accept: "application/json",
+					},
+					body: formData,
+			});
+			
+			if (res.ok) {
+				setStatus("success");
+				setForm({ name: "", email: "", subject: "", message: "" });
+			} else {
+				setStatus("error");
+			}
+		} catch (err) {
+			console.error(err);
+			setStatus("error");
+		}
 	};
 	
 	return (
 		<>
-		<p className="mt-3 text-neutral-600 max-w-3xl">{texts.desc}</p>
+		<p className="mt-3 max-w-3xl text-neutral-600">{texts.desc}</p>
+		
 		<form
-		noValidate
-		className="mt-8 max-w-2xl"
-		action="https://formspree.io/f/xdkyaree"
-		method="POST"
 		onSubmit={handleSubmit}
+		className="mt-8 max-w-2xl"
+		acceptCharset="UTF-8"
 		>
-		<div className="grid sm:grid-cols-2 gap-4">
+		{/* お名前 + メール */}
+		<div className="grid gap-4 sm:grid-cols-2">
 		<Input
-		id="contact-name"
-		name="name" // ← Formspree に送られるフィールド名
-		placeholder={texts.name}
+		name="name"
+		placeholder={texts.name || "お名前 / Name"}
 		className="rounded-2xl"
 		value={form.name}
-		onChange={(e) => onChange("name", e.target.value)}
-		required
+		onChange={handleChange}
 		/>
 		<Input
-		id="contact-email"
-		name="email" // ← Formspree に送られるフィールド名
 		type="email"
-		placeholder={texts.email}
+		name="email"
+		placeholder={texts.email || "メールアドレス / Email"}
 		className="rounded-2xl"
 		value={form.email}
-		onChange={(e) => onChange("email", e.target.value)}
-		required
+		onChange={handleChange}
 		/>
 		</div>
-		<Textarea
-		id="contact-message"
-		name="message" // ← Formspree に送られるフィールド名
-		placeholder={texts.message}
-		className="rounded-2xl mt-4 min-h-[160px]"
-		value={form.message}
-		onChange={(e) => onChange("message", e.target.value)}
-		required
+		
+		{/* 件名（任意） */}
+		<Input
+		name="subject"
+		placeholder="件名 / Subject（任意）"
+		className="mt-4 rounded-2xl"
+		value={form.subject}
+		onChange={handleChange}
 		/>
 		
-		{/* 任意：フォーム識別用の hidden フィールド */}
-		<input type="hidden" name="form_name" value="masahiro-site-contact" />
+		{/* メッセージ本文 */}
+		<Textarea
+		name="message"
+		placeholder={texts.message || "お問い合わせ内容 / Message"}
+		className="mt-4 min-h-[160px] rounded-2xl"
+		value={form.message}
+		onChange={handleChange}
+		/>
+		
+		{/* エラーメッセージ */}
+		{error && (
+				<p className="mt-2 text-sm text-red-600">
+				{error}
+				</p>
+		)}
+		
+		{/* 送信結果メッセージ */}
+		{status === "success" && (
+				<p className="mt-2 text-sm text-green-700">
+				送信が完了しました。お問い合わせありがとうございます。
+				</p>
+		)}
+		{status === "error" && (
+				<p className="mt-2 text-sm text-red-600">
+				送信中にエラーが発生しました。時間をおいて再度お試しください。
+				</p>
+		)}
 		
 		<div className="mt-4">
-		<Button type="submit" className="rounded-2xl">
-		<Mail className="h-4 w-4 mr-2" /> {texts.send}
+		<Button
+		type="submit"
+		className="rounded-2xl"
+		disabled={status === "sending"}
+		>
+		<Mail className="mr-2 h-4 w-4" />
+		{status === "sending" ? "送信中..." : texts.send}
 		</Button>
 		</div>
-		{notice && (
-				<div
-				className={`mt-3 text-sm px-3 py-2 rounded-lg ${
-						notice.type === "ok"
-						? "bg-green-50 text-green-700"
-						: "bg-red-50 text-red-700"
-				}`}
-				aria-live="polite"
-				>
-				{notice.msg}
-				</div>
-		)}
 		</form>
 		</>
 	);
