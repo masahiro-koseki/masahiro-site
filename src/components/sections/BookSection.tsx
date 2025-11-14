@@ -28,7 +28,7 @@ type Highlight = {
 type BookSectionProps = {
 	lang: "ja" | "en";
 	book: BookTexts;
-	highlights: Highlight[];
+	highlights: readonly Highlight[];
 	amazonJp: string;
 	amazonEn: string;
 };
