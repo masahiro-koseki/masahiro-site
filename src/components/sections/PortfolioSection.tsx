@@ -11,7 +11,7 @@ type PortfolioCategory = {
 type PortfolioSectionProps = {
 	lang: "ja" | "en";
 	desc: string;
-	categories: PortfolioCategory[];
+	categories: readonly PortfolioCategory[];
 	openGallery: (catIndex: number, imageIndex?: number) => void;
 };
 
