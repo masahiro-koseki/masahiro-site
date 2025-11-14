@@ -30,9 +30,7 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 			subject: "",
 			message: "",
 	});
-	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
-		"idle",
-	);
+	const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
 	const [error, setError] = useState("");
 	
 	const handleChange = (
@@ -71,10 +69,8 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 			});
 			
 			if (res.ok) {
-				// 一応内部状態もリセット
-				setStatus("success");
+				// 状態リセットしてから…
 				setForm({ name: "", email: "", subject: "", message: "" });
-				
 				// 🎯 サンクスページへリダイレクト
 				router.push("/thanks");
 			} else {
@@ -139,7 +135,6 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 				</p>
 		)}
 		
-		{/* エラー時だけ画面に出す（成功時はサンクスページに飛ぶ） */}
 		{status === "error" && (
 				<p className="mt-2 text-sm text-red-600">
 				送信中にエラーが発生しました。時間をおいて再度お試しください。

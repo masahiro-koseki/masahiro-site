@@ -382,7 +382,7 @@ const NEWS_ITEMS = [
             title: "展示・掲載",
               items: NEWS_ITEMS
           },
-          contact: { title: "お問い合わせ", desc: "撮影のご依頼／作品使用／展示のご相談など、お気軽にお知らせください。", name: "お名前", email: "メールアドレス", message: "メッセージ", send: "送信（ダミー)" },
+          contact: { title: "お問い合わせ", desc: "撮影のご依頼／作品使用／展示のご相談など、お気軽にお知らせください。", name: "お名前", email: "メールアドレス", message: "メッセージ", send: "送信" },
           footer: { rights: "© Masahiro Koseki", lang: "言語", jp: "日本語", en: "English" }
         },
         en: {
@@ -414,7 +414,7 @@ const NEWS_ITEMS = [
             title: "Exhibitions / Press",
             items: NEWS_ITEMS
           },
-          contact: { title: "Contact", desc: "For commissions, licensing, and exhibitions, please get in touch.", name: "Name", email: "Email", message: "Message", send: "Send (demo)" },
+          contact: { title: "Contact", desc: "For commissions, licensing, and exhibitions, please get in touch.", name: "Name", email: "Email", message: "Message", send: "Send" },
           footer: { rights: "© Masahiro Koseki", lang: "Language", jp: "日本語", en: "English" }
         }
       } as const)[lang],
