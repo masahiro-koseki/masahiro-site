@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 type BookTexts = {
 	lead: string;
 	desc: string;
-	specs: string[];
+	specs: readonly string[];
 	buttons: {
 		preview: string;
 		buy: string;
