@@ -19,7 +19,7 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 	return (
 		<div className="mt-6">
 		{/* 紹介文（プロフィール画像なしで横幅いっぱい） */}
-		<p className="text-neutral-700 leading-relaxed max-w-3xl">
+		<p className="text-neutral-700 leading-relaxed">
 		{about.bio}
 		</p>
 		
