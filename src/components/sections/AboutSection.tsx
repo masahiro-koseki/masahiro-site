@@ -17,18 +17,13 @@ type AboutSectionProps = {
 
 export default function AboutSection({ lang, about }: AboutSectionProps) {
 	return (
-		<div className="mt-6 grid md:grid-cols-3 gap-8 items-start">
-		{/* 左：ポートレート枠（今はダミー） */}
-		<div className="md:col-span-1">
-		<div className="aspect-square rounded-2xl bg-neutral-100 grid place-items-center text-neutral-500">
-		Portrait
-		</div>
-		</div>
+		<div className="mt-6">
+		{/* 紹介文（プロフィール画像なしで横幅いっぱい） */}
+		<p className="text-neutral-700 leading-relaxed max-w-3xl">
+		{about.bio}
+		</p>
 		
-		{/* 右：本文＋各種情報＋カード */}
-		<div className="md:col-span-2">
-		<p className="text-neutral-700 leading-relaxed">{about.bio}</p>
-		
+		{/* 場所・撮影対象・リンク */}
 		<ul className="mt-4 text-sm text-neutral-700 space-y-1">
 		<li className="flex items-center gap-2">
 		<MapPin className="h-4 w-4" /> {about.location}
@@ -47,9 +42,9 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		</li>
 		</ul>
 		
-		{/* 略歴・掲載など（サンプル） */}
+		{/* 略歴・掲載など：2列カード */}
 		<div className="mt-6 grid sm:grid-cols-2 gap-4">
-		<Card className="rounded-2xl">
+		<Card className="rounded-2xl h-full">
 		<CardHeader>
 		<CardTitle className="text-base flex items-center gap-2">
 		<Calendar className="h-4 w-4" />
@@ -80,7 +75,7 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		</CardContent>
 		</Card>
 		
-		<Card className="rounded-2xl">
+		<Card className="rounded-2xl h-full">
 		<CardHeader>
 		<CardTitle className="text-base">
 		{lang === "ja" ? "掲載・活動（例）" : "Features & Activities"}
@@ -101,7 +96,6 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		</ul>
 		</CardContent>
 		</Card>
-		</div>
 		</div>
 		</div>
 	);
