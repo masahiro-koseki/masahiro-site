@@ -376,7 +376,6 @@ const NEWS_ITEMS = [
 						bio: "岩手県の山々と渓流に魅せられ、四季折々の自然を撮り続ける写真家。中学時代の渓流釣りをきっかけに自然と深く関わり、17歳頃から栗駒山、焼石岳、早池峰山など地元の山へ足を運ぶようになる。朝焼けの稜線や静かな渓谷の佇まいに心を奪われ、「この瞬間を残したい」という思いから写真撮影を始める。山岳風景から渓流、樹木、湿原の息づかいまで、自然そのものが持つ“静けさの美しさ”を丁寧に写し取ることを大切にしている。岩手を中心とした東北の風景と向き合いながら、今も変わらずフィールドに立ち続けている。",
 						location: "拠点：岩手県（日本）",
 						focus: "主なテーマ：山岳・渓流・森の光",
-						links: "詳しいプロフィール"
 					},
           news: {
             title: "展示・掲載",
@@ -408,7 +407,6 @@ const NEWS_ITEMS = [
 						bio: "A photographer captivated by the mountains and streams of Iwate, Japan. His connection with nature began in junior high school while fishing in local mountain streams. By the age of seventeen, he started exploring nearby peaks such as Mt. Kurikoma, Mt. Yakeishi, and Mt. Hayachine. The glow of dawn on the ridgeline and the quiet presence of deep valleys inspired him to pick up a camera, hoping to preserve those unforgettable moments. From mountain landscapes to streams, forests, and wetlands, he seeks to capture the subtle and tranquil beauty found in nature. Based in the Tohoku region, he continues to spend time in the field, photographing the changing seasons of his home mountains.",
 						location: "Base: Iwate, Japan",
 						focus: "Main themes: mountains, streams, forest light",
-						links: "Detailed profile"
 					},
           news: {
             title: "Exhibitions / Press",

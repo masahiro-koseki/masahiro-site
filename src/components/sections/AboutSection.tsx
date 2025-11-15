@@ -31,15 +31,6 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		<li className="flex items-center gap-2">
 		<Camera className="h-4 w-4" /> {about.focus}
 		</li>
-		<li className="flex items-center gap-2">
-		<Globe className="h-4 w-4" />
-		<a
-		href="#"
-		className="underline underline-offset-4 hover:opacity-80"
-		>
-		{about.links}
-		</a>
-		</li>
 		</ul>
 		
 		{/* 略歴・掲載など：2列カード */}
