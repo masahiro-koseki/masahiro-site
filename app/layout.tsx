@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://masahiro-site.vercel.app"),
+	metadataBase: new URL("https://masahiro-koseki.com"),
 	
 	title: {
 		default:
