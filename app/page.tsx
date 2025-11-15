@@ -29,7 +29,7 @@ const Section = ({ id, children, className = "" }: { id?: string; children: Reac
   
 
   return (
-    <section id={safeId} className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-1 ${extra}`}>
+    <section id={safeId} className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${extra}`}>
       {children}
     </section>
   );
