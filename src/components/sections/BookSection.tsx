@@ -43,18 +43,21 @@ export default function BookSection({
 	return (
 		<>
 		{/* リードテキスト＋説明 */}
-		<p className="mt-2 text-neutral-700">
+		<p className="mt-2 text-neutral-700 section-body max-w-3xl">
 		{lang === "ja"
 			? "夜明け前の静かな登山道、沢音の響く森、霧に包まれた湿原――そんな瞬間を一冊にまとめました。"
 		: "Before dawn on the trail, the sound of streams in the forest, wetlands wrapped in fog — this book gathers those quiet moments into one volume."}
 		</p>
-		<p className="mt-3 text-neutral-600 max-w-3xl">{book.desc}</p>
 		
-		<div className="mt-8 grid md:grid-cols-2 gap-6">
+		<p className="mt-3 text-neutral-600 section-body max-w-3xl">
+		{book.desc}
+		</p>
+		
+		<div className="mt-6 grid md:grid-cols-2 gap-6">
 		{/* 左：ブックカバー＋要約メッセージ＋スペック＋ボタン */}
 		<Card className="rounded-2xl shadow-lg">
 		<CardHeader>
-		<CardTitle className="flex items-center gap-2">
+		<CardTitle className="flex items-center gap-2 text-base md:text-lg">
 		<BookOpen className="h-5 w-5" /> {book.lead}
 		</CardTitle>
 		</CardHeader>
@@ -71,7 +74,7 @@ export default function BookSection({
 		</div>
 		
 		{/* 著者紹介＋序文からの要約メッセージ */}
-		<p className="mt-2 text-neutral-700 max-w-3xl">
+		<p className="mt-3 text-neutral-700 section-body max-w-3xl">
 		{lang === "ja"
 			? "山や渓流で出会った美しい瞬間を「いつまでも残したい」と思い、写真を撮りはじめました。長い間手元にあった写真をまとめ、この地で生きた証として形に残したい――それが、この写真集を作った理由です。"
 		: "I began photographing the mountains and streams, wishing to preserve the beautiful moments I encountered there. This book gathers images that have been with me for many years, as a quiet record of my life in this land."}
@@ -85,12 +88,11 @@ export default function BookSection({
 		</ul>
 		
 		{/* ボタン */}
-		<div className="mt-6 flex flex-wrap gap-3">
+		<div className="mt-5 flex flex-wrap gap-3">
 		{/* プレビューへ */}
 		<Link href="/preview" className="inline-flex">
 		<Button className="rounded-2xl" variant="default">
-		<ExternalLink className="h-4 w-4 mr-2" />{" "}
-		{book.buttons.preview}
+		<ExternalLink className="h-4 w-4 mr-2" /> {book.buttons.preview}
 		</Button>
 		</Link>
 		
@@ -104,9 +106,7 @@ export default function BookSection({
 		<Button
 		variant="outline"
 		className="rounded-2xl"
-		aria-label={
-			lang === "ja" ? "Amazonで購入" : "Buy on Amazon"
-		}
+		aria-label={lang === "ja" ? "Amazonで購入" : "Buy on Amazon"}
 		>
 		<ExternalLink className="h-4 w-4 mr-2" />
 		{book.buttons.buy}
@@ -119,8 +119,8 @@ export default function BookSection({
 		{/* 右：ハイライトカード */}
 		<Card className="rounded-2xl shadow-lg">
 		<CardHeader>
-		<CardTitle className="flex items-center gap-2">
-		<Camera className="h-5 w-5" />{" "}
+		<CardTitle className="flex items-center gap-2 text-base md:text-lg">
+		<Camera className="h-5 w-5" />
 		{lang === "ja" ? "見どころ" : "Highlights"}
 		</CardTitle>
 		</CardHeader>
@@ -159,8 +159,8 @@ export default function BookSection({
 		</Card>
 		</div>
 		
-		{/* セクション下の区切り線（元のまま） */}
-		<div className="w-full h-px bg-neutral-200 my-8"></div>
+		{/* セクション下の区切り線：下方向の余白を抑える */}
+		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
 		</>
 	);
 }

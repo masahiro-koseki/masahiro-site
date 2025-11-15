@@ -24,20 +24,21 @@ type NewsSectionProps = {
 };
 
 export default function NewsSection({ lang, news }: NewsSectionProps) {
-	// どのニュースが開いているか（日付で管理）
+	// 開いているニュース（日付で識別）
 	const [openDate, setOpenDate] = useState<string | null>(null);
 	
 	const toggleNews = (date: string) => {
 		setOpenDate((prev) => (prev === date ? null : date));
 	};
 	
-	// 新しい順にソートして最新4件を取得
+	// 最新4件に絞る（→ページ全体がすっきりする）
 	const latestNews = [...news.items]
 	.sort((a, b) => b.date.localeCompare(a.date))
 	.slice(0, 4);
 	
 	return (
-		<div className="mt-6 space-y-4">
+		<>
+		<div className="mt-4 space-y-4">
 		{latestNews.map((n) => {
 					const isOpen = openDate === n.date;
 					const title = lang === "ja" ? n.title_ja : n.title_en;
@@ -45,19 +46,22 @@ export default function NewsSection({ lang, news }: NewsSectionProps) {
 					const body = lang === "ja" ? n.body_ja : n.body_en;
 					
 					return (
-						<Card key={n.date} className="rounded-2xl">
-						{/* タイトル部分全体をクリック可能に */}
+						<Card key={n.date} className="rounded-2xl shadow-sm">
+						{/* === タイトル行（全体がボタン） === */}
 						<button
 						type="button"
 						onClick={() => toggleNews(n.date)}
 						className="w-full text-left"
 						>
-						<CardHeader className="flex flex-row items-center justify-between gap-4">
+						<CardHeader className="flex flex-row items-center justify-between gap-4 py-4">
 						<div>
-						<CardTitle className="text-base flex items-center gap-2">
+						{/* 見出しを控えめに */}
+						<CardTitle className="text-base font-semibold flex items-center gap-2">
 						<Calendar className="h-4 w-4" />
 						{title}
 						</CardTitle>
+						
+						{/* 日付・場所 */}
 						<div className="mt-1 text-xs text-neutral-600 flex flex-wrap items-center gap-x-3 gap-y-1">
 						<span>{n.date}</span>
 						{place && (
@@ -68,18 +72,20 @@ export default function NewsSection({ lang, news }: NewsSectionProps) {
 						)}
 						</div>
 						</div>
+						
+						{/* ▼ アイコン（回転） */}
 						<ChevronDown
-						className={`h-4 w-4 flex-shrink-0 transition-transform ${
+						className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
 								isOpen ? "rotate-180" : ""
 						}`}
 						/>
 						</CardHeader>
 						</button>
 						
-						{/* トグルで表示/非表示になる本文 */}
+						{/* === 本文（トグル） === */}
 						{isOpen && (
-								<CardContent>
-								<p className="mt-1 text-sm leading-relaxed text-neutral-700">
+								<CardContent className="pb-4">
+								<p className="mt-1 section-body text-neutral-700">
 								{body}
 								</p>
 								</CardContent>
@@ -88,5 +94,9 @@ export default function NewsSection({ lang, news }: NewsSectionProps) {
 					);
 		})}
 		</div>
+		
+		{/* セクションの締めの区切り線（他セクションと統一） */}
+		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
+		</>
 	);
 }

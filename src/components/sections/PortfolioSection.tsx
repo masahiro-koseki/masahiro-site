@@ -38,11 +38,13 @@ export default function PortfolioSection({
 }: PortfolioSectionProps) {
 	return (
 		<>
-		{/* 説明文 */}
-		<p className="mt-3 text-neutral-600 max-w-3xl">{desc}</p>
+		{/* 説明文：section-body を適用して全体と統一 */}
+		<p className="mt-3 text-neutral-600 section-body max-w-3xl">
+		{desc}
+		</p>
 		
 		{/* カテゴリーカード */}
-		<div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+		<div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 		{categories.map((c, i) => (
 					<motion.div
 					key={i}
@@ -65,8 +67,12 @@ export default function PortfolioSection({
 					/>
 					</div>
 					<div className="p-4">
-					<div className="font-semibold text-sm mb-1">{c.name}</div>
-					<div className="text-sm text-neutral-600">{c.note}</div>
+					<div className="font-semibold text-sm mb-1">
+					{c.name}
+					</div>
+					<div className="text-sm text-neutral-600">
+					{c.note}
+					</div>
 					<div className="mt-3">
 					<Button
 					variant="outline"
@@ -83,8 +89,8 @@ export default function PortfolioSection({
 		))}
 		</div>
 		
-		{/* 下の区切り線（今まで通り） */}
-		<div className="w-full h-px bg-neutral-200 my-8"></div>
+		{/* 下の区切り線：下方向の余白をやや抑える */}
+		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
 		</>
 	);
 }

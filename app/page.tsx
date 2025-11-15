@@ -475,7 +475,7 @@ const NEWS_ITEMS = [
         <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
-		<Section id="book">
+		<Section id="book" className="section-spacing">
 		<H2>{t.book.lead}</H2>
 		
 		<BookSection
@@ -487,7 +487,7 @@ const NEWS_ITEMS = [
 		/>
 		</Section>
 		
-		<Section id="portfolio">
+		<Section id="portfolio" className="section-spacing">
 		<H2>{t.portfolio.lead}</H2>
 		
 		<PortfolioSection
@@ -498,17 +498,17 @@ const NEWS_ITEMS = [
 		/>
 		</Section>
 
-		<Section id="about">
+		<Section id="about" className="section-spacing">
 		<H2>{t.about.title}</H2>
 		<AboutSection lang={lang} about={t.about} />
 		</Section>
 
-		<Section id="news">
+		<Section id="news" className="section-spacing">
 		<H2>{t.news.title}</H2>
 		<NewsSection lang={lang} news={t.news} />
 		</Section>
 
-		<Section id="contact">
+		<Section id="contact" className="section-spacing">
 		<H2>{t.contact.title}</H2>
 		<ContactSection texts={t.contact} />
 		</Section>
@@ -527,7 +527,7 @@ const NEWS_ITEMS = [
 		)}
 
       <footer className="border-t">
-        <Section id="footer" className="py-10">
+		<Section id="footer" className="section-spacing py-10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-sm text-neutral-600">
               {t.footer.rights} — {new Date().getFullYear()}

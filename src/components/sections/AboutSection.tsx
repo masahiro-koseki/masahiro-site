@@ -1,5 +1,5 @@
 // src/components/sections/AboutSection.tsx
-import { MapPin, Camera, Globe, Calendar } from "lucide-react";
+import { MapPin, Camera, Calendar } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 type AboutTexts = {
@@ -19,11 +19,11 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 	return (
 		<div className="mt-6">
 		{/* 紹介文（プロフィール画像なしで横幅いっぱい） */}
-		<p className="text-neutral-700 leading-relaxed">
+		<p className="text-neutral-700 section-body">
 		{about.bio}
 		</p>
 		
-		{/* 場所・撮影対象・リンク */}
+		{/* 場所・撮影対象 */}
 		<ul className="mt-4 text-sm text-neutral-700 space-y-1">
 		<li className="flex items-center gap-2">
 		<MapPin className="h-4 w-4" /> {about.location}
@@ -83,6 +83,9 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		</CardContent>
 		</Card>
 		</div>
+		
+		{/* 下の区切り線：次セクションとの余白は Section 側に任せる */}
+		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
 		</div>
 	);
 }

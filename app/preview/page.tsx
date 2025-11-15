@@ -87,7 +87,7 @@ export default function PreviewPage() {
 		<h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
 		{lang === "ja" ? "写真集プレビュー" : "Photo Book Preview"}
 		</h1>
-		<p className="mt-3 text-neutral-600 max-w-3xl">
+		<p className="mt-3 text-neutral-600 max-w-3xl section-body">
 		{lang === "ja"
 			? "印刷仕上がりに近い比率で抜粋したサンプルを掲載しています。画像をクリックすると拡大表示します。"
 		: "Selected sample spreads in print-like ratios. Click an image to open the lightbox."}

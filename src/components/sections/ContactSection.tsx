@@ -84,11 +84,14 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 	
 	return (
 		<>
-		<p className="mt-3 max-w-3xl text-neutral-600">{texts.desc}</p>
+		{/* 説明文：全体と同じ本文サイズに統一 */}
+		<p className="mt-3 max-w-3xl text-neutral-600 section-body">
+		{texts.desc}
+		</p>
 		
 		<form
 		onSubmit={handleSubmit}
-		className="mt-8 max-w-2xl"
+		className="mt-6 max-w-2xl"
 		acceptCharset="UTF-8"
 		>
 		{/* お名前 + メール */}
