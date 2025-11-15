@@ -367,7 +367,7 @@ const NEWS_ITEMS = [
           },
 			about: {
 						title: "プロフィール",
-						bio: "岩手県の山々と渓流に魅せられ、四季折々の自然を撮り続ける写真家。中学時代の渓流釣りをきっかけに自然と深く関わり、17歳頃から栗駒山、焼石岳、早池峰山など地元の山へ足を運ぶようになる。朝焼けの稜線や静かな渓谷の佇まいに心を奪われ、「この瞬間を残したい」という思いから写真撮影を始める。山岳風景から渓流、樹木、湿原の息づかいまで、自然そのものが持つ“静けさの美しさ”を丁寧に写し取ることを大切にしている。岩手を中心とした東北の風景と向き合いながら、今も変わらずフィールドに立ち続けている。",
+						bio: "岩手県の山々と渓流に魅せられ、四季折々の自然を撮り続ける。中学時代の渓流釣りをきっかけに自然と深く関わり、17歳頃から栗駒山、焼石岳、早池峰山など地元の山へ足を運ぶようになる。朝焼けの稜線や静かな渓谷の佇まいに心を奪われ、「この瞬間を残したい」という思いから写真撮影を始める。山岳風景から渓流、樹木、湿原の息づかいまで、自然そのものが持つ“静けさの美しさ”を丁寧に写し取ることを大切にしている。岩手を中心とした東北の風景と向き合いながら、今も変わらずフィールドに立ち続けている。",
 						location: "拠点：岩手県（日本）",
 						focus: "主なテーマ：山岳・渓流・森の光",
 						links: "詳しいプロフィール"
@@ -376,7 +376,7 @@ const NEWS_ITEMS = [
             title: "お知らせ",
               items: NEWS_ITEMS
           },
-          contact: { title: "お問い合わせ", desc: "撮影のご依頼／作品使用／展示のご相談など、お気軽にお知らせください。", name: "お名前", email: "メールアドレス", message: "メッセージ", send: "送信" },
+          contact: { title: "お問い合わせ", desc: "お気軽にお知らせください。", name: "お名前", email: "メールアドレス", message: "メッセージ", send: "送信" },
           footer: { rights: "© Masahiro Koseki", lang: "言語", jp: "日本語", en: "English" }
         },
         en: {
@@ -408,7 +408,7 @@ const NEWS_ITEMS = [
             title: "News",
             items: NEWS_ITEMS
           },
-          contact: { title: "Contact", desc: "For commissions, licensing, and exhibitions, please get in touch.", name: "Name", email: "Email", message: "Message", send: "Send" },
+          contact: { title: "Contact", desc: "please get in touch.", name: "Name", email: "Email", message: "Message", send: "Send" },
           footer: { rights: "© Masahiro Koseki", lang: "Language", jp: "日本語", en: "English" }
         }
       } as const)[lang],
