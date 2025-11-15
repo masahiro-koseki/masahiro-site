@@ -304,7 +304,6 @@ const gallerySources = [
 const NEWS_ITEMS = [
   {
     date: "2025-11-05",
-    type: "production_log",
     title_ja: "写真集制作進行",
     title_en: "Photo Book Production Progress",
     place: "Online",
@@ -315,7 +314,6 @@ const NEWS_ITEMS = [
   },
   {
     date: "2025-10-25",
-    type: "production_log",
     title_ja: "写真集制作進行",
     title_en: "Photo Book Production Progress",
     place: "Online",
@@ -326,7 +324,6 @@ const NEWS_ITEMS = [
   },
   {
     date: "2025-09-30",
-    type: "production_log",
     title_ja: "写真集制作進行",
     title_en: "Photo Book Production Progress",
     place: "Online",
@@ -337,7 +334,6 @@ const NEWS_ITEMS = [
   },
   {
     date: "2025-06-06",
-    type: "production_log",
     title_ja: "写真集制作進行",
     title_en: "Photo Book Production Progress",
     place: "Online",
@@ -352,7 +348,7 @@ const NEWS_ITEMS = [
     () =>
       ({
         ja: {
-          nav: { home: "ホーム", book: "写真集", portfolio: "ポートフォリオ", about: "プロフィール", news: "展示・掲載", contact: "お問い合わせ" },
+          nav: { home: "ホーム", book: "写真集", portfolio: "ポートフォリオ", about: "プロフィール", news: "お知らせ", contact: "お問い合わせ" },
 					hero: { title: "山と自然に魅せられて", subtitle: "岩手・東北の山と四季を写した日本の自然風景写真。", cta1: "写真集を見る", cta2: "作品をみる" },
           book: {
             lead: "写真集『山と自然に魅せられて』",
@@ -377,14 +373,14 @@ const NEWS_ITEMS = [
 						links: "詳しいプロフィール"
 					},
           news: {
-            title: "展示・掲載",
+            title: "お知らせ",
               items: NEWS_ITEMS
           },
           contact: { title: "お問い合わせ", desc: "撮影のご依頼／作品使用／展示のご相談など、お気軽にお知らせください。", name: "お名前", email: "メールアドレス", message: "メッセージ", send: "送信" },
           footer: { rights: "© Masahiro Koseki", lang: "言語", jp: "日本語", en: "English" }
         },
         en: {
-          nav: { home: "Home", book: "Photo Book", portfolio: "Portfolio", about: "About", news: "Exhibitions", contact: "Contact" },
+          nav: { home: "Home", book: "Photo Book", portfolio: "Portfolio", about: "About", news: "News", contact: "Contact" },
 					hero: { title: "Fascinated by Mountains and Nature", subtitle: "A Landscape Photography Journey through the Mountains and Four Seasons of Northern Japan.", cta1: "View Photo Book", cta2: "View Portfolio" },
           book: {
 						lead: "Photo Book ｢ Fascinated by Mountains and Nature 」",
@@ -409,7 +405,7 @@ const NEWS_ITEMS = [
 						links: "Detailed profile"
 					},
           news: {
-            title: "Exhibitions / Press",
+            title: "News",
             items: NEWS_ITEMS
           },
           contact: { title: "Contact", desc: "For commissions, licensing, and exhibitions, please get in touch.", name: "Name", email: "Email", message: "Message", send: "Send" },
