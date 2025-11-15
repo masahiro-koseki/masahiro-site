@@ -177,16 +177,6 @@ export default function PreviewPage() {
 		
 		<div className="w-full h-px bg-neutral-200 my-10" />
 		
-		<section>
-		<h2 className="text-xl font-semibold">
-		{lang === "ja" ? "差し替え方法" : "How to Replace Preview Images"}
-		</h2>
-		<ol className="mt-3 list-decimal list-inside text-sm text-neutral-700 space-y-1">
-		<li>{lang === "ja" ? "画像を public/images/ に配置します。" : "Place images under public/images/."}</li>
-		<li>{lang === "ja" ? "previews 配列の src を差し替えます。" : "Update the src in the previews array."}</li>
-		<li>{lang === "ja" ? "見出し（jp/en）や枚数も調整できます。" : "Adjust captions (jp/en) and the number of items as needed."}</li>
-		</ol>
-		</section>
 		</main>
 		
 		{open && (
