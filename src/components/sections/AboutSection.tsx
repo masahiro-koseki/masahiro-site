@@ -48,7 +48,7 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		<CardHeader>
 		<CardTitle className="text-base flex items-center gap-2">
 		<Calendar className="h-4 w-4" />
-		{lang === "ja" ? "略歴（例）" : "Timeline (sample)"}
+		{lang === "ja" ? "略歴" : "Timeline"}
 		</CardTitle>
 		</CardHeader>
 		<CardContent>
@@ -78,16 +78,11 @@ export default function AboutSection({ lang, about }: AboutSectionProps) {
 		<Card className="rounded-2xl h-full">
 		<CardHeader>
 		<CardTitle className="text-base">
-		{lang === "ja" ? "掲載・活動（例）" : "Features & Activities"}
+		{lang === "ja" ? "掲載・活動" : "Features & Activities"}
 		</CardTitle>
 		</CardHeader>
 		<CardContent>
 		<ul className="text-sm text-neutral-700 space-y-2">
-		<li>
-		{lang === "ja"
-			? "地元の自然をテーマにした個展（想定）"
-		: "Solo exhibitions featuring local nature (planned / sample)"}
-		</li>
 		<li>
 		{lang === "ja"
 			? "写真集・Webサイトで岩手の山や渓流の魅力を発信"
