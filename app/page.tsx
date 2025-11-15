@@ -132,8 +132,6 @@ export default function Page() {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
-  const [newsDetail, setNewsDetail] = useState<string | null>(null);
-  const [newsLimit, setNewsLimit] = useState(4);
 	
 	useEffect(() => {
 			if (!lbOpen) return;
@@ -438,13 +436,7 @@ const NEWS_ITEMS = [
   const closeGallery = () => setLbOpen(false);
   const nextImg = () => setLbIndex((i) => (i + 1) % gallerySources[lbCat].length);
   const prevImg = () => setLbIndex((i) => (i - 1 + gallerySources[lbCat].length) % gallerySources[lbCat].length);
-  const openNews = (date: string) => setNewsDetail(date);
-  const closeNews = () => setNewsDetail(null);
-  const getNews = (date: string) => t.news.items.find((it: any) => it.date === date);
-  const currentNews = newsDetail ? getNews(newsDetail) : null;
-  const handleLoadMoreNews = () => {
-		setNewsLimit((limit) => Math.min(limit + 4, t.news.items.length));
-  };
+ 
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
@@ -517,15 +509,7 @@ const NEWS_ITEMS = [
 
 		<Section id="news">
 		<H2>{t.news.title}</H2>
-		<NewsSection
-		lang={lang}
-		news={t.news}
-		newsDetail={newsDetail}
-		newsLimit={newsLimit}
-		onLoadMore={handleLoadMoreNews}
-		openNews={openNews}
-		closeNews={closeNews}
-		/>
+		<NewsSection lang={lang} news={t.news} />
 		</Section>
 
 		<Section id="contact">
