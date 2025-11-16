@@ -89,7 +89,7 @@ export default function NewsSection({ lang, news }: NewsSectionProps) {
 						{/* 本文（開いているときだけ） */}
 						{isOpen && (
 								<div className="px-4 pb-3 pt-1 border-t border-neutral-200">
-								<p className="section-body text-neutral-700 mt-1">
+								<p className="text-[13px] leading-relaxed text-neutral-700 mt-1">
 								{body}
 								</p>
 								</div>
