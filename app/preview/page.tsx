@@ -52,12 +52,7 @@ export default function PreviewPage() {
 		
 	const [open, setOpen]   = useState(false);
 	const [idx, setIdx]     = useState(0);
-	
-	const openLB  = (i: number) => { setIdx(i); setOpen(true); };
-	const closeLB = () => setOpen(false);
-	const next    = useCallback(() => setIdx(i => (i + 1) % previews.length), [previews.length]);
-	const prev    = useCallback(() => setIdx(i => (i - 1 + previews.length) % previews.length), [previews.length]);
-	
+		
 	const HIGHLIGHT_INDEX: Record<string, number> = {
 		spring: 3,
 		summer: 4,
