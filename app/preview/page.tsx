@@ -49,15 +49,7 @@ export default function PreviewPage() {
 	{ src: "/images/book_sample_autumn.webp",  alt: "Autumn highlight spread",              jp: "秋 ハイライト（見開き）",             en: "Autumn highlight spread" },
 	{ src: "/images/book_sample_winter.webp",  alt: "Winter highlight spread",              jp: "冬 ハイライト（見開き）",             en: "Winter highlight spread" },
 	];
-	
-	// ハイライトキー → プレビュー配列のインデックス
-	const HIGHLIGHT_INDEX: Record<string, number> = {
-		spring: 3, // previews[3] = 春
-		summer: 4, // previews[4] = 夏
-		autumn: 5, // previews[5] = 秋
-		winter: 6, // previews[6] = 冬
-	};
-	
+		
 	const [open, setOpen]   = useState(false);
 	const [idx, setIdx]     = useState(0);
 	
