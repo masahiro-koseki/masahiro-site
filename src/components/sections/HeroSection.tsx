@@ -61,7 +61,7 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		initial={{ opacity: 0, y: 8 }}
 		animate={{ opacity: 1, y: 0 }}
 		transition={{ duration: 0.6 }}
-		className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight drop-shadow-md"
+		className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight drop-shadow-md"
 		>
 		{texts.title}
 		</motion.h1>
