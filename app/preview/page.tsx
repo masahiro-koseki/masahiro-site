@@ -5,16 +5,13 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 
 const LANG_KEY = "mk_lang";
 type Lang = "ja" | "en";
 
 export default function PreviewPage() {
 	const [lang, setLang] = useState<Lang>("ja");
-	
-	const searchParams = useSearchParams();
-	const highlight = searchParams.get("highlight");
+	const [highlight, setHighlight] = useState<string | null>(null);
 	
 	useEffect(() => {
 			try {
@@ -22,6 +19,17 @@ export default function PreviewPage() {
 				if (saved === "ja" || saved === "en") setLang(saved);
 			} catch {}
 	}, []);
+	
+	// クエリパラメータ ?highlight=xxx をクライアント側で取得
+	useEffect(() => {
+			if (typeof window === "undefined") return;
+			const url = new URL(window.location.href);
+			const h = url.searchParams.get("highlight");
+			if (h) {
+				setHighlight(h);
+			}
+	}, []);
+
 
 	
 	const changeLang = (l: Lang) => {
@@ -58,7 +66,21 @@ export default function PreviewPage() {
 	const next    = useCallback(() => setIdx(i => (i + 1) % previews.length), [previews.length]);
 	const prev    = useCallback(() => setIdx(i => (i - 1 + previews.length) % previews.length), [previews.length]);
 	
-	// ハイライト指定があれば、到着時に該当ページを自動で開く
+	const HIGHLIGHT_INDEX: Record<string, number> = {
+		spring: 3,
+		summer: 4,
+		autumn: 5,
+		winter: 6,
+	};
+	
+	const [open, setOpen] = useState(false);
+	const [idx, setIdx] = useState(0);
+	
+	const openLB  = (i: number) => { setIdx(i); setOpen(true); };
+	const closeLB = () => setOpen(false);
+	const next    = useCallback(() => setIdx(i => (i + 1) % previews.length), [previews.length]);
+	const prev    = useCallback(() => setIdx(i => (i - 1 + previews.length) % previews.length), [previews.length]);
+	
 	useEffect(() => {
 			if (!highlight) return;
 			const i = HIGHLIGHT_INDEX[highlight];
@@ -67,6 +89,7 @@ export default function PreviewPage() {
 				setOpen(true);
 			}
 	}, [highlight]);
+
 
 	useEffect(() => {
 			if (!open) return;
