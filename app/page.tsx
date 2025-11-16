@@ -41,7 +41,7 @@ const H2 = ({ children }: { children: React.ReactNode }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="text-1xl sm:text-2xl md:text-3xl font-bold tracking-tight"
+    className="text-1xl sm:text-2xl md:text-2xl font-bold tracking-tight"
   >
     {children}
   </motion.h2>
