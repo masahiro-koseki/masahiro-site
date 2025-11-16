@@ -405,7 +405,7 @@ const gallerySources = [
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(typeof id === "string" ? id : "");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
 
