@@ -301,48 +301,36 @@ const gallerySources = [
 	},
 	] as const;
 	
-const NEWS_ITEMS = [
-  {
-    date: "2025-11-05",
-    title_ja: "写真集制作進行",
-    title_en: "Photo Book Production Progress",
-    place: "Online",
-    body_ja:
-      "この日はレイアウト検討と、写真セレクトの再精査を進めました。制作ノートの整理も同時に行い、ページ構成の方向性が少しずつ固まってきています。",
-    body_en:
-      "This day was spent refining layout directions and reviewing image selections again. Production notes are gradually forming a more concrete page structure."
-  },
-  {
-    date: "2025-10-25",
-    title_ja: "写真集制作進行",
-    title_en: "Photo Book Production Progress",
-    place: "Online",
-    body_ja:
-      "候補写真の入れ替えと順序の再検討を実施。静けさと流れが両立するよう、各章の冒頭と終わりのバランスを微調整しました。",
-    body_en:
-      "Reworked candidate images and their order. Fine-tuned chapter openings and endings to balance quietness and flow."
-  },
-  {
-    date: "2025-09-30",
-    title_ja: "写真集制作進行",
-    title_en: "Photo Book Production Progress",
-    place: "Online",
-    body_ja:
-      "試作PDFで通読チェック。トーンの揺れを抑えるため、一部写真の現像パラメータを小さく調整しました。",
-    body_en:
-      "Read-through check with a draft PDF. Made small adjustments to development parameters to keep tonal consistency."
-  },
-  {
-    date: "2025-06-06",
-    title_ja: "写真集制作進行",
-    title_en: "Photo Book Production Progress",
-    place: "Online",
-    body_ja:
-      "収録範囲を検討。焼石岳・栗駒・早池峰の比率を見直し、各章のテーマを再定義しました。",
-    body_en:
-      "Reviewed coverage scope. Rebalanced Yakeishidake/Kurikoma/Hayachine and redefined the themes for each chapter."
-  }
-] as const;
+	const NEWS_ITEMS = [
+	{
+		date: "2025-11-16",
+		title_ja: "Website完成・公開",
+		title_en: "Website Completed & Officially Launched",
+		body_ja: "写真集用のWebsiteの制作が完了。ドメインも取得し正式に公開。",
+		body_en: "The official website for the photo book has been completed and is now live with the newly acquired domain."
+	},
+	{
+		date: "2025-11-08",
+		title_ja: "写真集完成・販売開始",
+		title_en: "Photo Book Completed & Now Available",
+		body_ja: "候補写真や各章の冒頭と終わりのバランス等も確認し、ようやく写真集が完成。Amazonサイトで販売開始。",
+		body_en: "After reviewing the image selections and adjusting the structure of each chapter, the photo book has finally been completed. It is now available for purchase on Amazon."
+	},
+	{
+		date: "2025-10-25",
+		title_ja: "Website制作開始",
+		title_en: "Website Development Began",
+		body_ja: "写真集販売に合わせて公開できるように写真集用のWebsiteの制作を開始。",
+		body_en: "Work began on developing the website to accompany the release of the photo book."
+	},
+	{
+		date: "2025-06-06",
+		title_ja: "写真集制作開始",
+		title_en: "Photo Book Production Started",
+		body_ja: "撮りためた写真を使って焼石岳・栗駒・早池峰等の岩手の山や自然の写真を収録した写真集の制作を開始。",
+		body_en: "Production of the photo book began, featuring photographs of Mt. Yakeishi, Mt. Kurikoma, Mt. Hayachine, and other natural landscapes of Iwate captured over the years."
+	}
+	] as const;
 
   const t = useMemo(
     () =>
