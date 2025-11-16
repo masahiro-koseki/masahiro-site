@@ -1,3 +1,4 @@
+// app/preview/page.tsx
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
@@ -13,6 +14,7 @@ export default function PreviewPage() {
 	const [lang, setLang] = useState<Lang>("ja");
 	const [highlight, setHighlight] = useState<string | null>(null);
 	
+	// 言語設定の復元
 	useEffect(() => {
 			try {
 				const saved = localStorage.getItem(LANG_KEY) as Lang | null;
@@ -29,27 +31,63 @@ export default function PreviewPage() {
 				setHighlight(h);
 			}
 	}, []);
-
-
 	
 	const changeLang = (l: Lang) => {
 		setLang(l);
-		try { localStorage.setItem(LANG_KEY, l); } catch {}
+		try {
+			localStorage.setItem(LANG_KEY, l);
+		} catch {}
 	};
 	
 	const previews = [
 	// 1段目：表紙・序文・目次
-	{ src: "/images/book_sample_cover.webp",   alt: "Book cover — spread",                  jp: "写真集 表紙",                         en: "Book cover — spread" },
-	{ src: "/images/book_sample_preface.webp", alt: "Preface — JA (left) / EN (right)",     jp: "序文 見開き（左：日本語／右：English）", en: "Preface — JA (left) / EN (right)" },
-	{ src: "/images/book_sample_toc.webp",     alt: "Table of Contents — spread",           jp: "目次 見開き",                         en: "Table of Contents — spread" },
+	{
+		src: "/images/book_sample_cover.webp",
+		alt: "Book cover — spread",
+		jp: "写真集 表紙",
+		en: "Book cover — spread",
+	},
+	{
+		src: "/images/book_sample_preface.webp",
+		alt: "Preface — JA (left) / EN (right)",
+		jp: "序文 見開き（左：日本語／右：English）",
+		en: "Preface — JA (left) / EN (right)",
+	},
+	{
+		src: "/images/book_sample_toc.webp",
+		alt: "Table of Contents — spread",
+		jp: "目次 見開き",
+		en: "Table of Contents — spread",
+	},
 	
 	// 2段目：春夏秋冬
-	{ src: "/images/book_sample_spring.webp",  alt: "Spring highlight spread",              jp: "春 ハイライト（見開き）",             en: "Spring highlight spread" },
-	{ src: "/images/book_sample_summer.webp",  alt: "Summer highlight spread",              jp: "夏 ハイライト（見開き）",             en: "Summer highlight spread" },
-	{ src: "/images/book_sample_autumn.webp",  alt: "Autumn highlight spread",              jp: "秋 ハイライト（見開き）",             en: "Autumn highlight spread" },
-	{ src: "/images/book_sample_winter.webp",  alt: "Winter highlight spread",              jp: "冬 ハイライト（見開き）",             en: "Winter highlight spread" },
+	{
+		src: "/images/book_sample_spring.webp",
+		alt: "Spring highlight spread",
+		jp: "春 ハイライト（見開き）",
+		en: "Spring highlight spread",
+	},
+	{
+		src: "/images/book_sample_summer.webp",
+		alt: "Summer highlight spread",
+		jp: "夏 ハイライト（見開き）",
+		en: "Summer highlight spread",
+	},
+	{
+		src: "/images/book_sample_autumn.webp",
+		alt: "Autumn highlight spread",
+		jp: "秋 ハイライト（見開き）",
+		en: "Autumn highlight spread",
+	},
+	{
+		src: "/images/book_sample_winter.webp",
+		alt: "Winter highlight spread",
+		jp: "冬 ハイライト（見開き）",
+		en: "Winter highlight spread",
+	},
 	];
-				
+	
+	// ハイライトキー → プレビュー配列のインデックス
 	const HIGHLIGHT_INDEX: Record<string, number> = {
 		spring: 3,
 		summer: 4,
@@ -60,11 +98,21 @@ export default function PreviewPage() {
 	const [open, setOpen] = useState(false);
 	const [idx, setIdx] = useState(0);
 	
-	const openLB  = (i: number) => { setIdx(i); setOpen(true); };
+	const openLB = (i: number) => {
+		setIdx(i);
+		setOpen(true);
+	};
 	const closeLB = () => setOpen(false);
-	const next    = useCallback(() => setIdx(i => (i + 1) % previews.length), [previews.length]);
-	const prev    = useCallback(() => setIdx(i => (i - 1 + previews.length) % previews.length), [previews.length]);
+	const next = useCallback(
+		() => setIdx((i) => (i + 1) % previews.length),
+		[previews.length]
+	);
+	const prev = useCallback(
+		() => setIdx((i) => (i - 1 + previews.length) % previews.length),
+		[previews.length]
+	);
 	
+	// ハイライト指定があれば、到着時に該当ページを自動で開く
 	useEffect(() => {
 			if (!highlight) return;
 			const i = HIGHLIGHT_INDEX[highlight];
@@ -73,14 +121,14 @@ export default function PreviewPage() {
 				setOpen(true);
 			}
 	}, [highlight]);
-
-
+	
+	// Lightbox キーボード操作
 	useEffect(() => {
 			if (!open) return;
 			const onKey = (e: KeyboardEvent) => {
 				if (e.key === "Escape") closeLB();
 				if (e.key === "ArrowRight") next();
-				if (e.key === "ArrowLeft")  prev();
+				if (e.key === "ArrowLeft") prev();
 			};
 			window.addEventListener("keydown", onKey);
 			document.documentElement.style.overflow = "hidden";
@@ -105,7 +153,10 @@ export default function PreviewPage() {
 		>
 		{lang === "ja" ? "English" : "日本語"}
 		</button>
-		<Link href="/" className="underline underline-offset-4 hover:opacity-70">
+		<Link
+		href="/"
+		className="underline underline-offset-4 hover:opacity-70"
+		>
 		← {lang === "ja" ? "ホーム" : "Home"}
 		</Link>
 		</div>
@@ -129,17 +180,26 @@ export default function PreviewPage() {
 		{previews.slice(0, 3).map((p, i) => (
 					<Card key={p.src} className="rounded-2xl overflow-hidden shadow-lg">
 					<CardHeader>
-					<CardTitle className="text-base">{lang === "ja" ? p.jp : p.en}</CardTitle>
+					<CardTitle className="text-base">
+					{lang === "ja" ? p.jp : p.en}
+					</CardTitle>
 					</CardHeader>
 					<CardContent className="p-0">
 					<button
 					type="button"
 					onClick={() => openLB(i)}
 					className="block w-full text-left"
-					aria-label={(lang === "ja" ? "拡大表示: " : "Open: ") + (lang === "ja" ? p.jp : p.en)}
+					aria-label={
+						(lang === "ja" ? "拡大表示: " : "Open: ") +
+						(lang === "ja" ? p.jp : p.en)
+					}
 					>
 					<div className="aspect-[3/2] bg-neutral-100 overflow-hidden">
-					<img src={p.src} alt={p.alt} className="h-full w-full object-cover" />
+					<img
+					src={p.src}
+					alt={p.alt}
+					className="h-full w-full object-cover"
+					/>
 					</div>
 					</button>
 					<div className="p-4">
@@ -163,19 +223,31 @@ export default function PreviewPage() {
 		{previews.slice(3).map((p, j) => {
 					const i = 3 + j; // Lightbox用の実インデックス
 					return (
-						<Card key={p.src} className="rounded-2xl overflow-hidden shadow-lg">
+						<Card
+						key={p.src}
+						className="rounded-2xl overflow-hidden shadow-lg"
+						>
 						<CardHeader>
-						<CardTitle className="text-base">{lang === "ja" ? p.jp : p.en}</CardTitle>
+						<CardTitle className="text-base">
+						{lang === "ja" ? p.jp : p.en}
+						</CardTitle>
 						</CardHeader>
 						<CardContent className="p-0">
 						<button
 						type="button"
 						onClick={() => openLB(i)}
 						className="block w-full text-left"
-						aria-label={(lang === "ja" ? "拡大表示: " : "Open: ") + (lang === "ja" ? p.jp : p.en)}
+						aria-label={
+							(lang === "ja" ? "拡大表示: " : "Open: ") +
+							(lang === "ja" ? p.jp : p.en)
+						}
 						>
 						<div className="aspect-[3/2] bg-neutral-100 overflow-hidden">
-						<img src={p.src} alt={p.alt} className="h-full w-full object-cover" />
+						<img
+						src={p.src}
+						alt={p.alt}
+						className="h-full w-full object-cover"
+						/>
 						</div>
 						</button>
 						<div className="p-4">
@@ -194,7 +266,6 @@ export default function PreviewPage() {
 					);
 		})}
 		</div>
-
 		
 		<div className="mt-10 text-center">
 		<Link href="/#book" className="inline-block">
@@ -205,7 +276,6 @@ export default function PreviewPage() {
 		</div>
 		
 		<div className="w-full h-px bg-neutral-200 my-10" />
-		
 		</main>
 		
 		{open && (
@@ -236,9 +306,15 @@ export default function PreviewPage() {
 				{lang === "ja" ? previews[idx].jp : previews[idx].en}
 				</div>
 				<div className="mt-4 flex items-center justify-between">
-				<Button variant="outline" onClick={prev} className="rounded-full">←</Button>
-				<div className="text-white text-sm">{idx + 1} / {previews.length}</div>
-				<Button variant="outline" onClick={next} className="rounded-full">→</Button>
+				<Button variant="outline" onClick={prev} className="rounded-full">
+				←
+				</Button>
+				<div className="text-white text-sm">
+				{idx + 1} / {previews.length}
+				</div>
+				<Button variant="outline" onClick={next} className="rounded-full">
+				→
+				</Button>
 				</div>
 				</div>
 				</div>
