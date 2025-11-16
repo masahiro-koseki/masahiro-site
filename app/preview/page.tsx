@@ -5,13 +5,16 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const LANG_KEY = "mk_lang";
 type Lang = "ja" | "en";
 
 export default function PreviewPage() {
-	//const [lang, setLang] = useState<"ja" | "en">("ja");
 	const [lang, setLang] = useState<Lang>("ja");
+	
+	const searchParams = useSearchParams();
+	const highlight = searchParams.get("highlight");
 	
 	useEffect(() => {
 			try {
@@ -19,6 +22,7 @@ export default function PreviewPage() {
 				if (saved === "ja" || saved === "en") setLang(saved);
 			} catch {}
 	}, []);
+
 	
 	const changeLang = (l: Lang) => {
 		setLang(l);
@@ -38,6 +42,14 @@ export default function PreviewPage() {
 	{ src: "/images/book_sample_winter.webp",  alt: "Winter highlight spread",              jp: "冬 ハイライト（見開き）",             en: "Winter highlight spread" },
 	];
 	
+	// ハイライトキー → プレビュー配列のインデックス
+	const HIGHLIGHT_INDEX: Record<string, number> = {
+		spring: 3, // previews[3] = 春
+		summer: 4, // previews[4] = 夏
+		autumn: 5, // previews[5] = 秋
+		winter: 6, // previews[6] = 冬
+	};
+	
 	const [open, setOpen]   = useState(false);
 	const [idx, setIdx]     = useState(0);
 	
@@ -46,6 +58,16 @@ export default function PreviewPage() {
 	const next    = useCallback(() => setIdx(i => (i + 1) % previews.length), [previews.length]);
 	const prev    = useCallback(() => setIdx(i => (i - 1 + previews.length) % previews.length), [previews.length]);
 	
+	// ハイライト指定があれば、到着時に該当ページを自動で開く
+	useEffect(() => {
+			if (!highlight) return;
+			const i = HIGHLIGHT_INDEX[highlight];
+			if (typeof i === "number") {
+				setIdx(i);
+				setOpen(true);
+			}
+	}, [highlight]);
+
 	useEffect(() => {
 			if (!open) return;
 			const onKey = (e: KeyboardEvent) => {

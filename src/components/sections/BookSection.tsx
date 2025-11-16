@@ -129,7 +129,7 @@ export default function BookSection({
 		{highlights.map((h) => (
 					<Link
 					key={h.key}
-					href={`/preview#${h.key}`}
+					href={`/preview?highlight=${h.key}`}
 					className="group block rounded-xl overflow-hidden bg-neutral-100"
 					>
 					<div className="aspect-[1/1] overflow-hidden">
@@ -157,8 +157,7 @@ export default function BookSection({
 		</p>
 		</CardContent>
 		</Card>
-		</div>
-		
+		</div>		
 		{/* セクション下の区切り線：下方向の余白を抑える */}
 		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
 		</>
