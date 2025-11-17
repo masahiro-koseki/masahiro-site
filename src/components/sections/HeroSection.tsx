@@ -74,7 +74,7 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		
 		{/* 詩的な一文（改行付き） */}
 		<p
-		className="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed"
+		className="mt-3 text-sm text-neutral-500 leading-relaxed"
 		dangerouslySetInnerHTML={{ __html: texts.poem }}
 		/>
 		
