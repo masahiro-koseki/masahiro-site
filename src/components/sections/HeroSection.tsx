@@ -142,3 +142,4 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		</motion.div>
 		</div>
 	);
+}
