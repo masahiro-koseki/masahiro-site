@@ -548,7 +548,7 @@ const gallerySources = [
 		</header>
 
 
-      <Section id="home" className="pt-12 pb-1">
+      <Section id="home" className="pt-12 pb-12">
 		<HeroSection texts={t.hero} scrollTo={scrollTo} />
         <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
