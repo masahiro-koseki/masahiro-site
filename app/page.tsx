@@ -568,7 +568,7 @@ const gallerySources = [
 
       <Section id="home" className="pt-12 pb-12">
 		<HeroSection texts={t.hero} scrollTo={scrollTo} />
-        <div className="w-full h-px bg-neutral-200 my-1"></div>
+        <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
 		<Section id="book" className="section-spacing">
