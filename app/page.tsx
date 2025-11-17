@@ -424,39 +424,126 @@ const gallerySources = [
 
   return (
     <div className="min-h-screen bg-white text-neutral-900">
-      <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-          <div className="flex items-center gap-2 font-semibold">
-            <GalleryVerticalEnd className="h-5 w-5" />
-            <span>Masahiro Koseki</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <button onClick={() => scrollTo("home")} className="hover:opacity-70">
-              {t.nav.home}
-            </button>
-            <button onClick={() => scrollTo("book")} className="hover:opacity-70">
-              {t.nav.book}
-            </button>
-            <button onClick={() => scrollTo("portfolio")} className="hover:opacity-70">
-              {t.nav.portfolio}
-            </button>
-            <button onClick={() => scrollTo("about")} className="hover:opacity-70">
-              {t.nav.about}
-            </button>
-            <button onClick={() => scrollTo("news")} className="hover:opacity-70">
-              {t.nav.news}
-            </button>
-            <button onClick={() => scrollTo("contact")} className="hover:opacity-70">
-              {t.nav.contact}
-            </button>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" className="rounded-full" onClick={() => changeLang(lang === "ja" ? "en" : "ja")}>
-              {lang === "ja" ? "EN" : "JP"}
-            </Button>
-          </div>
-        </div>
-      </header>
+		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
+		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+		
+		{/* 左：ロゴ */}
+		<div className="flex items-center gap-2 font-semibold">
+		<GalleryVerticalEnd className="h-5 w-5" />
+		<span>Masahiro Koseki</span>
+		</div>
+		
+		{/* --- PC 用ナビ --- */}
+		<nav className="hidden md:flex items-center gap-6 text-sm">
+		<button onClick={() => scrollTo("home")} className="hover:opacity-70">
+		{t.nav.home}
+		</button>
+		<button onClick={() => scrollTo("book")} className="hover:opacity-70">
+		{t.nav.book}
+		</button>
+		<button onClick={() => scrollTo("portfolio")} className="hover:opacity-70">
+		{t.nav.portfolio}
+		</button>
+		<button onClick={() => scrollTo("about")} className="hover:opacity-70">
+		{t.nav.about}
+		</button>
+		<button onClick={() => scrollTo("news")} className="hover:opacity-70">
+		{t.nav.news}
+		</button>
+		<button onClick={() => scrollTo("contact")} className="hover:opacity-70">
+		{t.nav.contact}
+		</button>
+		</nav>
+		
+		{/* --- PC 用 言語切替ボタン --- */}
+		<div className="hidden md:flex items-center gap-2">
+		<Button
+		variant="outline"
+		className="rounded-full"
+		onClick={() => changeLang(lang === "ja" ? "en" : "ja")}
+		>
+		{lang === "ja" ? "EN" : "JP"}
+		</Button>
+		</div>
+		
+		{/* --- モバイル用ハンバーガーボタン --- */}
+		<button
+		className="md:hidden flex items-center justify-center px-2 py-2 border border-neutral-300 rounded-lg bg-white"
+		onClick={() => setMenuOpen((v) => !v)}
+		aria-label="menu"
+		>
+		<div className="flex flex-col gap-[4px]">
+		<span className="w-5 h-[2px] bg-neutral-800"></span>
+		<span className="w-5 h-[2px] bg-neutral-800"></span>
+		<span className="w-5 h-[2px] bg-neutral-800"></span>
+		</div>
+		</button>
+		
+		</div>
+		
+		{/* --- モバイルメニュー本体 --- */}
+		{menuOpen && (
+				<nav className="md:hidden border-t border-neutral-300 bg-white text-sm">
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("home")}
+				>
+				{t.nav.home}
+				</button>
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("book")}
+				>
+				{t.nav.book}
+				</button>
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("portfolio")}
+				>
+				{t.nav.portfolio}
+				</button>
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("about")}
+				>
+				{t.nav.about}
+				</button>
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("news")}
+				>
+				{t.nav.news}
+				</button>
+				<button
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => scrollTo("contact")}
+				>
+				{t.nav.contact}
+				</button>
+				
+				{/* 言語切替（モバイル用） */}
+				<div className="border-t border-neutral-200 flex gap-2 px-4 py-3">
+				<button
+				className={`px-3 py-1 rounded-full ${
+						lang === "ja" ? "bg-neutral-900 text-white" : "bg-neutral-200"
+				}`}
+				onClick={() => changeLang("ja")}
+				>
+				JP
+				</button>
+				<button
+				className={`px-3 py-1 rounded-full ${
+						lang === "en" ? "bg-neutral-900 text-white" : "bg-neutral-200"
+				}`}
+				onClick={() => changeLang("en")}
+				>
+				EN
+				</button>
+				</div>
+				</nav>
+		)}
+		</header>
+
 
       <Section id="home" className="pt-12 pb-1">
 		<HeroSection texts={t.hero} scrollTo={scrollTo} />
