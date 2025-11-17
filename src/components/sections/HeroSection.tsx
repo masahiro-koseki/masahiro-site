@@ -68,10 +68,10 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		</motion.h1>
 		<p className="mt-4 text-base sm:text-lg text-neutral-600">
 		{texts.subtitle}
-		</p>
-		<p className="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
+		<p
+		className="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed"
 		dangerouslySetInnerHTML={{ __html: texts.poem }}
-		</p>
+		/>
 		<div className="mt-6 flex gap-3">
 		<Button className="rounded-2xl" onClick={() => scrollTo("book")}>
 		<BookOpen className="h-4 w-4 mr-2" />
