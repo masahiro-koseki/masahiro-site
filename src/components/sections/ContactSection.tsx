@@ -144,7 +144,7 @@ export default function ContactSection({ texts }: ContactSectionProps) {
 				</p>
 		)}
 		
-		<div className="mt-4">
+		<div className="mt-4 mb-4">
 		<Button
 		type="submit"
 		className="rounded-2xl"
