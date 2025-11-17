@@ -405,11 +405,29 @@ const gallerySources = [
     [lang]
   );
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(typeof id === "string" ? id : "");
-		if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-		setMenuOpen(false); // ← モバイルメニューを閉じる
-  };
+	const scrollTo = (id: string) => {
+		if (typeof window === "undefined") return;
+		
+		const el = document.getElementById(id);
+		if (!el) return;
+		
+		// ヘッダーの高さを取得（sticky header 分のオフセット）
+		const header = document.querySelector("header");
+		const headerHeight =
+		header instanceof HTMLElement ? header.offsetHeight : 0;
+		
+		// 要素の画面内位置 + 現在のスクロール量 - ヘッダー高さ（少し余裕を見て数px引く）
+		const rect = el.getBoundingClientRect();
+		const targetY = rect.top + window.scrollY - headerHeight - 8; // 8pxだけ余裕
+		
+		window.scrollTo({
+				top: targetY < 0 ? 0 : targetY,
+				behavior: "smooth",
+		});
+		
+		// モバイルメニューを閉じる
+		setMenuOpen(false);
+	};
 
 
   const openGallery = (cat: number, index = 0) => {
