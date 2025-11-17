@@ -171,7 +171,9 @@ export default function Page() {
 	>
 	{lang === "ja" ? "EN" : "JP"}
 	</Button>
-
+	
+	const [menuOpen, setMenuOpen] = useState(false);
+	
 	const galleryMeta = [
 	// 0) Alpine
 	{
@@ -405,7 +407,8 @@ const gallerySources = [
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(typeof id === "string" ? id : "");
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+		if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+		setMenuOpen(false); // ← モバイルメニューを閉じる
   };
 
 
