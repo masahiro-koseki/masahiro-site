@@ -70,7 +70,7 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		{texts.subtitle}
 		</p>
 		<p className="mt-3 text-sm sm:text-base text-neutral-500 leading-relaxed">
-		{texts.poem}
+		dangerouslySetInnerHTML={{ __html: texts.poem }}
 		</p>
 		<div className="mt-6 flex gap-3">
 		<Button className="rounded-2xl" onClick={() => scrollTo("book")}>
