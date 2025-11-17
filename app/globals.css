@@ -25,8 +25,7 @@ body {
 @layer utilities {
   /* セクション間の余白（少し狭めに統一） */
   .section-spacing {
-		@apply mt-16 md:mt-8; /* モバイル16px / PC32px 相当 */
-		scroll-margin-top: 60px; 
+		@apply mt-16 md:mt-32; /* モバイル16px / PC32px 相当 */
   }
 
   /* セクションタイトル（H2想定） */
