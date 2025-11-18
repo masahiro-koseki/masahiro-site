@@ -224,7 +224,7 @@ export default function EnMountainsPage() {
 		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
 		{/* ★地図画像を用意できたらコメントアウトを外して使用 */}
 		<Image
-					src="/images/maps/tohoku-region-map-en.jpg"
+					src="/images/maps/tohoku-region-map.jpg"
 					alt="Map of northern Japan showing the area of the mountains"
 					fill
 					className="object-contain"
