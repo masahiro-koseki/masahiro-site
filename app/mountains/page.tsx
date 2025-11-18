@@ -112,7 +112,7 @@ export default function MountainsPage() {
 					className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
 					>
 					{/* 画像エリア：トリミングせず全体を見せる */}
-					<div className="relative aspect-[4/3] w-full bg-black/5">
+					<div className="relative aspect-[1/1] w-full bg-black/5">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
