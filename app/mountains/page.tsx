@@ -1,3 +1,4 @@
+// app/mountains/page.tsx
 import Image from "next/image";
 
 const mountains = [
@@ -44,17 +45,18 @@ const mountains = [
 
 export default function MountainsPage() {
 	return (
-		<main className="min-h-screen bg-white text-neutral-900">
+		// ★ここはトップページの <main> と同じ className にしてもOKです
+		<main className="min-h-screen bg-slate-50 text-gray-900">
 		<div className="mx-auto max-w-6xl px-4 py-16">
 		{/* ヘッダー */}
 		<section className="mb-16">
-		<p className="text-sm uppercase tracking-[0.2em] text-sky-300">
+		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
 		</p>
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
 		地元の山々の紹介
 		</h1>
-		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
+		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
 		焼石岳、栗駒山、早池峰山――。
 		中学時代の渓流釣りをきっかけに足を運ぶようになり、
 		その稜線や沢、森の表情に魅せられてきました。
@@ -62,27 +64,27 @@ export default function MountainsPage() {
 		</p>
 		</section>
 		
-		{/* エリアマップ（後で差し替えOK） */}
-		<section className="mb-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 md:p-7">
+		{/* エリア説明・マップ枠 */}
+		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
 		<div className="flex flex-col gap-6 md:flex-row md:items-center">
 		<div className="md:w-2/3">
-		<h2 className="text-xl font-semibold md:text-2xl">
+		<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
 		岩手・東北の山域エリア
 		</h2>
-		<p className="mt-4 text-sm leading-relaxed text-slate-200 md:text-base">
+		<p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
 		ここで紹介する山々は、主に岩手県とその周辺に位置しています。
 		北上山地の主峰・早池峰山、湿原と池塘が点在する焼石岳、
 		紅葉の名所として知られる栗駒山など、いずれも四季折々に表情を変えながら、
 		山と自然の魅力を見せてくれます。
 		</p>
-		<p className="mt-4 text-xs text-slate-400 md:text-sm">
+		<p className="mt-4 text-xs text-gray-500 md:text-sm">
 		※ エリアマップやアクセス情報は、今後このセクションに追加していく予定です。
 		</p>
 		</div>
 		<div className="md:w-1/3">
-		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-950/70">
+		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
 		{/* ここに将来的に地図画像やイラストを入れる */}
-		<div className="flex h-full items-center justify-center px-4 text-center text-xs text-slate-400">
+		<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
 		Area map / region illustration
 		<br />
 		（後で地図画像やイラストに差し替え）
@@ -95,11 +97,11 @@ export default function MountainsPage() {
 		{/* 山一覧 */}
 		<section className="space-y-6">
 		<div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-		<h2 className="text-xl font-semibold md:text-2xl">
+		<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
 		山一覧（登場する主な山々）
 		</h2>
-		<p className="text-xs text-slate-400 md:text-sm">
-		※ ここから各山の個別ページ（詳細・写真ギャラリー）へリンクさせていきます。
+		<p className="text-xs text-gray-500 md:text-sm">
+		※ 今後、ここから各山の個別ページ（詳細・写真ギャラリー）へリンクさせていきます。
 		</p>
 		</div>
 		
@@ -107,9 +109,10 @@ export default function MountainsPage() {
 		{mountains.map((mt) => (
 					<article
 					key={mt.id}
-					className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60"
+					className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
 					>
-					<div className="relative aspect-[4/3] w-full bg-black/40">
+					{/* 画像エリア：トリミングせず全体を見せる */}
+					<div className="relative aspect-[4/3] w-full bg-black/5">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
@@ -118,34 +121,42 @@ export default function MountainsPage() {
 					sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
 					/>
 					</div>
+					
 					<div className="flex flex-1 flex-col p-4">
-					<div className="text-xs uppercase tracking-[0.18em] text-sky-300">
+					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
 					{mt.nameEn}
 					</div>
-					<h3 className="mt-1 text-lg font-semibold">{mt.nameJa}</h3>
-					<dl className="mt-3 space-y-1 text-xs text-slate-300 md:text-sm">
+					<h3 className="mt-1 text-lg font-semibold text-gray-900">
+					{mt.nameJa}
+					</h3>
+					
+					<dl className="mt-3 space-y-1 text-xs text-gray-700 md:text-sm">
 					<div className="flex gap-2">
-					<dt className="w-12 shrink-0 text-slate-400">標高</dt>
+					<dt className="w-12 shrink-0 text-gray-500">標高</dt>
 					<dd>{mt.height}</dd>
 					</div>
 					<div className="flex gap-2">
-					<dt className="w-12 shrink-0 text-slate-400">エリア</dt>
+					<dt className="w-12 shrink-0 text-gray-500">エリア</dt>
 					<dd>{mt.area}</dd>
 					</div>
 					<div className="flex gap-2">
-					<dt className="w-12 shrink-0 text-slate-400">季節</dt>
+					<dt className="w-12 shrink-0 text-gray-500">季節</dt>
 					<dd>{mt.seasons}</dd>
 					</div>
 					</dl>
-					<p className="mt-3 flex-1 text-xs leading-relaxed text-slate-200 md:text-sm">
+					
+					<p className="mt-3 flex-1 text-xs leading-relaxed text-gray-700 md:text-sm">
 					{mt.descriptionJa}
 					</p>
-					<p className="mt-2 text-[11px] leading-relaxed text-slate-400 md:text-xs">
+					<p className="mt-2 text-[11px] leading-relaxed text-gray-600 md:text-xs">
 					{mt.descriptionEn}
 					</p>
 					
-					{/* 後で個別ページへのリンクに変更予定 */}
-					{/* <Link href={`/mountains/${mt.id}`} className="mt-3 text-xs text-sky-300 hover:underline">
+					{/* 個別ページ作成後に有効化予定 */}
+					{/* <Link
+					href={`/mountains/${mt.id}`}
+					className="mt-3 text-xs font-semibold text-blue-600 hover:underline"
+				  >
 					詳細ページへ
 				  </Link> */}
 						</div>
