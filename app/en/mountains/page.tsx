@@ -38,11 +38,15 @@ const mountains: Mountain[] = [
 	mainImage: "/images/mountains/hayachine-top.jpg",
 	subImages: [
 	{
-		src: "/images/mountains/hayachine-flowers.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/hayachine-flowers-01.jpg", // ★実ファイル名に合わせて変更
 		alt: "Alpine flowers on the slopes of Mt. Hayachine",
 	},
 	{
-		src: "/images/mountains/hayachine-ridge.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/hayachine-flowers-02.jpg",
+		alt: "Close-up view of alpine plants on Mt. Hayachine",
+	},
+	{
+		src: "/images/mountains/hayachine-ridge.jpg",
 		alt: "Ridgeline view from Mt. Hayachine",
 	},
 	],
@@ -65,11 +69,15 @@ const mountains: Mountain[] = [
 	mainImage: "/images/mountains/yakeishi-kaminuma.jpg",
 	subImages: [
 	{
-		src: "/images/mountains/yakeishi-wetland.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/yakeishi-wetland-01.jpg",
 		alt: "Wetland and pond near Mt. Yakeishi",
 	},
 	{
-		src: "/images/mountains/yakeishi-flower.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/yakeishi-wetland-02.jpg",
+		alt: "Marsh and gentle ridges around Mt. Yakeishi",
+	},
+	{
+		src: "/images/mountains/yakeishi-flower.jpg",
 		alt: "Flowers around the marshes of Mt. Yakeishi",
 	},
 	],
@@ -92,12 +100,16 @@ const mountains: Mountain[] = [
 	mainImage: "/images/mountains/kurikoma-autumn.jpg",
 	subImages: [
 	{
-		src: "/images/mountains/kurikoma-beech.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/kurikoma-beech.jpg",
 		alt: "Beech forest on the slopes of Mt. Kurikoma",
 	},
 	{
-		src: "/images/mountains/kurikoma-wetland.jpg", // ★実ファイル名に合わせて変更
-		alt: "Small wetland area near Mt. Kurikoma",
+		src: "/images/mountains/kurikoma-wetland.jpg",
+		alt: "Small wetland near Mt. Kurikoma",
+	},
+	{
+		src: "/images/mountains/kurikoma-summer.jpg",
+		alt: "Summer view of Mt. Kurikoma",
 	},
 	],
 	summary:
@@ -130,13 +142,11 @@ export default function EnMountainsPage() {
 		{/* ▼ 英語版ナビゲーション */}
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
 		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-		{/* 左：ロゴ */}
 		<div className="flex items-center gap-2 font-semibold">
 		<GalleryVerticalEnd className="h-5 w-5" />
 		<span>Masahiro Koseki</span>
 		</div>
 		
-		{/* PC用ナビ */}
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
 		Home
@@ -147,7 +157,6 @@ export default function EnMountainsPage() {
 		<span className="text-gray-900 font-medium">Mountains (EN)</span>
 		</nav>
 		
-		{/* 言語切り替え：JPへ */}
 		<div className="hidden md:flex items-center gap-2">
 		<Button
 		variant="outline"
@@ -163,7 +172,7 @@ export default function EnMountainsPage() {
 		{/* ▼ メインコンテンツ */}
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
-		{/* 導入セクション */}
+		{/* 導入 */}
 		<section className="mb-12">
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains of Iwate &amp; Northern Japan
@@ -213,7 +222,7 @@ export default function EnMountainsPage() {
 		</div>
 		<div className="md:w-1/3">
 		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
-		{/* ★地図画像が用意できたら src を差し替え */}
+		{/* ★地図画像を用意できたらコメントアウトを外して使用 */}
 		{/* <Image
 					src="/images/maps/tohoku-iwate-mountains-en.jpg"
 					alt="Map of northern Japan showing the area of the mountains"
@@ -240,8 +249,10 @@ export default function EnMountainsPage() {
 						className="rounded-2xl border border-gray-200 bg-white shadow-sm"
 						>
 						<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
-						{/* メイン写真 */}
-						<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5">
+						{/* 左：メイン画像＋サムネイル */}
+						<div className="p-5 md:p-6 md:pr-3 flex flex-col gap-3">
+						{/* メイン画像（少し控えめな高さ） */}
+						<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
 						<Image
 						src={mt.mainImage}
 						alt={mt.name}
@@ -251,7 +262,28 @@ export default function EnMountainsPage() {
 						/>
 						</div>
 						
-						{/* テキストエリア */}
+						{/* サムネイル 3枚を横並び */}
+						{mt.subImages.length > 0 && (
+								<div className="flex gap-3 justify-start">
+								{mt.subImages.map((img, idx) => (
+											<div
+											key={idx}
+											className="relative w-20 h-16 md:w-24 md:h-18 rounded-md overflow-hidden bg-black/5 border border-gray-200"
+											>
+											<Image
+											src={img.src}
+											alt={img.alt}
+											fill
+											className="object-cover"
+											sizes="96px"
+											/>
+											</div>
+								))}
+								</div>
+						)}
+						</div>
+						
+						{/* 右：テキスト */}
 						<div className="p-5 md:p-6 flex flex-col gap-3">
 						<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
 						Mountain
@@ -300,31 +332,6 @@ export default function EnMountainsPage() {
 						</div>
 						</div>
 						
-						{/* サムネイル画像（小さな写真 2〜3枚） */}
-						{mt.subImages.length > 0 && (
-								<div className="mt-4">
-								<div className="text-xs font-semibold text-gray-600 mb-2">
-								Additional scenes
-								</div>
-								<div className="flex flex-wrap gap-3">
-								{mt.subImages.map((img, idx) => (
-											<div
-											key={idx}
-											className="relative w-24 h-16 md:w-28 md:h-20 rounded-md overflow-hidden bg-black/5 border border-gray-200"
-											>
-											<Image
-											src={img.src}
-											alt={img.alt}
-											fill
-											className="object-cover"
-											sizes="120px"
-											/>
-											</div>
-								))}
-								</div>
-								</div>
-						)}
-						
 						<div className="mt-4 text-xs text-gray-500">
 						* Conditions in the mountains can change quickly due to
 						weather, trail damage, or snow. Please always check the
@@ -337,7 +344,7 @@ export default function EnMountainsPage() {
 			))}
 			</section>
 			
-			{/* 安全・装備・一般的な注意事項 */}
+			{/* 注意事項 */}
 			<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
 			<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
 			Before You Hike in These Mountains
