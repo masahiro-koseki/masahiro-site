@@ -128,7 +128,6 @@ const Lightbox = ({
 
 export default function Page() {
   const [lang, setLang] = useState<Lang>("ja");
-  //const [lang, setLang] = useState<"ja" | "en">("ja");
   const [lbOpen, setLbOpen] = useState(false);
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
