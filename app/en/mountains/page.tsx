@@ -10,20 +10,50 @@ import { Button } from "@/components/ui/button";
 
 const LANG_KEY = "mk_lang";
 
-const mountains = [
+type SubImage = {
+	src: string;
+	alt: string;
+};
+
+type Mountain = {
+	id: string;
+	name: string;
+	height: string;
+	area: string;
+	mainImage: string;
+	summary: string;
+	character: string;
+	bestSeason: string;
+	difficulty: string;
+	access: string;
+	subImages: SubImage[];
+};
+
+const mountains: Mountain[] = [
 {
 	id: "hayachine",
 	name: "Mt. Hayachine",
 	height: "1,917 m",
 	area: "Hanamaki & Tono, Iwate Prefecture",
-	image: "/images/mountains/hayachine-top.jpg",
+	mainImage: "/images/mountains/hayachine-top.jpg",
+	subImages: [
+	{
+		src: "/images/mountains/hayachine-flowers.jpg", // ★実ファイル名に合わせて変更
+		alt: "Alpine flowers on the slopes of Mt. Hayachine",
+	},
+	{
+		src: "/images/mountains/hayachine-ridge.jpg", // ★実ファイル名に合わせて変更
+		alt: "Ridgeline view from Mt. Hayachine",
+	},
+	],
 	summary:
 	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Famous for endemic alpine flowers and wide-open views.",
 	character:
 	"Trails climb through forest and dwarf pine to a rocky summit. In early summer the slopes are covered with alpine plants, including several rare and endemic species. On a clear day, you can see the Kitakami Mountains and the Ou Range stretching into the distance.",
 	bestSeason:
 	"Late June to early August for alpine flowers; late September to early October for autumn colors; clear winter days for a distant, snow-covered profile.",
-	difficulty: "Moderate. Some steep rocky sections near the summit; basic mountain hiking experience recommended.",
+	difficulty:
+	"Moderate. Some steep rocky sections near the summit; basic mountain hiking experience recommended.",
 	access:
 	"Trailheads are generally reached by car or local bus from Hanamaki or Tono. Schedules and access may change, so please check the latest local information.",
 },
@@ -32,7 +62,17 @@ const mountains = [
 	name: "Mt. Yakeishi",
 	height: "1,548 m",
 	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
-	image: "/images/mountains/yakeishi-kaminuma.jpg",
+	mainImage: "/images/mountains/yakeishi-kaminuma.jpg",
+	subImages: [
+	{
+		src: "/images/mountains/yakeishi-wetland.jpg", // ★実ファイル名に合わせて変更
+		alt: "Wetland and pond near Mt. Yakeishi",
+	},
+	{
+		src: "/images/mountains/yakeishi-flower.jpg", // ★実ファイル名に合わせて変更
+		alt: "Flowers around the marshes of Mt. Yakeishi",
+	},
+	],
 	summary:
 	"A mountain known for its wetlands, ponds, and rich alpine vegetation. The contrast of fresh green and lingering snow in early summer is especially striking.",
 	character:
@@ -49,7 +89,17 @@ const mountains = [
 	name: "Mt. Kurikoma",
 	height: "1,626 m",
 	area: "Border of Miyagi, Iwate & Akita Prefectures",
-	image: "/images/mountains/kurikoma-autumn.jpg",
+	mainImage: "/images/mountains/kurikoma-autumn.jpg",
+	subImages: [
+	{
+		src: "/images/mountains/kurikoma-beech.jpg", // ★実ファイル名に合わせて変更
+		alt: "Beech forest on the slopes of Mt. Kurikoma",
+	},
+	{
+		src: "/images/mountains/kurikoma-wetland.jpg", // ★実ファイル名に合わせて変更
+		alt: "Small wetland area near Mt. Kurikoma",
+	},
+	],
 	summary:
 	"One of Tohoku’s best-known mountains for autumn foliage. The wide slopes are covered with colorful dwarf shrubs and beech forests.",
 	character:
@@ -70,14 +120,14 @@ export default function EnMountainsPage() {
 		try {
 			localStorage.setItem(LANG_KEY, "ja");
 		} catch {
-			// 何もしない（環境によっては localStorage が使えない場合もある）
+			// ignore
 		}
 		router.push("/mountains");
 	};
 	
 	return (
 		<div className="min-h-screen bg-slate-50 text-gray-900">
-		{/* ▼ 英語版ナビゲーション（トップとデザイン統一） */}
+		{/* ▼ 英語版ナビゲーション */}
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
 		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
 		{/* 左：ロゴ */}
@@ -107,9 +157,6 @@ export default function EnMountainsPage() {
 		JP
 		</Button>
 		</div>
-		
-		{/* モバイル用ハンバーガー（簡易版） */}
-		{/* 必要ならトップと同じモバイルメニューを実装してもOK */}
 		</div>
 		</header>
 		
@@ -117,7 +164,7 @@ export default function EnMountainsPage() {
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
 		{/* 導入セクション */}
-		<section className="mb-16">
+		<section className="mb-12">
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains of Iwate &amp; Northern Japan
 		</p>
@@ -143,125 +190,193 @@ export default function EnMountainsPage() {
 		</p>
 		</section>
 		
-		{/* 各山セクション */}
-		<section className="space-y-10">
-		{mountains.map((mt) => (
-					<article
-					key={mt.id}
-					id={mt.id}
-					className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden"
-					>
-					<div className="grid gap-0 md:grid-cols-[2fr,3fr]">
-					{/* 写真 */}
-					<div className="relative aspect-[4/3] w-full bg-black/5">
-					<Image
-					src={mt.image}
-					alt={mt.name}
-					fill
-					className="object-cover"
-					sizes="(min-width: 1024px) 40vw, 100vw"
-					/>
-					</div>
-					
-					{/* テキスト */}
-					<div className="p-5 md:p-6 flex flex-col gap-3">
-					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
-					Mountain
-					</div>
-					<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
-					{mt.name}
-					</h2>
-					
-					<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
-					<div className="flex gap-2">
-					<dt className="w-16 shrink-0 text-gray-500">
-					Height
-					</dt>
-					<dd>{mt.height}</dd>
-					</div>
-					<div className="flex gap-2">
-					<dt className="w-16 shrink-0 text-gray-500">Area</dt>
-					<dd>{mt.area}</dd>
-					</div>
-					</dl>
-					
-					<p className="mt-2 text-sm leading-relaxed text-gray-700">
-					{mt.summary}
-					</p>
-					
-					<div className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
-					<div>
-					<span className="font-semibold">
-					Character of the mountain:
-					</span>{" "}
-					{mt.character}
-					</div>
-					<div>
-					<span className="font-semibold">Best season:</span>{" "}
-					{mt.bestSeason}
-					</div>
-					<div>
-					<span className="font-semibold">Difficulty (rough):</span>{" "}
-					{mt.difficulty}
-					</div>
-					<div>
-					<span className="font-semibold">Access notes:</span>{" "}
-					{mt.access}
-					</div>
-					</div>
-					
-					<div className="mt-4 text-xs text-gray-500">
-					* Conditions in the mountains can change quickly due to
-					weather, trail damage, or snow. Please always check the
-					latest local information and prepare appropriate gear
-					before you go.
-					</div>
-					</div>
-					</div>
-					</article>
-		))}
-		</section>
-		
-		{/* 安全・装備・一般的な注意事項 */}
-		<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
+		{/* 地図セクション */}
+		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
+		<div className="flex flex-col gap-6 md:flex-row md:items-center">
+		<div className="md:w-2/3">
 		<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
-		Before You Hike in These Mountains
+		Where are these mountains?
 		</h2>
 		<p className="mt-3 text-sm leading-relaxed text-gray-700">
-		These mountains are not technically extreme, but they are still
-		real mountains with changing weather and sometimes long trails.
-		Please keep in mind:
+		These peaks are located in the northern part of Honshu, the
+		main island of Japan. They lie inland from the Pacific coast,
+		roughly between Morioka and Sendai. Travel usually involves a
+		combination of Shinkansen or express trains and local buses or
+		rental cars.
 		</p>
-		<ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-gray-700 space-y-1">
-		<li>
-		Weather can change quickly, especially on ridges. Carry rain
-		gear and warm layers even in summer.
-		</li>
-		<li>
-		Trails may be muddy, rocky, or covered with snow in early
-		season. Proper hiking shoes are strongly recommended.
-		</li>
-		<li>
-		Mobile phone reception may be weak or unavailable in some
-		areas.
-		</li>
-		<li>
-		In case of emergency, rescue can take time. Plan a route that
-		matches your experience and fitness.
-		</li>
-		<li>
-		Check recent trail and access information from local tourist
-		offices, mountain huts, or official websites.
-		</li>
-		</ul>
-		<p className="mt-4 text-sm leading-relaxed text-gray-700">
-		The photographs in the photo book were taken over many years in
-		different seasons. Please enjoy them as a quiet record of how
-		these mountains look and feel throughout the year.
+		<p className="mt-3 text-sm leading-relaxed text-gray-700">
+		The map on the right gives a rough idea of the region and the
+		relative positions of Mt. Hayachine, Mt. Yakeishi, and Mt.
+		Kurikoma. It is not for navigation, but to help you imagine
+		the landscape in which these photographs were taken.
 		</p>
-		</section>
 		</div>
-		</main>
-		</div>
-	);
-}
+		<div className="md:w-1/3">
+		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
+		{/* ★地図画像が用意できたら src を差し替え */}
+		{/* <Image
+					src="/images/maps/tohoku-iwate-mountains-en.jpg"
+					alt="Map of northern Japan showing the area of the mountains"
+					fill
+					className="object-contain"
+				  /> */}
+			<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
+			Map placeholder
+			<br />
+			(Replace with a simple map image of Tohoku / Iwate showing
+			the mountain area)
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
+			
+			{/* 各山セクション */}
+			<section className="space-y-10">
+			{mountains.map((mt) => (
+						<article
+						key={mt.id}
+						id={mt.id}
+						className="rounded-2xl border border-gray-200 bg-white shadow-sm"
+						>
+						<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
+						{/* メイン写真 */}
+						<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5">
+						<Image
+						src={mt.mainImage}
+						alt={mt.name}
+						fill
+						className="object-cover"
+						sizes="(min-width: 1024px) 40vw, 100vw"
+						/>
+						</div>
+						
+						{/* テキストエリア */}
+						<div className="p-5 md:p-6 flex flex-col gap-3">
+						<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+						Mountain
+						</div>
+						<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
+						{mt.name}
+						</h2>
+						
+						<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
+						<div className="flex gap-2">
+						<dt className="w-16 shrink-0 text-gray-500">
+						Height
+						</dt>
+						<dd>{mt.height}</dd>
+						</div>
+						<div className="flex gap-2">
+						<dt className="w-16 shrink-0 text-gray-500">Area</dt>
+						<dd>{mt.area}</dd>
+						</div>
+						</dl>
+						
+						<p className="mt-2 text-sm leading-relaxed text-gray-700">
+						{mt.summary}
+						</p>
+						
+						<div className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
+						<div>
+						<span className="font-semibold">
+						Character of the mountain:
+						</span>{" "}
+						{mt.character}
+						</div>
+						<div>
+						<span className="font-semibold">Best season:</span>{" "}
+						{mt.bestSeason}
+						</div>
+						<div>
+						<span className="font-semibold">
+						Difficulty (rough):
+						</span>{" "}
+						{mt.difficulty}
+						</div>
+						<div>
+						<span className="font-semibold">Access notes:</span>{" "}
+						{mt.access}
+						</div>
+						</div>
+						
+						{/* サムネイル画像（小さな写真 2〜3枚） */}
+						{mt.subImages.length > 0 && (
+								<div className="mt-4">
+								<div className="text-xs font-semibold text-gray-600 mb-2">
+								Additional scenes
+								</div>
+								<div className="flex flex-wrap gap-3">
+								{mt.subImages.map((img, idx) => (
+											<div
+											key={idx}
+											className="relative w-24 h-16 md:w-28 md:h-20 rounded-md overflow-hidden bg-black/5 border border-gray-200"
+											>
+											<Image
+											src={img.src}
+											alt={img.alt}
+											fill
+											className="object-cover"
+											sizes="120px"
+											/>
+											</div>
+								))}
+								</div>
+								</div>
+						)}
+						
+						<div className="mt-4 text-xs text-gray-500">
+						* Conditions in the mountains can change quickly due to
+						weather, trail damage, or snow. Please always check the
+						latest local information and prepare appropriate gear
+						before you go.
+						</div>
+						</div>
+						</div>
+						</article>
+			))}
+			</section>
+			
+			{/* 安全・装備・一般的な注意事項 */}
+			<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
+			<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
+			Before You Hike in These Mountains
+			</h2>
+			<p className="mt-3 text-sm leading-relaxed text-gray-700">
+			These mountains are not technically extreme, but they are still
+			real mountains with changing weather and sometimes long trails.
+			Please keep in mind:
+			</p>
+			<ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-gray-700 space-y-1">
+			<li>
+			Weather can change quickly, especially on ridges. Carry rain
+			gear and warm layers even in summer.
+			</li>
+			<li>
+			Trails may be muddy, rocky, or covered with snow in early
+			season. Proper hiking shoes are strongly recommended.
+			</li>
+			<li>
+			Mobile phone reception may be weak or unavailable in some
+			areas.
+			</li>
+			<li>
+			In case of emergency, rescue can take time. Plan a route that
+			matches your experience and fitness.
+			</li>
+			<li>
+			Check recent trail and access information from local tourist
+			offices, mountain huts, or official websites.
+			</li>
+			</ul>
+			<p className="mt-4 text-sm leading-relaxed text-gray-700">
+			The photographs in the photo book were taken over many years in
+			different seasons. Please enjoy them as a quiet record of how
+			these mountains look and feel throughout the year.
+			</p>
+			</section>
+			</div>
+			</main>
+			</div>
+		);
+	}
