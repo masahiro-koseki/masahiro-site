@@ -1,0 +1,267 @@
+// app/en/mountains/page.tsx
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { GalleryVerticalEnd } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const LANG_KEY = "mk_lang";
+
+const mountains = [
+{
+	id: "hayachine",
+	name: "Mt. Hayachine",
+	height: "1,917 m",
+	area: "Hanamaki & Tono, Iwate Prefecture",
+	image: "/images/mountains/hayachine-top.jpg",
+	summary:
+	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Famous for endemic alpine flowers and wide-open views.",
+	character:
+	"Trails climb through forest and dwarf pine to a rocky summit. In early summer the slopes are covered with alpine plants, including several rare and endemic species. On a clear day, you can see the Kitakami Mountains and the Ou Range stretching into the distance.",
+	bestSeason:
+	"Late June to early August for alpine flowers; late September to early October for autumn colors; clear winter days for a distant, snow-covered profile.",
+	difficulty: "Moderate. Some steep rocky sections near the summit; basic mountain hiking experience recommended.",
+	access:
+	"Trailheads are generally reached by car or local bus from Hanamaki or Tono. Schedules and access may change, so please check the latest local information.",
+},
+{
+	id: "yakeishi",
+	name: "Mt. Yakeishi",
+	height: "1,548 m",
+	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
+	image: "/images/mountains/yakeishi-kaminuma.jpg",
+	summary:
+	"A mountain known for its wetlands, ponds, and rich alpine vegetation. The contrast of fresh green and lingering snow in early summer is especially striking.",
+	character:
+	"Around Nakanuma and Kaminuma you will find quiet highland marshes, ponds, and gentle ridges. In summer the wetlands are filled with flowers, while autumn brings warm colors to the grass and shrubs. The area is less crowded than major tourist mountains, offering a quieter experience.",
+	bestSeason:
+	"Late May to July for fresh green and flowers; late September to mid-October for autumn colors.",
+	difficulty:
+	"Moderate. Trails include some muddy or wet sections around marshes; waterproof footwear is useful. Weather can change quickly on the ridge.",
+	access:
+	"Access is mainly by car from Oshu City or from the Akita side. Some forest roads may be closed due to snow or damage, especially in early season.",
+},
+{
+	id: "kurikoma",
+	name: "Mt. Kurikoma",
+	height: "1,626 m",
+	area: "Border of Miyagi, Iwate & Akita Prefectures",
+	image: "/images/mountains/kurikoma-autumn.jpg",
+	summary:
+	"One of Tohoku’s best-known mountains for autumn foliage. The wide slopes are covered with colorful dwarf shrubs and beech forests.",
+	character:
+	"The upper slopes are open and rounded, giving wide views in many directions. In autumn the entire mountain turns red, orange, and yellow, attracting many visitors. In other seasons, you can enjoy wetlands, small ponds, and quiet forest trails.",
+	bestSeason:
+	"Late September to mid-October is the peak autumn season, but also the most crowded. Early summer offers fresh green and remaining snow patches.",
+	difficulty:
+	"Easy to moderate, depending on the chosen route. Popular trails are well-marked but can be busy during the foliage season.",
+	access:
+	"Multiple trailheads on the Miyagi, Iwate, and Akita sides. Access is mainly by car; public transport options are limited and may require taxis or seasonal buses.",
+},
+];
+
+export default function EnMountainsPage() {
+	const router = useRouter();
+	
+	const goToJapanese = () => {
+		try {
+			localStorage.setItem(LANG_KEY, "ja");
+		} catch {
+			// 何もしない（環境によっては localStorage が使えない場合もある）
+		}
+		router.push("/mountains");
+	};
+	
+	return (
+		<div className="min-h-screen bg-slate-50 text-gray-900">
+		{/* ▼ 英語版ナビゲーション（トップとデザイン統一） */}
+		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
+		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+		{/* 左：ロゴ */}
+		<div className="flex items-center gap-2 font-semibold">
+		<GalleryVerticalEnd className="h-5 w-5" />
+		<span>Masahiro Koseki</span>
+		</div>
+		
+		{/* PC用ナビ */}
+		<nav className="hidden md:flex items-center gap-6 text-sm">
+		<Link href="/" className="hover:opacity-70">
+		Home
+		</Link>
+		<Link href="/#book" className="hover:opacity-70">
+		Photo Book
+		</Link>
+		<span className="text-gray-900 font-medium">Mountains (EN)</span>
+		</nav>
+		
+		{/* 言語切り替え：JPへ */}
+		<div className="hidden md:flex items-center gap-2">
+		<Button
+		variant="outline"
+		className="rounded-full"
+		onClick={goToJapanese}
+		>
+		JP
+		</Button>
+		</div>
+		
+		{/* モバイル用ハンバーガー（簡易版） */}
+		{/* 必要ならトップと同じモバイルメニューを実装してもOK */}
+		</div>
+		</header>
+		
+		{/* ▼ メインコンテンツ */}
+		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
+		<div className="mx-auto max-w-6xl px-4">
+		{/* 導入セクション */}
+		<section className="mb-16">
+		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+		Mountains of Iwate &amp; Northern Japan
+		</p>
+		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+		Quiet Trails and Seasons in Northern Japan
+		</h1>
+		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
+		The mountains introduced here are located in and around Iwate
+		Prefecture in the Tohoku region of northern Japan. They are not as
+		crowded as the famous peaks around Tokyo or Kyoto. Instead, they
+		offer quiet trails, wide views, rich wetlands, and the changing
+		colors of four distinct seasons.
+		</p>
+		<p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
+		This page is written especially for visitors from overseas who are
+		curious about these mountains after seeing the photo book{" "}
+		<span className="italic">
+		“Fascinated by Mountains and Nature”.
+		</span>{" "}
+		It is not a complete guidebook, but an introduction to the
+		character of each mountain and what kind of experience you may
+		find there.
+		</p>
+		</section>
+		
+		{/* 各山セクション */}
+		<section className="space-y-10">
+		{mountains.map((mt) => (
+					<article
+					key={mt.id}
+					id={mt.id}
+					className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+					>
+					<div className="grid gap-0 md:grid-cols-[2fr,3fr]">
+					{/* 写真 */}
+					<div className="relative aspect-[4/3] w-full bg-black/5">
+					<Image
+					src={mt.image}
+					alt={mt.name}
+					fill
+					className="object-cover"
+					sizes="(min-width: 1024px) 40vw, 100vw"
+					/>
+					</div>
+					
+					{/* テキスト */}
+					<div className="p-5 md:p-6 flex flex-col gap-3">
+					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+					Mountain
+					</div>
+					<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
+					{mt.name}
+					</h2>
+					
+					<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
+					<div className="flex gap-2">
+					<dt className="w-16 shrink-0 text-gray-500">
+					Height
+					</dt>
+					<dd>{mt.height}</dd>
+					</div>
+					<div className="flex gap-2">
+					<dt className="w-16 shrink-0 text-gray-500">Area</dt>
+					<dd>{mt.area}</dd>
+					</div>
+					</dl>
+					
+					<p className="mt-2 text-sm leading-relaxed text-gray-700">
+					{mt.summary}
+					</p>
+					
+					<div className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
+					<div>
+					<span className="font-semibold">
+					Character of the mountain:
+					</span>{" "}
+					{mt.character}
+					</div>
+					<div>
+					<span className="font-semibold">Best season:</span>{" "}
+					{mt.bestSeason}
+					</div>
+					<div>
+					<span className="font-semibold">Difficulty (rough):</span>{" "}
+					{mt.difficulty}
+					</div>
+					<div>
+					<span className="font-semibold">Access notes:</span>{" "}
+					{mt.access}
+					</div>
+					</div>
+					
+					<div className="mt-4 text-xs text-gray-500">
+					* Conditions in the mountains can change quickly due to
+					weather, trail damage, or snow. Please always check the
+					latest local information and prepare appropriate gear
+					before you go.
+					</div>
+					</div>
+					</div>
+					</article>
+		))}
+		</section>
+		
+		{/* 安全・装備・一般的な注意事項 */}
+		<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
+		<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
+		Before You Hike in These Mountains
+		</h2>
+		<p className="mt-3 text-sm leading-relaxed text-gray-700">
+		These mountains are not technically extreme, but they are still
+		real mountains with changing weather and sometimes long trails.
+		Please keep in mind:
+		</p>
+		<ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-gray-700 space-y-1">
+		<li>
+		Weather can change quickly, especially on ridges. Carry rain
+		gear and warm layers even in summer.
+		</li>
+		<li>
+		Trails may be muddy, rocky, or covered with snow in early
+		season. Proper hiking shoes are strongly recommended.
+		</li>
+		<li>
+		Mobile phone reception may be weak or unavailable in some
+		areas.
+		</li>
+		<li>
+		In case of emergency, rescue can take time. Plan a route that
+		matches your experience and fitness.
+		</li>
+		<li>
+		Check recent trail and access information from local tourist
+		offices, mountain huts, or official websites.
+		</li>
+		</ul>
+		<p className="mt-4 text-sm leading-relaxed text-gray-700">
+		The photographs in the photo book were taken over many years in
+		different seasons. Please enjoy them as a quiet record of how
+		these mountains look and feel throughout the year.
+		</p>
+		</section>
+		</div>
+		</main>
+		</div>
+	);
+}
