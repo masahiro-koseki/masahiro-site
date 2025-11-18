@@ -109,12 +109,13 @@ export default function MountainsPage() {
 					key={mt.id}
 					className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60"
 					>
-					<div className="relative h-40 w-full overflow-hidden">
+					<div className="relative aspect-[4/3] w-full bg-black/40">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
 					fill
-					className="object-cover transition-transform duration-500 group-hover:scale-105"
+					className="object-contain"
+					sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
 					/>
 					</div>
 					<div className="flex flex-1 flex-col p-4">
