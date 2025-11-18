@@ -17,7 +17,9 @@ const mountains = [
 	nameEn: "Mt. Hayachine",
 	height: "1,917 m",
 	area: "岩手県 花巻市・遠野市",
+	areaEn: "Hanamaki & Tono, Iwate Prefecture",
 	seasons: "春〜冬（高山植物・残雪・紅葉・樹氷）",
+	seasonsEn: "Spring–winter (alpine flowers, lingering snow, autumn foliage, rime ice)",
 	image: "/images/mountains/hayachine-top.jpg",
 	descriptionJa:
 	"北上山地の主峰で、日本百名山のひとつ。固有種を含む高山植物の宝庫として知られ、山頂からは北上山地と奥羽山脈の大展望が広がります。",
@@ -30,7 +32,9 @@ const mountains = [
 	nameEn: "Mt. Yakeishi",
 	height: "1,548 m",
 	area: "岩手県 奥州市・秋田県 東成瀬村",
+	areaEn: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
 	seasons: "新緑〜初夏・紅葉・初冬",
+	seasonsEn: "Fresh green to early summer, autumn foliage, early winter",
 	image: "/images/mountains/yakeishi-kaminuma.jpg",
 	descriptionJa:
 	"湿原や池塘、高山植物が彩る山として知られ、とくに新緑と残雪が重なる初夏の風景が印象的。中沼周辺は静かな山上湿原の雰囲気を楽しめます。",
@@ -43,7 +47,9 @@ const mountains = [
 	nameEn: "Mt. Kurikoma",
 	height: "1,626 m",
 	area: "宮城・岩手・秋田 三県境",
+	areaEn: "Border of Miyagi, Iwate & Akita Prefectures",
 	seasons: "夏〜秋（紅葉の名所）",
+	seasonsEn: "Summer–autumn (renowned for autumn foliage)",
 	image: "/images/mountains/kurikoma-autumn.jpg",
 	descriptionJa:
 	"東北屈指の紅葉の名山。広大な裾野に色づく草紅葉とブナ林が広がり、秋には山全体が燃えるような色彩に包まれます。",
@@ -62,7 +68,7 @@ export default function MountainsPage() {
 				const saved = localStorage.getItem(LANG_KEY) as Lang | null;
 				if (saved === "ja" || saved === "en") setLang(saved);
 			} catch {
-				// 何もしない（ブラウザでない環境など）
+				// SSR環境などでは何もしない
 			}
 	}, []);
 	
@@ -99,7 +105,7 @@ export default function MountainsPage() {
 		<span>Masahiro Koseki</span>
 		</div>
 		
-		{/* PC用ナビ（/ など別ページへリンク） */}
+		{/* PC用ナビ */}
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
 		{navText.home}
@@ -185,7 +191,7 @@ export default function MountainsPage() {
 		)}
 		</header>
 		
-		{/* ▼ メインコンテンツ（NavBarに隠れないように上に余白） */}
+		{/* ▼ メインコンテンツ */}
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
 		{/* ヘッダーセクション */}
@@ -288,13 +294,13 @@ export default function MountainsPage() {
 					<dt className="w-12 shrink-0 text-gray-500">
 					{lang === "ja" ? "エリア" : "Area"}
 					</dt>
-					<dd>{mt.area}</dd>
+					<dd>{lang === "ja" ? mt.area : mt.areaEn}</dd>
 					</div>
 					<div className="flex gap-2">
 					<dt className="w-12 shrink-0 text-gray-500">
 					{lang === "ja" ? "季節" : "Seasons"}
 					</dt>
-					<dd>{mt.seasons}</dd>
+					<dd>{lang === "ja" ? mt.seasons : mt.seasonsEn}</dd>
 					</div>
 					</dl>
 					
