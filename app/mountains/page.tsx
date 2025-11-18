@@ -44,7 +44,7 @@ const mountains = [
 
 export default function MountainsPage() {
 	return (
-		<main className="min-h-screen bg-slate-950 text-slate-50">
+		<main className="min-h-screen bg-white text-neutral-900">
 		<div className="mx-auto max-w-6xl px-4 py-16">
 		{/* ヘッダー */}
 		<section className="mb-16">
