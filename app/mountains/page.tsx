@@ -9,7 +9,7 @@ const mountains = [
 	height: "1,917 m",
 	area: "岩手県 花巻市・遠野市",
 	seasons: "春〜冬（高山植物・残雪・紅葉・樹氷）",
-	image: "/images/mountains/hayachine.jpg", // ★実際の画像パスに変更してください
+	image: "/images/mountains/hayachine-top.jpg", // ★実際の画像パスに変更してください
 	descriptionJa:
 	"北上山地の主峰で、日本百名山のひとつ。固有種を含む高山植物の宝庫として知られ、山頂からは北上山地と奥羽山脈の大展望が広がります。",
 	descriptionEn:
