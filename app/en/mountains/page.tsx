@@ -223,12 +223,12 @@ export default function EnMountainsPage() {
 		<div className="md:w-1/3">
 		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
 		{/* ★地図画像を用意できたらコメントアウトを外して使用 */}
-		{/* <Image
+		<Image
 					src="/images/maps/tohoku-iwate-mountains-en.jpg"
 					alt="Map of northern Japan showing the area of the mountains"
 					fill
 					className="object-contain"
-				  /> */}
+				  />
 			<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
 			Map placeholder
 			<br />
