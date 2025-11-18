@@ -201,8 +201,8 @@ export default function EnMountainsPage() {
 		
 		{/* 地図セクション */}
 		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
-		<div className="flex flex-col gap-6 md:flex-row md:items-center">
-		<div className="md:w-2/3">
+		<div className="space-y-6">
+		<div>
 		<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
 		Where are these mountains?
 		</h2>
@@ -214,31 +214,35 @@ export default function EnMountainsPage() {
 		rental cars.
 		</p>
 		<p className="mt-3 text-sm leading-relaxed text-gray-700">
-		The map on the right gives a rough idea of the region and the
-		relative positions of Mt. Hayachine, Mt. Yakeishi, and Mt.
-		Kurikoma. It is not for navigation, but to help you imagine
-		the landscape in which these photographs were taken.
+		The map below gives a rough idea of the region and the relative
+		positions of Mt. Hayachine, Mt. Yakeishi, and Mt. Kurikoma. It is
+		not for navigation, but to help you imagine the landscape in which
+		these photographs were taken.
+		</p>
+		<p className="mt-2 text-xs text-gray-500">
+		Click the map to open a larger version in a new tab.
 		</p>
 		</div>
-		<div className="md:w-1/3">
-		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
-		{/* ★地図画像を用意できたらコメントアウトを外して使用 */}
+		
+		{/* 地図本体：カード幅いっぱい＋クリックで拡大表示 */}
+		<a
+		href="/images/maps/tohoku-iwate-mountains-en.jpg" // ★保存したパスに合わせてください
+		target="_blank"
+		rel="noreferrer"
+		className="block"
+		>
+		<div className="relative mx-auto max-w-2xl aspect-[3/2] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
 		<Image
-					src="/images/maps/tohoku-iwate-mountains-en.jpg"
-					alt="Map of northern Japan showing the area of the mountains"
-					fill
-					className="object-contain"
-				  />
-			<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
-			Map placeholder
-			<br />
-			(Replace with a simple map image of Tohoku / Iwate showing
-			the mountain area)
-			</div>
-			</div>
-			</div>
-			</div>
-			</section>
+		src="/images/maps/tohoku-iwate-mountains-en.jpg" // ★同じくパスを合わせる
+		alt="Map of northern Japan showing the area of the mountains"
+		fill
+		className="object-contain"
+		sizes="(min-width: 1024px) 640px, 100vw"
+		/>
+		</div>
+		</a>
+		</div>
+		</section>
 			
 			{/* 各山セクション */}
 			<section className="space-y-10">
