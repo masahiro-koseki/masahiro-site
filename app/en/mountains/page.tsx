@@ -35,7 +35,7 @@ const mountains: Mountain[] = [
 	name: "Mt. Hayachine",
 	height: "1,917 m",
 	area: "Hanamaki & Tono, Iwate Prefecture",
-	mainImage: "/images/mountains/hayachine-main.jpg",
+	mainImage: "/images/mountains/hayachine-top.jpg",
 	subImages: [
 	{
 		src: "/images/mountains/hayachine-flowers-01.jpg",
@@ -46,7 +46,7 @@ const mountains: Mountain[] = [
 		alt: "Close-up view of alpine plants on Mt. Hayachine",
 	},
 	{
-		src: "/images/mountains/hayachine-ridge.jpg",
+		src: "/images/mountains/hayachine-main.jpg",
 		alt: "Ridgeline view from Mt. Hayachine",
 	},
 	],
