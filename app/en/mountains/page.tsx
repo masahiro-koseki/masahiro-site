@@ -231,13 +231,13 @@ export default function EnMountainsPage() {
 		<button
 		type="button"
 		onClick={() => setMapOpen(true)}
-		className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100"
+		className="group relative aspect-[1.166] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100"
 		>
 		<Image
 		src="/images/maps/tohoku-region-map.jpg" // ★このパスにマップ画像を保存
 		alt="Map of northern Japan showing the area of the mountains"
 		fill
-		className="object-contain"
+		className="object-cover"
 		sizes="(min-width: 1024px) 320px, 100vw"
 		/>
 		<div className="pointer-events-none absolute inset-0 bg-black/0 transition group-hover:bg-black/10" />
