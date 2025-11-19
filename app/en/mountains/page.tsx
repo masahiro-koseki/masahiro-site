@@ -184,7 +184,10 @@ export default function EnMountainsPage() {
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
-		<span className="text-gray-900 font-medium">Mountains (EN)</span>
+		<Link href="/#portfolio" className="hover:opacity-70">
+		Portfolio
+		</Link>
+		<span className="text-gray-900 font-medium">Mountains</span>
 		</nav>
 		
 		<div className="hidden md:flex items-center gap-2">
