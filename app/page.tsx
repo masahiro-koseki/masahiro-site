@@ -128,6 +128,7 @@ const Lightbox = ({
 
 export default function Page() {
   const [lang, setLang] = useState<Lang>("ja");
+  const mountainsHref = lang === "ja" ? "/mountains" : "/en/mountains";
   const [lbOpen, setLbOpen] = useState(false);
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
@@ -472,6 +473,9 @@ const gallerySources = [
 		<button onClick={() => scrollTo("portfolio")} className="hover:opacity-70">
 		{t.nav.portfolio}
 		</button>
+		<Link href={mountainsHref} className="hover:opacity-70">
+		{lang === "ja" ? "山の紹介" : "Mountains"}
+		</Link>		
 		<button onClick={() => scrollTo("about")} className="hover:opacity-70">
 		{t.nav.about}
 		</button>
@@ -530,6 +534,15 @@ const gallerySources = [
 				>
 				{t.nav.portfolio}
 				</button>
+				
+				<Link
+				href={mountainsHref}
+				className="block w-full text-left px-4 py-2 hover:bg-neutral-100"
+				onClick={() => setMenuOpen(false)}
+				>
+				{lang === "ja" ? "山の紹介" : "Mountains (EN)"}
+				</Link>
+
 				<button
 				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
 				onClick={() => scrollTo("about")}
