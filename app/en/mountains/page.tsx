@@ -28,6 +28,7 @@ type Mountain = {
 	difficulty: string;
 	access: string;
 	subImages: SubImage[];
+	mainCaption: string;
 };
 
 const mountains: Mountain[] = [
@@ -72,18 +73,22 @@ const mountains: Mountain[] = [
 	height: "1,548 m",
 	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
 	mainImage: "/images/mountains/yakeishi-kaminuma.jpg",
+	mainCaption: "Calm morning light over the marshes near Mt. Yakeishi.",
 	subImages: [
 	{
 		src: "/images/mountains/yakeishi-wetland-01.jpg",
-		alt: "Wetland and pond near Mt. Yakeishi",
+		alt: "Wetland and pond",
+		caption: "Quiet wetland and pond in the highland area of Mt. Yakeishi.",
 	},
 	{
 		src: "/images/mountains/yakeishi-wetland-02.jpg",
-		alt: "Marsh and gentle ridges around Mt. Yakeishi",
+		alt: "Marsh and gentle ridges",
+		caption: "Gentle ridges and marshes spreading around the mountain.",
 	},
 	{
 		src: "/images/mountains/yakeishi-flower.jpg",
-		alt: "Flowers around the marshes of Mt. Yakeishi",
+		alt: "Flowers around the marshes",
+		caption: "Summer flowers adding color to the wetland scenery.",
 	},
 	],
 	summary:
@@ -103,20 +108,24 @@ const mountains: Mountain[] = [
 	height: "1,626 m",
 	area: "Border of Miyagi, Iwate & Akita Prefectures",
 	mainImage: "/images/mountains/kurikoma-autumn.jpg",
+	mainCaption: "Autumn colors covering the wide slopes of Mt. Kurikoma.",
 	subImages: [
 	{
 		src: "/images/mountains/kurikoma-beech.jpg",
-		alt: "Beech forest on the slopes of Mt. Kurikoma",
+		alt: "Beech forest",
+		caption: "Beech forest on the lower slopes of Mt. Kurikoma.",
 	},
 	{
 		src: "/images/mountains/kurikoma-wetland.jpg",
-		alt: "Small wetland near Mt. Kurikoma",
+		alt: "Small wetland",
+		caption: "A small wetland area near one of the main routes.",
 	},
 	{
 		src: "/images/mountains/kurikoma-summer.jpg",
-		alt: "Summer view of Mt. Kurikoma",
+		alt: "Summer green slopes",
+		caption: "Bright summer green spreading across the open slopes.",
 	},
-	],
+	],	
 	summary:
 	"One of Tohoku’s best-known mountains for autumn foliage. The wide slopes are covered with colorful dwarf shrubs and beech forests.",
 	character:
