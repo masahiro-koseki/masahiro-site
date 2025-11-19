@@ -42,7 +42,7 @@ const mountains: Mountain[] = [
 		alt: "Alpine flowers on the slopes of Mt. Hayachine",
 	},
 	{
-		src: "/images/mountains/hayachine-flowers-02.jpg",
+		src: "/images/mountains/hayachine-flowers.jpg",
 		alt: "Close-up view of alpine plants on Mt. Hayachine",
 	},
 	{
