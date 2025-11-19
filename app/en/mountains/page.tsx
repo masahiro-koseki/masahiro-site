@@ -72,7 +72,7 @@ const mountains: Mountain[] = [
 	name: "Mt. Yakeishi",
 	height: "1,548 m",
 	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
-	mainImage: "/images/mountains/yakeishi-main.jpg",
+	mainImage: "/images/mountains/Yakeishi-main.jpg",
 	mainCaption: "Early-summer reflections at Nakanuma, with the lingering snowfields of Mt. Yakeishi.",
 	subImages: [
 	{
@@ -81,12 +81,12 @@ const mountains: Mountain[] = [
 		caption: "Kobaikeisō blooming around the wetland below Mt. Yakeishi.",
 	},
 	{
-		src: "/images/mountains/Yakeishi-honnai-01.jpg",
+		src: "/images/mountains/Yakeishi-honnnai-01.jpg",
 		alt: "Chinguruma flowers on alpine slope",
 		caption: "A wide alpine slope covered with blooming Chinguruma flowers.",
 	},
 	{
-		src: "/images/mountains/Yakeishi-honnai-02.jpg",
+		src: "/images/mountains/Yakeishi-honnnai-02.jpg",
 		alt: "Autumn marshland and ponds",
 		caption: "Autumn marshland with small ponds along the Yakeishi highlands.",
 	},
