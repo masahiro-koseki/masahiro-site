@@ -14,6 +14,7 @@ type SubImage = {
 	src: string;
 	alt: string;
 	caption: string;
+	bookPage?: number;
 };
 
 type Mountain = {
@@ -79,16 +80,19 @@ const mountains: Mountain[] = [
 		src: "/images/mountains/Yakeishi-kaminuma-01.jpg",
 		alt: "Kobaikeiso flowers and wetland",
 		caption: "Kobaikeisō blooming around the wetland below Mt. Yakeishi.",
+		bookPage: 53
 	},
 	{
 		src: "/images/mountains/Yakeishi-honnnai-01.jpg",
 		alt: "Chinguruma flowers on alpine slope",
 		caption: "A wide alpine slope covered with blooming Chinguruma flowers.",
+		bookPage: 49
 	},
 	{
 		src: "/images/mountains/Yakeishi-honnnai-02.jpg",
 		alt: "Autumn marshland and ponds",
 		caption: "Autumn marshland with small ponds along the Yakeishi highlands.",
+		bookPage: 95
 	},
 	],
 	summary:
@@ -114,6 +118,7 @@ const mountains: Mountain[] = [
 		src: "/images/mountains/kurikoma-showako.jpg",
 		alt: "Lake Showa and volcanic slopes",
 		caption: "The emerald waters of Lake Showa, surrounded by lingering snow and volcanic slopes.",
+		bookPage: 61
 	},
 	{
 		src: "/images/mountains/iwakagami.jpg",
@@ -124,6 +129,7 @@ const mountains: Mountain[] = [
 		src: "/images/mountains/kurikoma-autumn.jpg",
 		alt: "Autumn marshland and ponds on Kurikoma",
 		caption: "Autumn colors and marsh spreading across the highlands of Mt. Kurikoma.",
+		bookPage: 119
 	},
 	],	
 	summary:
@@ -308,6 +314,13 @@ export default function EnMountainsPage() {
 										<p className="mt-1 text-[10px] text-gray-600 text-center leading-tight italic">
 										{img.caption}
 										</p>
+										{/* 写真集のページ番号（ある画像だけ表示） */}
+										{img.bookPage && (
+												<p className="text-[9px] text-gray-500 text-center italic">
+												Featured in the photo book (p. {img.bookPage})
+												</p>
+										)}
+
 										</div>
 							))}
 							</div>
