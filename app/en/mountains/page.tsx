@@ -187,6 +187,9 @@ export default function EnMountainsPage() {
 		<Link href="/#portfolio" className="hover:opacity-70">
 		Portfolio
 		</Link>
+		<Link href="/#About" className="hover:opacity-70">
+		About
+		</Link>
 		<span className="text-gray-900 font-medium">Mountains</span>
 		</nav>
 		
@@ -453,6 +456,12 @@ export default function EnMountainsPage() {
 		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
 		Photo Book
+		<Link href="/portfolio" className="hover:opacity-70">
+		Portfolio
+		</Link>
+		<Link href="/#about" className="hover:opacity-70">
+		About
+		</Link>
 		</Link>
 		<Link href="/en/mountains" className="hover:text-gray-900">
 		Mountains
