@@ -460,12 +460,9 @@ export default function EnMountainsPage() {
 		<Link href="/en/mountains" className="hover:text-gray-900">
 		Mountains (EN)
 		</Link>
-		<a
-		href="mailto:masahiro.koseki@gmail.com"
-		className="hover:text-gray-900"
-		>
+		<Link href="/#contact" className="hover:text-gray-900">
 		Contact
-		</a>
+		</Link>
 		</div>
 		</div>
 		</footer>
