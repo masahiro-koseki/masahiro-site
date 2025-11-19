@@ -13,6 +13,7 @@ const LANG_KEY = "mk_lang";
 type SubImage = {
 	src: string;
 	alt: string;
+	caption: string;
 };
 
 type Mountain = {
