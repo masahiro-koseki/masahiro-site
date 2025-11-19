@@ -456,7 +456,7 @@ export default function EnMountainsPage() {
 		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
 		Photo Book
-		<Link href="/portfolio" className="hover:opacity-70">
+		<Link href="/#portfolio" className="hover:opacity-70">
 		Portfolio
 		</Link>
 		<Link href="/#about" className="hover:opacity-70">
