@@ -19,7 +19,8 @@ const mountains = [
 	area: "岩手県 花巻市・遠野市",
 	areaEn: "Hanamaki & Tono, Iwate Prefecture",
 	seasons: "春〜冬（高山植物・残雪・紅葉・樹氷）",
-	seasonsEn: "Spring–winter (alpine flowers, lingering snow, autumn foliage, rime ice)",
+	seasonsEn:
+	"Spring–winter (alpine flowers, lingering snow, autumn foliage, rime ice)",
 	image: "/images/mountains/hayachine-top.jpg",
 	descriptionJa:
 	"北上山地の主峰で、日本百名山のひとつ。固有種を含む高山植物の宝庫として知られ、山頂からは北上山地と奥羽山脈の大展望が広がります。",
@@ -61,6 +62,8 @@ const mountains = [
 export default function MountainsPage() {
 	const [lang, setLang] = useState<Lang>("ja");
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [mapOpen, setMapOpen] = useState(false);
+	const year = new Date().getFullYear();
 	
 	// トップページと同じ localStorage のキーで言語を共有
 	useEffect(() => {
@@ -200,16 +203,18 @@ export default function MountainsPage() {
 		Mountains &amp; Nature
 		</p>
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-		{lang === "ja" ? "地元の山々の紹介" : "Introduction to Local Mountains"}
+		{lang === "ja"
+			? "地元の山々の紹介"
+		: "Introduction to Local Mountains"}
 		</h1>
 		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
 		{lang === "ja"
-			? "焼石岳、栗駒山、早池峰山――。中学時代の渓流釣りをきっかけに足を運ぶようになり、その稜線や沢、森の表情に魅せられてきました。このページでは、写真集に登場する山々の概要や特徴、季節ごとの魅力を紹介していきます。"
-		: "Mt. Yakeishi, Mt. Kurikoma, and Mt. Hayachine—these home mountains have drawn me in since my days fishing in local mountain streams as a teenager. Their ridgelines, streams, and forests continue to fascinate me. This page introduces the main mountains featured in my photo book, along with their characteristics and seasonal charm."}
+			? "焼石岳、栗駒山、早池峰山――。中学時代の渓流釣りをきっかけに足を運ぶようになり、その稜線や沢、森の表情に魅せられてきました。このページでは、写真集に登場する主な山々の概要や特徴、季節ごとの魅力を、写真とともに簡単にご紹介します。"
+		: "Mt. Yakeishi, Mt. Kurikoma, and Mt. Hayachine—these home mountains have drawn me in since my days fishing in local mountain streams as a teenager. Their ridgelines, streams, and forests continue to fascinate me. This page briefly introduces the main mountains featured in my photo book, along with their characteristics and seasonal charm."}
 		</p>
 		</section>
 		
-		{/* エリア説明・マップ枠 */}
+		{/* エリア説明・マップ */}
 		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
 		<div className="flex flex-col gap-6 md:flex-row md:items-center">
 		<div className="md:w-2/3">
@@ -225,20 +230,32 @@ export default function MountainsPage() {
 		</p>
 		<p className="mt-4 text-xs text-gray-500 md:text-sm">
 		{lang === "ja"
-			? "※ エリアマップやアクセス情報は、今後このセクションに追加していく予定です。"
-		: "* A regional map and access information will be added to this section in the future."}
+			? "※ 下のエリアマップは概略図です。実際に山に入る際は、必ず登山地図や最新の現地情報で詳細を確認してください。"
+		: "* The map below is a simplified regional map. For actual hiking, please use detailed maps and up-to-date local information."}
 		</p>
 		</div>
 		<div className="md:w-1/3">
-		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
-		<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
-		Area map / region illustration
-		<br />
-		{lang === "ja"
-			? "（後で地図画像やイラストに差し替え）"
-		: "(Map or illustration to be added later)"}
+		<button
+		type="button"
+		onClick={() => setMapOpen(true)}
+		className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100"
+		>
+		<Image
+		src="/images/maps/tohoku-region-map.jpg"
+		alt={
+			lang === "ja"
+			? "東北地方の山域位置図"
+			: "Map of the Tohoku region and mountain area"
+		}
+		fill
+		className="object-cover"
+		sizes="(min-width: 1024px) 320px, 100vw"
+		/>
+		<div className="pointer-events-none absolute inset-0 bg-black/0 transition group-hover:bg-black/10" />
+		<div className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold text-gray-700 shadow-sm">
+		{lang === "ja" ? "クリックで拡大" : "Click to enlarge"}
 		</div>
-		</div>
+		</button>
 		</div>
 		</div>
 		</section>
@@ -248,13 +265,13 @@ export default function MountainsPage() {
 		<div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
 		<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
 		{lang === "ja"
-			? "山一覧（登場する主な山々）"
+			? "山一覧（写真集に登場する主な山々）"
 		: "Mountain List (Main Peaks Featured)"}
 		</h2>
 		<p className="text-xs text-gray-500 md:text-sm">
 		{lang === "ja"
-			? "※ 今後、ここから各山の個別ページ（詳細・写真ギャラリー）へリンクさせていきます。"
-		: "* In the future, each card will link to a detailed page with photo galleries and more information."}
+			? "※ 各カードには主なエリア・季節・特徴を簡単にまとめています。必要に応じて、今後さらに詳しい個別ページも追加していく予定です。"
+		: "* Each card summarizes the main area, seasons, and character of the mountain. Additional detailed pages may be added in the future if needed."}
 		</p>
 		</div>
 		
@@ -305,23 +322,78 @@ export default function MountainsPage() {
 					</dl>
 					
 					<p className="mt-3 flex-1 text-xs leading-relaxed text-gray-700 md:text-sm">
-					{lang === "ja" ? mt.descriptionJa : mt.descriptionEn}
+					{lang === "ja"
+						? mt.descriptionJa
+					: mt.descriptionEn}
 					</p>
-					
-					{/* 将来：個別ページへのリンクを追加予定 */}
-					{/* <Link
-					  href={`/mountains/${mt.id}`}
-					  className="mt-3 text-xs font-semibold text-blue-600 hover:underline"
-					>
-					  {lang === "ja" ? "詳細ページへ" : "View details"}
-					</Link> */}
-						</div>
-						</article>
-			))}
-			</div>
-			</section>
-			</div>
-			</main>
-			</div>
-		);
-	}
+					</div>
+					</article>
+		))}
+		</div>
+		</section>
+		</div>
+		</main>
+		
+		{/* ▼ フッター（トップ・英語版と整合） */}
+		<footer className="border-t bg-white">
+		<div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm text-gray-600 md:flex-row md:items-center md:justify-between">
+		<div>
+		<p className="font-medium">Masahiro Koseki</p>
+		<p className="text-xs text-gray-500">
+		© {year} Masahiro Koseki. All rights reserved.
+		</p>
+		</div>
+		<div className="flex flex-wrap items-center gap-4 text-xs">
+		<Link href="/" className="hover:text-gray-900">
+		Home
+		</Link>
+		<Link href="/#book" className="hover:text-gray-900">
+		写真集
+		</Link>
+		<Link href="/mountains" className="hover:text-gray-900">
+		山の紹介（JP）
+		</Link>
+		<Link href="/en/mountains" className="hover:text-gray-900">
+		Mountains (EN)
+		</Link>
+		<Link href="/#contact" className="hover:text-gray-900">
+		Contact
+		</Link>
+		</div>
+		</div>
+		</footer>
+		
+		{/* ▼ 地図用 Lightbox オーバーレイ */}
+		{mapOpen && (
+				<div
+				className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70"
+				onClick={() => setMapOpen(false)}
+				>
+				<div
+				className="relative mx-4 w-full max-w-4xl aspect-[3/2] rounded-xl overflow-hidden bg-black"
+				onClick={(e) => e.stopPropagation()}
+				>
+				<Image
+				src="/images/maps/tohoku-region-map.jpg"
+				alt={
+					lang === "ja"
+					? "東北地方の山域位置図"
+					: "Map of the Tohoku region and mountain area"
+				}
+				fill
+				className="object-contain"
+				sizes="(min-width: 1024px) 800px, 100vw"
+				/>
+				<button
+				type="button"
+				className="absolute top-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white"
+				onClick={() => setMapOpen(false)}
+				>
+				{lang === "ja" ? "閉じる" : "Close"}
+				</button>
+				</div>
+				</div>
+		)}
+		</div>
+	);
+}
