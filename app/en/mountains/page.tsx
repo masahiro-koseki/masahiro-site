@@ -123,7 +123,7 @@ const mountains: Mountain[] = [
 	{
 		src: "/images/mountains/kurikoma-autumn.jpg",
 		alt: "Autumn marshland and ponds on Kurikoma",
-		caption: "Autumn colors and marsh ponds spreading across the highlands of Mt. Kurikoma.",
+		caption: "Autumn colors and marsh spreading across the highlands of Mt. Kurikoma.",
 	},
 	],	
 	summary:
