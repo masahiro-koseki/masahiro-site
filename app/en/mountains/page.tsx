@@ -181,14 +181,6 @@ export default function EnMountainsPage() {
 		<Link href="/" className="hover:opacity-70">
 		Home
 		</Link>
-		<Link href="/#book" className="hover:opacity-70">
-		Photo Book
-		</Link>
-		<Link href="/#portfolio" className="hover:opacity-70">
-		Portfolio
-		</Link>
-		<Link href="/#About" className="hover:opacity-70">
-		About
 		</Link>
 		<span className="text-gray-900 font-medium">Mountains</span>
 		</nav>
@@ -453,15 +445,6 @@ export default function EnMountainsPage() {
 		<div className="flex flex-wrap items-center gap-4 text-xs">
 		<Link href="/" className="hover:text-gray-900">
 		Home
-		</Link>
-		<Link href="/#book" className="hover:text-gray-900">
-		Photo Book
-		<Link href="/#portfolio" className="hover:opacity-70">
-		Portfolio
-		</Link>
-		<Link href="/#about" className="hover:opacity-70">
-		About
-		</Link>
 		</Link>
 		<Link href="/en/mountains" className="hover:text-gray-900">
 		Mountains
