@@ -281,7 +281,7 @@ export default function EnMountainsPage() {
 										src={img.src}
 										alt={img.alt}
 										fill
-										className="object-cover"
+										className="object-contains"
 										sizes="96px"
 										/>
 										</div>
