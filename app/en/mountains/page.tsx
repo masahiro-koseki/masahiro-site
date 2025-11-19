@@ -107,7 +107,7 @@ const mountains: Mountain[] = [
 	name: "Mt. Kurikoma",
 	height: "1,626 m",
 	area: "Border of Miyagi, Iwate & Akita Prefectures",
-	mainImage: "/images/mountains/kurikoma-autumn.jpg",
+	mainImage: "/images/mountains/kurikoma-sekaiyachi-01.jpg",
 	mainCaption: "Early-summer fields of Nikko-kisuge spreading across Sekaiyachi, with Mt. Kurikoma rising beyond.",
 	subImages: [
 	{
