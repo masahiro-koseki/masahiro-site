@@ -23,13 +23,13 @@ type Mountain = {
 	height: string;
 	area: string;
 	mainImage: string;
+	mainCaption: string;
 	summary: string;
 	character: string;
 	bestSeason: string;
 	difficulty: string;
 	access: string;
 	subImages: SubImage[];
-	mainCaption: string;
 };
 
 const mountains: Mountain[] = [
@@ -44,18 +44,18 @@ const mountains: Mountain[] = [
 	{
 		src: "/images/mountains/hayachine-flowers-01.jpg",
 		alt: "Alpine flowers and rocky trail",
-		caption: "Alpine flowers along the rocky trail near the summit."
+		caption: "Alpine flowers along the rocky trail near the summit.",
 	},
 	{
 		src: "/images/mountains/hayachine-flowers-02.jpg",
 		alt: "Summer wildflowers blooming on the exposed ridge",
-		caption: "Summer wildflowers blooming on the exposed ridge."
+		caption: "Summer wildflowers blooming on the exposed ridge.",
 	},
 	{
 		src: "/images/mountains/hayachine-main.jpg",
 		alt: "Mt. Hayachine viewed from the Odagoe trailhead",
 		caption: "Mt. Hayachine viewed from the Odagoe trailhead.",
-	}
+	},
 	],
 	summary:
 	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Famous for endemic alpine flowers and wide-open views.",
@@ -74,25 +74,29 @@ const mountains: Mountain[] = [
 	height: "1,548 m",
 	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
 	mainImage: "/images/mountains/Yakeishi-main.jpg",
-	mainCaption: "Early-summer reflections at Nakanuma, with the lingering snowfields of Mt. Yakeishi.",
+	mainCaption:
+	"Early-summer reflections at Nakanuma, with the lingering snowfields of Mt. Yakeishi.",
 	subImages: [
 	{
 		src: "/images/mountains/Yakeishi-kaminuma-01.jpg",
 		alt: "Kobaikeiso flowers and wetland",
-		caption: "Kobaikeisō blooming around the wetland below Mt. Yakeishi.",
-		bookPage: 53
+		caption:
+		"Kobaikeisō blooming around the wetland below Mt. Yakeishi.",
+		bookPage: 53,
 	},
 	{
 		src: "/images/mountains/Yakeishi-honnnai-01.jpg",
 		alt: "Chinguruma flowers on alpine slope",
-		caption: "A wide alpine slope covered with blooming Chinguruma flowers.",
-		bookPage: 49
+		caption:
+		"A wide alpine slope covered with blooming Chinguruma flowers.",
+		bookPage: 49,
 	},
 	{
 		src: "/images/mountains/Yakeishi-honnnai-02.jpg",
 		alt: "Autumn marshland and ponds",
-		caption: "Autumn marshland with small ponds along the Yakeishi highlands.",
-		bookPage: 95
+		caption:
+		"Autumn marshland with small ponds along the Yakeishi highlands.",
+		bookPage: 95,
 	},
 	],
 	summary:
@@ -112,26 +116,30 @@ const mountains: Mountain[] = [
 	height: "1,626 m",
 	area: "Border of Miyagi, Iwate & Akita Prefectures",
 	mainImage: "/images/mountains/kurikoma-sekaiyachi-01.jpg",
-	mainCaption: "Early-summer fields of Nikko-kisuge spreading across Sekaiyachi, with Mt. Kurikoma rising beyond.",
+	mainCaption:
+	"Early-summer fields of Nikko-kisuge spreading across Sekaiyachi, with Mt. Kurikoma rising beyond.",
 	subImages: [
 	{
 		src: "/images/mountains/kurikoma-showako.jpg",
 		alt: "Lake Showa and volcanic slopes",
-		caption: "The emerald waters of Lake Showa, surrounded by lingering snow and volcanic slopes.",
-		bookPage: 61
+		caption:
+		"The emerald waters of Lake Showa, surrounded by lingering snow and volcanic slopes.",
+		bookPage: 61,
 	},
 	{
 		src: "/images/mountains/iwakagami.jpg",
 		alt: "Iwakagami flowers",
-		caption: "Iwakagami flowers blooming along the forest trails of Mt. Kurikoma.",
+		caption:
+		"Iwakagami flowers blooming along the forest trails of Mt. Kurikoma.",
 	},
 	{
 		src: "/images/mountains/kurikoma-autumn.jpg",
 		alt: "Autumn marshland and ponds on Kurikoma",
-		caption: "Autumn colors and marsh spreading across the highlands of Mt. Kurikoma.",
-		bookPage: 119
+		caption:
+		"Autumn colors and marsh spreading across the highlands of Mt. Kurikoma.",
+		bookPage: 119,
 	},
-	],	
+	],
 	summary:
 	"One of Tohoku’s best-known mountains for autumn foliage. The wide slopes are covered with colorful dwarf shrubs and beech forests.",
 	character:
@@ -148,6 +156,7 @@ const mountains: Mountain[] = [
 export default function EnMountainsPage() {
 	const router = useRouter();
 	const [mapOpen, setMapOpen] = useState(false);
+	const year = new Date().getFullYear();
 	
 	const goToJapanese = () => {
 		try {
@@ -170,7 +179,10 @@ export default function EnMountainsPage() {
 		
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
-		Home
+		Home (JP)
+		</Link>
+		<Link href="/en" className="hover:opacity-70">
+		Home (EN)
 		</Link>
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
@@ -220,7 +232,7 @@ export default function EnMountainsPage() {
 		</p>
 		</section>
 		
-		{/* 地図セクション（元の2カラムレイアウト＋Lightbox） */}
+		{/* 地図セクション */}
 		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
 		<div className="flex flex-col gap-6 md:flex-row md:items-center">
 		{/* 左：説明文 */}
@@ -254,7 +266,7 @@ export default function EnMountainsPage() {
 		className="group relative aspect-[1.166] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100"
 		>
 		<Image
-		src="/images/maps/tohoku-region-map.jpg" // ★このパスにマップ画像を保存
+		src="/images/maps/tohoku-region-map.jpg"
 		alt="Map of northern Japan showing the area of the mountains"
 		fill
 		className="object-cover"
@@ -300,7 +312,6 @@ export default function EnMountainsPage() {
 							<div className="grid grid-cols-3 gap-3 w-full">
 							{mt.subImages.map((img, idx) => (
 										<div key={idx} className="flex flex-col">
-										
 										<div className="relative w-full aspect-[1.166] rounded-md overflow-hidden bg-black/5 border border-gray-200">
 										<Image
 										src={img.src}
@@ -314,18 +325,17 @@ export default function EnMountainsPage() {
 										<p className="mt-1 text-[10px] text-gray-600 text-center leading-tight italic">
 										{img.caption}
 										</p>
+										
 										{/* 写真集のページ番号（ある画像だけ表示） */}
 										{img.bookPage && (
 												<p className="text-[9px] text-gray-500 text-center italic">
 												Featured in the photo book (p. {img.bookPage})
 												</p>
 										)}
-
 										</div>
 							))}
 							</div>
 					)}
-
 					</div>
 					
 					{/* 右：テキスト */}
@@ -339,9 +349,7 @@ export default function EnMountainsPage() {
 					
 					<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
 					<div className="flex gap-2">
-					<dt className="w-16 shrink-0 text-gray-500">
-					Height
-					</dt>
+					<dt className="w-16 shrink-0 text-gray-500">Height</dt>
 					<dd>{mt.height}</dd>
 					</div>
 					<div className="flex gap-2">
@@ -428,6 +436,45 @@ export default function EnMountainsPage() {
 		</p>
 		</section>
 		</div>
+		</main>
+		
+		{/* ▼ フッター */}
+		<footer className="border-t bg-white">
+		<div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm text-gray-600 md:flex-row md:items-center md:justify-between">
+		<div>
+		<p className="font-medium">Masahiro Koseki</p>
+		<p className="text-xs text-gray-500">
+		© {year} Masahiro Koseki. All rights reserved.
+		</p>
+		</div>
+		<div className="flex flex-wrap items-center gap-4 text-xs">
+		<Link href="/" className="hover:text-gray-900">
+		Japanese Top
+		</Link>
+		<Link href="/en" className="hover:text-gray-900">
+		English Top
+		</Link>
+		<Link href="/#book" className="hover:text-gray-900">
+		Photo Book (JP)
+		</Link>
+		<Link href="/en#book" className="hover:text-gray-900">
+		Photo Book (EN)
+		</Link>
+		<Link href="/mountains" className="hover:text-gray-900">
+		山の紹介（JP）
+		</Link>
+		<Link href="/en/mountains" className="hover:text-gray-900">
+		Mountains (EN)
+		</Link>
+		<a
+		href="mailto:masahiro.koseki@gmail.com"
+		className="hover:text-gray-900"
+		>
+		Contact
+		</a>
+		</div>
+		</div>
+		</footer>
 		
 		{/* ▼ 地図用 Lightbox オーバーレイ */}
 		{mapOpen && (
@@ -456,7 +503,6 @@ export default function EnMountainsPage() {
 				</div>
 				</div>
 		)}
-		</main>
 		</div>
 	);
 }
