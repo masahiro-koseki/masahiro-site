@@ -20,7 +20,7 @@ const mountains = [
 	areaEn: "Hanamaki & Tono, Iwate Prefecture",
 	seasons: "春〜冬（高山植物・残雪・紅葉・樹氷）",
 	seasonsEn: "Spring–winter (alpine flowers, lingering snow, autumn foliage, rime ice)",
-	image: "/images/mountains/hayachine-top.jpg",
+	image: "/images/mountains/hayachine-main.jpg",
 	descriptionJa:
 	"北上山地の主峰で、日本百名山のひとつ。固有種を含む高山植物の宝庫として知られ、山頂からは北上山地と奥羽山脈の大展望が広がります。",
 	descriptionEn:
