@@ -673,4 +673,4 @@ const gallerySources = [
       </footer>
     </div>
   );
-}
+
