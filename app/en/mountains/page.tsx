@@ -108,22 +108,22 @@ const mountains: Mountain[] = [
 	height: "1,626 m",
 	area: "Border of Miyagi, Iwate & Akita Prefectures",
 	mainImage: "/images/mountains/kurikoma-autumn.jpg",
-	mainCaption: "Autumn colors covering the wide slopes of Mt. Kurikoma.",
+	mainCaption: "Early-summer fields of Nikko-kisuge spreading across Sekaiyachi, with Mt. Kurikoma rising beyond.",
 	subImages: [
 	{
-		src: "/images/mountains/kurikoma-beech.jpg",
-		alt: "Beech forest",
-		caption: "Beech forest on the lower slopes of Mt. Kurikoma.",
+		src: "/images/mountains/kurikoma-showako.jpg",
+		alt: "Lake Showa and volcanic slopes",
+		caption: "The emerald waters of Lake Showa, surrounded by lingering snow and volcanic slopes.",
 	},
 	{
-		src: "/images/mountains/kurikoma-wetland.jpg",
-		alt: "Small wetland",
-		caption: "A small wetland area near one of the main routes.",
+		src: "/images/mountains/iwakagami.jpg",
+		alt: "Iwakagami flowers",
+		caption: "Iwakagami flowers blooming along the forest trails of Mt. Kurikoma.",
 	},
 	{
-		src: "/images/mountains/kurikoma-summer.jpg",
-		alt: "Summer green slopes",
-		caption: "Bright summer green spreading across the open slopes.",
+		src: "/images/mountains/kurikoma-autumn.jpg",
+		alt: "Autumn marshland and ponds on Kurikoma",
+		caption: "Autumn colors and marsh ponds spreading across the highlands of Mt. Kurikoma.",
 	},
 	],	
 	summary:
