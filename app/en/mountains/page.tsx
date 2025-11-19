@@ -460,7 +460,7 @@ export default function EnMountainsPage() {
 		<Link href="/en/mountains" className="hover:text-gray-900">
 		Mountains (EN)
 		</Link>
-		<Link href="/#contact" className="hover:text-gray-900">
+		<Link href="/?lang=en#contact" className="hover:text-gray-900">
 		Contact
 		</Link>
 		</div>
