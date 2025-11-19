@@ -150,7 +150,7 @@ export default function Page() {
 				root.style.overflow = prev;
 			};
 	}, [lbOpen]);
-}
+	
 	// URL の ?lang= を優先して言語を決定し、なければ localStorage から復元
 	useEffect(() => {
 			if (typeof window === "undefined") return;
