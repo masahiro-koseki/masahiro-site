@@ -2,7 +2,6 @@
 // full code rewrite will be placed next turn after structure scaffold confirmation
 "use client";
 import React, { useMemo, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import BookSection from "@/components/sections/BookSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
@@ -167,11 +166,25 @@ export default function Page() {
 			}
 			
 			// ② URL 指定がなければ localStorage を使用
-			try {
-				const saved = localStorage.getItem(LANG_KEY) as Lang | null;
-				if (saved === "ja" || saved === "en") setLang(saved);
-			} catch {}
-	}, [searchParams]);
+			// URL の ?lang= を優先して言語を決定し、なければ localStorage から復元
+			useEffect(() => {
+					if (typeof window === "undefined") return;
+					
+					// ① URL のクエリパラメータ ?lang= を優先
+					const params = new URLSearchParams(window.location.search);
+					const urlLang = params.get("lang");
+					if (urlLang === "ja" || urlLang === "en") {
+						setLang(urlLang);
+						try { localStorage.setItem(LANG_KEY, urlLang); } catch {}
+						return;
+					}
+					
+					// ② 指定がなければ localStorage から復元
+					try {
+						const saved = localStorage.getItem(LANG_KEY) as Lang | null;
+						if (saved === "ja" || saved === "en") setLang(saved);
+					} catch {}
+			}, []);
 
 	
 	const changeLang = (l: Lang) => {
