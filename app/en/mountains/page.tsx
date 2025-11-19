@@ -270,24 +270,26 @@ export default function EnMountainsPage() {
 					/>
 					</div>
 					
+					{/* サムネイル 3枚を均等配置 */}
 					{mt.subImages.length > 0 && (
-							<div className="flex gap-3 justify-start">
+							<div className="grid grid-cols-3 gap-3 w-full">
 							{mt.subImages.map((img, idx) => (
 										<div
 										key={idx}
-										className="relative w-20 h-16 md:w-24 md:h-18 rounded-md overflow-hidden bg-black/5 border border-gray-200"
+										className="relative w-full aspect-[1.166] rounded-md overflow-hidden bg-black/5 border border-gray-200"
 										>
 										<Image
 										src={img.src}
 										alt={img.alt}
 										fill
-										className="object-contains"
-										sizes="96px"
+										className="object-cover"
+										sizes="(min-width:1024px) 20vw, 33vw"
 										/>
 										</div>
 							))}
 							</div>
 					)}
+
 					</div>
 					
 					{/* 右：テキスト */}
