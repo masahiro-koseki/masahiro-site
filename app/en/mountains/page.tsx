@@ -36,19 +36,23 @@ const mountains: Mountain[] = [
 	height: "1,917 m",
 	area: "Hanamaki & Tono, Iwate Prefecture",
 	mainImage: "/images/mountains/hayachine-top.jpg",
+	mainCaption: "Dawn view from the summit ridge of Mt. Hayachine.",
 	subImages: [
 	{
 		src: "/images/mountains/hayachine-flowers-01.jpg",
-		alt: "Alpine flowers on the slopes of Mt. Hayachine",
+		alt: "Alpine flowers and rocky trail",
+		caption: "Alpine flowers along the rocky trail near the summit."
 	},
 	{
 		src: "/images/mountains/hayachine-flowers-02.jpg",
-		alt: "Close-up view of alpine plants on Mt. Hayachine",
+		alt: "Matsumushiso and summer wildflowers",
+		caption: "Summer wildflowers blooming on the exposed ridge."
 	},
 	{
 		src: "/images/mountains/hayachine-main.jpg",
-		alt: "Ridgeline view from Mt. Hayachine",
-	},
+		alt: "Miyama-shajin flowers",
+		caption: "Miyama-shajin (Campanula species) near the upper slopes."
+	}
 	],
 	summary:
 	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Famous for endemic alpine flowers and wide-open views.",
@@ -260,31 +264,40 @@ export default function EnMountainsPage() {
 					<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
 					{/* 左：メイン画像＋サムネイル */}
 					<div className="p-5 md:p-6 md:pr-3 flex flex-col gap-3">
+					{/* メイン画像 */}
 					<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
 					<Image
 					src={mt.mainImage}
 					alt={mt.name}
 					fill
 					className="object-cover"
-					sizes="(min-width: 1024px) 40vw, 100vw"
 					/>
 					</div>
+					
+					{/* メイン画像キャプション */}
+					<p className="mt-2 text-xs text-gray-600 text-center italic">
+					{mt.mainCaption}
+					</p>
 					
 					{/* サムネイル 3枚を均等配置 */}
 					{mt.subImages.length > 0 && (
 							<div className="grid grid-cols-3 gap-3 w-full">
 							{mt.subImages.map((img, idx) => (
-										<div
-										key={idx}
-										className="relative w-full aspect-[1.166] rounded-md overflow-hidden bg-black/5 border border-gray-200"
-										>
+										<div key={idx} className="flex flex-col">
+										
+										<div className="relative w-full aspect-[1.166] rounded-md overflow-hidden bg-black/5 border border-gray-200">
 										<Image
 										src={img.src}
 										alt={img.alt}
 										fill
 										className="object-cover"
-										sizes="(min-width:1024px) 20vw, 33vw"
 										/>
+										</div>
+										
+										{/* サムネイルキャプション */}
+										<p className="mt-1 text-[10px] text-gray-600 text-center leading-tight italic">
+										{img.caption}
+										</p>
 										</div>
 							))}
 							</div>
