@@ -47,13 +47,13 @@ const mountains: Mountain[] = [
 	},
 	{
 		src: "/images/mountains/hayachine-flowers-02.jpg",
-		alt: "Matsumushiso and summer wildflowers",
+		alt: "Summer wildflowers blooming on the exposed ridge",
 		caption: "Summer wildflowers blooming on the exposed ridge."
 	},
 	{
 		src: "/images/mountains/hayachine-main.jpg",
-		alt: "Miyama-shajin flowers",
-		caption: "Miyama-shajin (Campanula species) near the upper slopes."
+		alt: "Mt. Hayachine viewed from the Odagoe trailhead",
+		caption: "Mt. Hayachine viewed from the Odagoe trailhead.",
 	}
 	],
 	summary:
