@@ -131,7 +131,6 @@ export default function Page() {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
-  const searchParams = useSearchParams();
 
 	
 	useEffect(() => {
@@ -155,8 +154,8 @@ export default function Page() {
 	useEffect(() => {
 			if (typeof window === "undefined") return;
 			
-			// ① URL パラメータを優先
-			const urlLang = searchParams.get("lang");
+			const params = new URLSearchParams(window.location.search);
+			const urlLang = params.get("lang");
 			if (urlLang === "ja" || urlLang === "en") {
 				setLang(urlLang);
 				try {
@@ -165,34 +164,22 @@ export default function Page() {
 				return;
 			}
 			
-			// ② URL 指定がなければ localStorage を使用
-			// URL の ?lang= を優先して言語を決定し、なければ localStorage から復元
-			useEffect(() => {
-					if (typeof window === "undefined") return;
-					
-					// ① URL のクエリパラメータ ?lang= を優先
-					const params = new URLSearchParams(window.location.search);
-					const urlLang = params.get("lang");
-					if (urlLang === "ja" || urlLang === "en") {
-						setLang(urlLang);
-						try { localStorage.setItem(LANG_KEY, urlLang); } catch {}
-						return;
-					}
-					
-					// ② 指定がなければ localStorage から復元
-					try {
-						const saved = localStorage.getItem(LANG_KEY) as Lang | null;
-						if (saved === "ja" || saved === "en") setLang(saved);
-					} catch {}
-			}, []);
-
+			// URL で指定がなければ localStorage を見る
+			try {
+				const saved = localStorage.getItem(LANG_KEY) as Lang | null;
+				if (saved === "ja" || saved === "en") setLang(saved);
+			} catch {}
+	}, []);
 	
 	const changeLang = (l: Lang) => {
 		setLang(l);
-		try { localStorage.setItem(LANG_KEY, l); } catch {}
+		try {
+			localStorage.setItem(LANG_KEY, l);
+		} catch {}
 	};
-
+	
 	const [menuOpen, setMenuOpen] = useState(false);
+	
 	
 	const galleryMeta = [
 	// 0) Alpine
@@ -669,7 +656,8 @@ const gallerySources = [
               Threads
             </a>
           </div>
-        </Section>
-      </footer>
-    </div>
-		);}
+			</Section>
+			</footer>
+		</div>
+	);
+}
