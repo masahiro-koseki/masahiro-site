@@ -132,7 +132,7 @@ export default function Page() {
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
   const searchParams = useSearchParams();
-
+}
 	
 	useEffect(() => {
 			if (!lbOpen) return;
@@ -150,6 +150,7 @@ export default function Page() {
 				root.style.overflow = prev;
 			};
 	}, [lbOpen]);
+
 	
 	// URL の ?lang= を優先して言語を決定し、なければ localStorage から復元
 	useEffect(() => {
@@ -673,4 +674,4 @@ const gallerySources = [
       </footer>
     </div>
   );
-
+		}
