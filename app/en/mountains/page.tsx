@@ -402,7 +402,7 @@ export default function EnMountainsPage() {
 				onClick={(e) => e.stopPropagation()}
 				>
 				<Image
-				src="/images/maps/tohoku-iwate-mountains-en.jpg"
+				src="/images/maps/tohoku-region-map.jpg"
 				alt="Map of northern Japan showing the area of the mountains"
 				fill
 				className="object-contain"
