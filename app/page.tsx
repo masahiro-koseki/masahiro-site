@@ -178,16 +178,7 @@ export default function Page() {
 		setLang(l);
 		try { localStorage.setItem(LANG_KEY, l); } catch {}
 	};
-	// 既存の切替ボタンを setLang から changeLang に置換
-	// 例：ヘッダーのトグル
-	<Button
-	variant="outline"
-	className="rounded-full"
-	onClick={() => changeLang(lang === "ja" ? "en" : "ja")}
-	>
-	{lang === "ja" ? "EN" : "JP"}
-	</Button>
-	
+
 	const [menuOpen, setMenuOpen] = useState(false);
 	
 	const galleryMeta = [
