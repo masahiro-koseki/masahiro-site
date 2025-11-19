@@ -76,17 +76,17 @@ const mountains: Mountain[] = [
 	mainCaption: "Early-summer reflections at Nakanuma, with the lingering snowfields of Mt. Yakeishi.",
 	subImages: [
 	{
-		src: "...",
+		src: "/images/mountains/Yakeishi-kaminuma-01.jpg",
 		alt: "Kobaikeiso flowers and wetland",
 		caption: "Kobaikeisō blooming around the wetland below Mt. Yakeishi.",
 	},
 	{
-		src: "...",
+		src: "/images/mountains/Yakeishi-honnai-01.jpg",
 		alt: "Chinguruma flowers on alpine slope",
 		caption: "A wide alpine slope covered with blooming Chinguruma flowers.",
 	},
 	{
-		src: "...",
+		src: "/images/mountains/Yakeishi-honnai-02.jpg",
 		alt: "Autumn marshland and ponds",
 		caption: "Autumn marshland with small ponds along the Yakeishi highlands.",
 	},
