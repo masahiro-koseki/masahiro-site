@@ -451,14 +451,8 @@ export default function EnMountainsPage() {
 		<Link href="/" className="hover:text-gray-900">
 		Japanese Top
 		</Link>
-		<Link href="/en" className="hover:text-gray-900">
-		English Top
-		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
-		Photo Book (JP)
-		</Link>
-		<Link href="/en#book" className="hover:text-gray-900">
-		Photo Book (EN)
+		Photo Book
 		</Link>
 		<Link href="/mountains" className="hover:text-gray-900">
 		山の紹介（JP）
