@@ -179,7 +179,7 @@ export default function EnMountainsPage() {
 		
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
-		Home (JP)
+		Home
 		</Link>
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
@@ -446,16 +446,13 @@ export default function EnMountainsPage() {
 		</div>
 		<div className="flex flex-wrap items-center gap-4 text-xs">
 		<Link href="/" className="hover:text-gray-900">
-		Japanese Top
+		Home
 		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
 		Photo Book
 		</Link>
-		<Link href="/mountains" className="hover:text-gray-900">
-		山の紹介（JP）
-		</Link>
 		<Link href="/en/mountains" className="hover:text-gray-900">
-		Mountains (EN)
+		Mountains
 		</Link>
 		<Link href="/?lang=en#contact" className="hover:text-gray-900">
 		Contact
