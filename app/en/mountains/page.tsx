@@ -181,9 +181,6 @@ export default function EnMountainsPage() {
 		<Link href="/" className="hover:opacity-70">
 		Home (JP)
 		</Link>
-		<Link href="/en" className="hover:opacity-70">
-		Home (EN)
-		</Link>
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
