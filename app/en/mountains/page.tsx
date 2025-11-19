@@ -1,7 +1,7 @@
 // app/en/mountains/page.tsx
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -38,7 +38,7 @@ const mountains: Mountain[] = [
 	mainImage: "/images/mountains/hayachine-top.jpg",
 	subImages: [
 	{
-		src: "/images/mountains/hayachine-flowers-01.jpg", // ★実ファイル名に合わせて変更
+		src: "/images/mountains/hayachine-flowers-01.jpg",
 		alt: "Alpine flowers on the slopes of Mt. Hayachine",
 	},
 	{
@@ -127,6 +127,7 @@ const mountains: Mountain[] = [
 
 export default function EnMountainsPage() {
 	const router = useRouter();
+	const [mapOpen, setMapOpen] = useState(false);
 	
 	const goToJapanese = () => {
 		try {
@@ -199,9 +200,10 @@ export default function EnMountainsPage() {
 		</p>
 		</section>
 		
-		{/* 地図セクション */}
+		{/* 地図セクション（元の2カラムレイアウト＋Lightbox） */}
 		<section className="mb-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
 		<div className="flex flex-col gap-6 md:flex-row md:items-center">
+		{/* 左：説明文 */}
 		<div className="md:w-2/3">
 		<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
 		Where are these mountains?
@@ -219,171 +221,204 @@ export default function EnMountainsPage() {
 		Kurikoma. It is not for navigation, but to help you imagine
 		the landscape in which these photographs were taken.
 		</p>
+		<p className="mt-2 text-xs text-gray-500">
+		Click the map to open a larger version.
+		</p>
 		</div>
+		
+		{/* 右：地図（クリックでLightbox表示） */}
 		<div className="md:w-1/3">
-		<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
-		{/* ★地図画像を用意できたらコメントアウトを外して使用 */}
+		<button
+		type="button"
+		onClick={() => setMapOpen(true)}
+		className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100"
+		>
 		<Image
-					src="/images/maps/tohoku-region-map.jpg"
-					alt="Map of northern Japan showing the area of the mountains"
+		src="/images/maps/tohoku-region-map.jpg" // ★このパスにマップ画像を保存
+		alt="Map of northern Japan showing the area of the mountains"
+		fill
+		className="object-contain"
+		sizes="(min-width: 1024px) 320px, 100vw"
+		/>
+		<div className="pointer-events-none absolute inset-0 bg-black/0 transition group-hover:bg-black/10" />
+		<div className="pointer-events-none absolute bottom-2 right-2 rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold text-gray-700 shadow-sm">
+		Click to enlarge
+		</div>
+		</button>
+		</div>
+		</div>
+		</section>
+		
+		{/* 各山セクション */}
+		<section className="space-y-10">
+		{mountains.map((mt) => (
+					<article
+					key={mt.id}
+					id={mt.id}
+					className="rounded-2xl border border-gray-200 bg-white shadow-sm"
+					>
+					<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
+					{/* 左：メイン画像＋サムネイル */}
+					<div className="p-5 md:p-6 md:pr-3 flex flex-col gap-3">
+					<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
+					<Image
+					src={mt.mainImage}
+					alt={mt.name}
 					fill
-					className="object-contain"
-				  />
-			<div className="flex h-full items-center justify-center px-4 text-center text-xs text-gray-500">
-			Map placeholder
-			<br />
-			(Replace with a simple map image of Tohoku / Iwate showing
-			the mountain area)
-			</div>
-			</div>
-			</div>
-			</div>
-			</section>
-			
-			{/* 各山セクション */}
-			<section className="space-y-10">
-			{mountains.map((mt) => (
-						<article
-						key={mt.id}
-						id={mt.id}
-						className="rounded-2xl border border-gray-200 bg-white shadow-sm"
-						>
-						<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
-						{/* 左：メイン画像＋サムネイル */}
-						<div className="p-5 md:p-6 md:pr-3 flex flex-col gap-3">
-						{/* メイン画像（少し控えめな高さ） */}
-						<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
-						<Image
-						src={mt.mainImage}
-						alt={mt.name}
-						fill
-						className="object-cover"
-						sizes="(min-width: 1024px) 40vw, 100vw"
-						/>
-						</div>
-						
-						{/* サムネイル 3枚を横並び */}
-						{mt.subImages.length > 0 && (
-								<div className="flex gap-3 justify-start">
-								{mt.subImages.map((img, idx) => (
-											<div
-											key={idx}
-											className="relative w-20 h-16 md:w-24 md:h-18 rounded-md overflow-hidden bg-black/5 border border-gray-200"
-											>
-											<Image
-											src={img.src}
-											alt={img.alt}
-											fill
-											className="object-cover"
-											sizes="96px"
-											/>
-											</div>
-								))}
-								</div>
-						)}
-						</div>
-						
-						{/* 右：テキスト */}
-						<div className="p-5 md:p-6 flex flex-col gap-3">
-						<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
-						Mountain
-						</div>
-						<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
-						{mt.name}
-						</h2>
-						
-						<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
-						<div className="flex gap-2">
-						<dt className="w-16 shrink-0 text-gray-500">
-						Height
-						</dt>
-						<dd>{mt.height}</dd>
-						</div>
-						<div className="flex gap-2">
-						<dt className="w-16 shrink-0 text-gray-500">Area</dt>
-						<dd>{mt.area}</dd>
-						</div>
-						</dl>
-						
-						<p className="mt-2 text-sm leading-relaxed text-gray-700">
-						{mt.summary}
-						</p>
-						
-						<div className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
-						<div>
-						<span className="font-semibold">
-						Character of the mountain:
-						</span>{" "}
-						{mt.character}
-						</div>
-						<div>
-						<span className="font-semibold">Best season:</span>{" "}
-						{mt.bestSeason}
-						</div>
-						<div>
-						<span className="font-semibold">
-						Difficulty (rough):
-						</span>{" "}
-						{mt.difficulty}
-						</div>
-						<div>
-						<span className="font-semibold">Access notes:</span>{" "}
-						{mt.access}
-						</div>
-						</div>
-						
-						<div className="mt-4 text-xs text-gray-500">
-						* Conditions in the mountains can change quickly due to
-						weather, trail damage, or snow. Please always check the
-						latest local information and prepare appropriate gear
-						before you go.
-						</div>
-						</div>
-						</div>
-						</article>
-			))}
-			</section>
-			
-			{/* 注意事項 */}
-			<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
-			<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
-			Before You Hike in These Mountains
-			</h2>
-			<p className="mt-3 text-sm leading-relaxed text-gray-700">
-			These mountains are not technically extreme, but they are still
-			real mountains with changing weather and sometimes long trails.
-			Please keep in mind:
-			</p>
-			<ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-gray-700 space-y-1">
-			<li>
-			Weather can change quickly, especially on ridges. Carry rain
-			gear and warm layers even in summer.
-			</li>
-			<li>
-			Trails may be muddy, rocky, or covered with snow in early
-			season. Proper hiking shoes are strongly recommended.
-			</li>
-			<li>
-			Mobile phone reception may be weak or unavailable in some
-			areas.
-			</li>
-			<li>
-			In case of emergency, rescue can take time. Plan a route that
-			matches your experience and fitness.
-			</li>
-			<li>
-			Check recent trail and access information from local tourist
-			offices, mountain huts, or official websites.
-			</li>
-			</ul>
-			<p className="mt-4 text-sm leading-relaxed text-gray-700">
-			The photographs in the photo book were taken over many years in
-			different seasons. Please enjoy them as a quiet record of how
-			these mountains look and feel throughout the year.
-			</p>
-			</section>
-			</div>
-			</main>
-			</div>
-		);
-	}
+					className="object-cover"
+					sizes="(min-width: 1024px) 40vw, 100vw"
+					/>
+					</div>
+					
+					{mt.subImages.length > 0 && (
+							<div className="flex gap-3 justify-start">
+							{mt.subImages.map((img, idx) => (
+										<div
+										key={idx}
+										className="relative w-20 h-16 md:w-24 md:h-18 rounded-md overflow-hidden bg-black/5 border border-gray-200"
+										>
+										<Image
+										src={img.src}
+										alt={img.alt}
+										fill
+										className="object-cover"
+										sizes="96px"
+										/>
+										</div>
+							))}
+							</div>
+					)}
+					</div>
+					
+					{/* 右：テキスト */}
+					<div className="p-5 md:p-6 flex flex-col gap-3">
+					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+					Mountain
+					</div>
+					<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
+					{mt.name}
+					</h2>
+					
+					<dl className="mt-1 space-y-1 text-xs text-gray-700 md:text-sm">
+					<div className="flex gap-2">
+					<dt className="w-16 shrink-0 text-gray-500">
+					Height
+					</dt>
+					<dd>{mt.height}</dd>
+					</div>
+					<div className="flex gap-2">
+					<dt className="w-16 shrink-0 text-gray-500">Area</dt>
+					<dd>{mt.area}</dd>
+					</div>
+					</dl>
+					
+					<p className="mt-2 text-sm leading-relaxed text-gray-700">
+					{mt.summary}
+					</p>
+					
+					<div className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
+					<div>
+					<span className="font-semibold">
+					Character of the mountain:
+					</span>{" "}
+					{mt.character}
+					</div>
+					<div>
+					<span className="font-semibold">Best season:</span>{" "}
+					{mt.bestSeason}
+					</div>
+					<div>
+					<span className="font-semibold">
+					Difficulty (rough):
+					</span>{" "}
+					{mt.difficulty}
+					</div>
+					<div>
+					<span className="font-semibold">Access notes:</span>{" "}
+					{mt.access}
+					</div>
+					</div>
+					
+					<div className="mt-4 text-xs text-gray-500">
+					* Conditions in the mountains can change quickly due to
+					weather, trail damage, or snow. Please always check the
+					latest local information and prepare appropriate gear
+					before you go.
+					</div>
+					</div>
+					</div>
+					</article>
+		))}
+		</section>
+		
+		{/* 注意事項 */}
+		<section className="mt-16 rounded-2xl border border-gray-200 bg-white p-5 md:p-7">
+		<h2 className="text-lg font-semibold text-gray-900 md:text-xl">
+		Before You Hike in These Mountains
+		</h2>
+		<p className="mt-3 text-sm leading-relaxed text-gray-700">
+		These mountains are not technically extreme, but they are still
+		real mountains with changing weather and sometimes long trails.
+		Please keep in mind:
+		</p>
+		<ul className="mt-3 list-disc pl-5 text-sm leading-relaxed text-gray-700 space-y-1">
+		<li>
+		Weather can change quickly, especially on ridges. Carry rain
+		gear and warm layers even in summer.
+		</li>
+		<li>
+		Trails may be muddy, rocky, or covered with snow in early
+		season. Proper hiking shoes are strongly recommended.
+		</li>
+		<li>
+		Mobile phone reception may be weak or unavailable in some
+		areas.
+		</li>
+		<li>
+		In case of emergency, rescue can take time. Plan a route that
+		matches your experience and fitness.
+		</li>
+		<li>
+		Check recent trail and access information from local tourist
+		offices, mountain huts, or official websites.
+		</li>
+		</ul>
+		<p className="mt-4 text-sm leading-relaxed text-gray-700">
+		The photographs in the photo book were taken over many years in
+		different seasons. Please enjoy them as a quiet record of how
+		these mountains look and feel throughout the year.
+		</p>
+		</section>
+		</div>
+		
+		{/* ▼ 地図用 Lightbox オーバーレイ */}
+		{mapOpen && (
+				<div
+				className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70"
+				onClick={() => setMapOpen(false)}
+				>
+				<div
+				className="relative mx-4 w-full max-w-4xl aspect-[3/2] rounded-xl overflow-hidden bg-black"
+				onClick={(e) => e.stopPropagation()}
+				>
+				<Image
+				src="/images/maps/tohoku-iwate-mountains-en.jpg"
+				alt="Map of northern Japan showing the area of the mountains"
+				fill
+				className="object-contain"
+				sizes="(min-width: 1024px) 800px, 100vw"
+				/>
+				<button
+				type="button"
+				className="absolute top-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white"
+				onClick={() => setMapOpen(false)}
+				>
+				Close
+				</button>
+				</div>
+				</div>
+		)}
+		</main>
+		</div>
+	);
+}
