@@ -19,6 +19,7 @@ type Mountain = {
 	seasons: string;
 	image: string;
 	description: string;
+	subImages: string[];
 };
 
 const mountains: Mountain[] = [
@@ -32,6 +33,11 @@ const mountains: Mountain[] = [
 	image: "/images/mountains/hayachine-top.jpg",
 	description:
 	"北上山地の主峰で、日本百名山のひとつ。固有種を含む高山植物の宝庫として知られ、山頂からは北上山地と奥羽山脈の大展望が広がります。春から初夏は花の時期、秋には紅葉、冬には樹氷と、四季折々に表情を変える山です。",
+	subImages: [
+	"/images/mountains/hayachine-flowers-01.jpg",
+	"/images/mountains/hayachine-flowers-02.jpg",
+	"/images/mountains/hayachine-main.jpg",
+	],
 },
 {
 	id: "yakeishi",
@@ -40,9 +46,14 @@ const mountains: Mountain[] = [
 	height: "1,548 m",
 	area: "岩手県 奥州市・秋田県 東成瀬村",
 	seasons: "新緑〜初夏・紅葉・初冬",
-	image: "/images/mountains/Yakeishi-main.jpg",
+	image: "/images/mountains/yakeishi-kaminuma.jpg",
 	description:
 	"湿原や池塘、高山植物が彩る山として知られ、とくに新緑と残雪が重なる初夏の風景が印象的です。中沼周辺や山上の湿原では、静かな水面に空や雲が映り込み、柔らかな光の変化を楽しむことができます。",
+	subImages: [
+	"/images/mountains/yakeishi-kaminuma-01.jpg",
+	"/images/mountains/yakeishi-honnnai-01.jpg",
+	"/images/mountains/yakeishi-honnnai-02.jpg",
+	],
 },
 {
 	id: "kurikoma",
@@ -54,6 +65,11 @@ const mountains: Mountain[] = [
 	image: "/images/mountains/kurikoma-autumn.jpg",
 	description:
 	"東北屈指の紅葉の名山。広大な裾野に草紅葉とブナ林が広がり、秋には山全体が燃えるような色彩に包まれます。夏は湿原や池塘の花が楽しめ、季節ごとに歩くたびに違った表情を見せてくれる山です。",
+	subImages: [
+	"/images/mountains/kurikoma-sekaiyachi-01.jpg",
+	"/images/mountains/iwakagami.jpg",
+	"/images/mountains/kurikoma-sekaiyachi-02.jpg",
+	],
 },
 ];
 
@@ -90,10 +106,10 @@ export default function MountainsPage() {
 		<Link href="/#book" className="hover:opacity-70">
 		写真集
 		</Link>
-		<span className="text-gray-900 font-medium">山紹介</span>
+		<span className="text-gray-900 font-medium">山紹介（JP）</span>
 		</nav>
 		
-		{/* PC用 言語切り替え（EN へジャンプ） */}
+		{/* PC用 EN ボタン（英語版ページへジャンプ） */}
 		<div className="hidden md:flex items-center gap-2">
 		<Button
 		variant="outline"
@@ -160,7 +176,7 @@ export default function MountainsPage() {
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
 		{/* ヘッダーセクション */}
-		<section className="mb-16">
+		<section className="mb-12 md:mb-16">
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
 		</p>
@@ -173,43 +189,61 @@ export default function MountainsPage() {
 		このページでは、写真集に登場する主な山々の概要や特徴、季節ごとの魅力を、
 		写真とともに簡単にご紹介します。
 		</p>
+		<p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
+		ここで紹介する山々は、主に岩手県とその周辺に位置しています。
+		北上山地の主峰・早池峰山、湿原と池塘が点在する焼石岳、紅葉の名所として知られる栗駒山など、
+		いずれも四季折々に表情を変えながら、山と自然の魅力を見せてくれます。
+		</p>
 		</section>
 		
-		{/* 山一覧 */}
-		<section className="space-y-6">
-		<div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-		<h2 className="text-xl font-semibold text-gray-900 md:text-2xl">
-		山一覧（写真集に登場する主な山々）
-		</h2>
-		<p className="text-xs text-gray-500 md:text-sm">
-		※ 各カードには主なエリア・季節・特徴を簡単にまとめています。
-		</p>
-		</div>
-		
-		<div className="mt-4 grid gap-6 md:grid-cols-3">
+		{/* 山ごとのセクション（英語版と同じ 1山＝1ブロック構成） */}
+		<section className="space-y-10 md:space-y-12">
 		{mountains.map((mt) => (
 					<article
 					key={mt.id}
-					className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+					className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
 					>
-					{/* 画像エリア */}
-					<div className="relative aspect-[4/3] w-full bg-black/5">
+					{/* メイン画像 */}
+					<div className="relative w-full aspect-[4/3] bg-black/5">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
 					fill
 					className="object-cover"
-					sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+					sizes="(min-width: 1024px) 960px, 100vw"
 					/>
 					</div>
 					
-					<div className="flex flex-1 flex-col p-4">
+					{/* サムネイル（英語版と同様にメインの下に3枚） */}
+					{mt.subImages && mt.subImages.length > 0 && (
+							<div className="px-4 pt-4">
+							<div className="grid grid-cols-3 gap-2">
+							{mt.subImages.map((src, idx) => (
+										<div
+										key={idx}
+										className="relative aspect-[4/3] overflow-hidden rounded-lg bg-black/5"
+										>
+										<Image
+										src={src}
+										alt={`${mt.nameJa} サムネイル ${idx + 1}`}
+										fill
+										className="object-cover"
+										sizes="(min-width: 1024px) 300px, 33vw"
+										/>
+										</div>
+							))}
+							</div>
+							</div>
+					)}
+					
+					{/* テキスト部分 */}
+					<div className="p-4 pb-6 md:p-6">
 					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
 					{mt.nameEn}
 					</div>
-					<h3 className="mt-1 text-lg font-semibold text-gray-900">
+					<h2 className="mt-1 text-lg font-semibold text-gray-900 md:text-xl">
 					{mt.nameJa}
-					</h3>
+					</h2>
 					
 					<dl className="mt-3 space-y-1 text-xs text-gray-700 md:text-sm">
 					<div className="flex gap-2">
@@ -226,13 +260,12 @@ export default function MountainsPage() {
 					</div>
 					</dl>
 					
-					<p className="mt-3 flex-1 text-xs leading-relaxed text-gray-700 md:text-sm">
+					<p className="mt-3 text-xs leading-relaxed text-gray-700 md:text-sm">
 					{mt.description}
 					</p>
 					</div>
 					</article>
 		))}
-		</div>
 		</section>
 		</div>
 		</main>
@@ -248,16 +281,19 @@ export default function MountainsPage() {
 		</div>
 		<div className="flex flex-wrap items-center gap-4 text-xs">
 		<Link href="/" className="hover:text-gray-900">
-		ホーム
+		Home
 		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
 		写真集
 		</Link>
 		<Link href="/mountains" className="hover:text-gray-900">
-		山の紹介
+		山の紹介（JP）
+		</Link>
+		<Link href="/en/mountains" className="hover:text-gray-900">
+		Mountains (EN)
 		</Link>
 		<Link href="/#contact" className="hover:text-gray-900">
-		コンタクト
+		Contact
 		</Link>
 		</div>
 		</div>
