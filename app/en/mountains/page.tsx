@@ -203,30 +203,38 @@ export default function EnMountainsPage() {
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
 		{/* 導入 */}
-		<section className="mb-12">
+		{/* Header section */}
+		<section className="mb-12 md:mb-16">
+		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-start">
+		
+		{/* Left: Title + Intro */}
+		<div>
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
-		Mountains of Iwate &amp; Northern Japan
+		Mountains &amp; Nature
 		</p>
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-		Quiet Trails and Seasons in Northern Japan
+		Mountains of Northern Japan
 		</h1>
-		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
-		The mountains introduced here are located in and around Iwate
-		Prefecture in the Tohoku region of northern Japan. They are not as
-		crowded as the famous peaks around Tokyo or Kyoto. Instead, they
-		offer quiet trails, wide views, rich wetlands, and the changing
-		colors of four distinct seasons.
+		
+		<p className="mt-6 text-sm leading-relaxed text-gray-700 md:text-base">
+		The mountains featured here—including Mt. Hayachine, Mt. Yakeishi, and Mt. Kurikoma—are places I have visited since my early days of stream fishing. Their ridges, forests, waterfalls, and ever-changing seasonal scenery have continued to inspire my photography.
 		</p>
-		<p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
-		This page is written especially for visitors from overseas who are
-		curious about these mountains after seeing the photo book{" "}
-		<span className="italic">
-		“Fascinated by Mountains and Nature”.
-		</span>{" "}
-		It is not a complete guidebook, but an introduction to the
-		character of each mountain and what kind of experience you may
-		find there.
+		<p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
+		These mountains are located mainly in Iwate Prefecture and surrounding areas. Each one offers unique landscapes: Mt. Hayachine with its alpine flora, Mt. Yakeishi with its wetlands and ponds, and Mt. Kurikoma known for its spectacular autumn colors. This page introduces their characteristics and seasonal highlights along with selected photographs.
 		</p>
+		</div>
+		
+		{/* Right: Header image */}
+		<div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl overflow-hidden bg-black/5">
+		<Image
+		src="/images/mountains/kurikoma-iwakagami.jpg"
+		alt="Alpine flowers on the volcanic slopes of Mt. Kurikoma"
+		fill
+		className="object-cover"
+		/>
+		</div>
+		
+		</div>
 		</section>
 		
 		{/* 地図セクション */}
