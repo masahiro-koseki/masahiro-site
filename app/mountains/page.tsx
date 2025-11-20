@@ -168,9 +168,6 @@ export default function MountainsPage() {
 		{/* メインコンテンツ */}
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
-		{/* 導入文＋イメージ写真 */}
-		<section className="mb-12 md:mb-16">
-		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-center">
 		{/* タイトル */}
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
@@ -178,6 +175,9 @@ export default function MountainsPage() {
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
 		地元の山々の紹介
 		</h1>
+		{/* 導入文＋イメージ写真 */}
+		<section className="mb-12 md:mb-16">
+		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-center">
 		{/* 左：テキスト */}
 		<div>
 		<p className="mt-0 text-sm leading-relaxed text-gray-700 md:text-base">
