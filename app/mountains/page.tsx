@@ -196,27 +196,29 @@ export default function MountainsPage() {
 		</p>
 		</section>
 		
-		{/* 山ごとのセクション（英語版と同じ 1山＝1ブロック構成） */}
+		{/* 山ごとのセクション（2列レイアウト） */}
 		<section className="space-y-10 md:space-y-12">
 		{mountains.map((mt) => (
 					<article
 					key={mt.id}
 					className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
 					>
+					<div className="flex flex-col gap-6 p-4 md:flex-row md:p-6">
+					{/* 左カラム：メイン画像＋サムネイル */}
+					<div className="md:w-1/2 space-y-3">
 					{/* メイン画像 */}
-					<div className="relative w-full aspect-[4/3] bg-black/5">
+					<div className="relative w-full aspect-[4/3] bg-black/5 rounded-xl overflow-hidden">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
 					fill
 					className="object-cover"
-					sizes="(min-width: 1024px) 960px, 100vw"
+					sizes="(min-width: 1024px) 480px, 100vw"
 					/>
 					</div>
 					
-					{/* サムネイル（英語版と同様にメインの下に3枚） */}
+					{/* サムネイル */}
 					{mt.subImages && mt.subImages.length > 0 && (
-							<div className="px-4 pt-4">
 							<div className="grid grid-cols-3 gap-2">
 							{mt.subImages.map((src, idx) => (
 										<div
@@ -228,16 +230,16 @@ export default function MountainsPage() {
 										alt={`${mt.nameJa} サムネイル ${idx + 1}`}
 										fill
 										className="object-cover"
-										sizes="(min-width: 1024px) 300px, 33vw"
+										sizes="(min-width: 1024px) 150px, 33vw"
 										/>
 										</div>
 							))}
 							</div>
-							</div>
 					)}
+					</div>
 					
-					{/* テキスト部分 */}
-					<div className="p-4 pb-6 md:p-6">
+					{/* 右カラム：テキスト */}
+					<div className="md:w-1/2 flex flex-col">
 					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
 					{mt.nameEn}
 					</div>
@@ -263,6 +265,7 @@ export default function MountainsPage() {
 					<p className="mt-3 text-xs leading-relaxed text-gray-700 md:text-sm">
 					{mt.description}
 					</p>
+					</div>
 					</div>
 					</article>
 		))}
