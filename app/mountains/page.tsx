@@ -168,19 +168,18 @@ export default function MountainsPage() {
 		{/* メインコンテンツ */}
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
-		{/* タイトル */}
+		<section className="mb-12 md:mb-16">
+		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-start">
+		{/* 左：タイトル＋テキスト */}
+		<div>
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
 		</p>
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
 		地元の山々の紹介
 		</h1>
-		{/* 導入文＋イメージ写真 */}
-		<section className="mb-12 md:mb-16">
-		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-center">
-		{/* 左：テキスト */}
-		<div>
-		<p className="mt-0 text-sm leading-relaxed text-gray-700 md:text-base">
+		
+		<p className="mt-6 text-sm leading-relaxed text-gray-700 md:text-base">
 		焼石岳、栗駒山、早池峰山――。中学時代の渓流釣りをきっかけに足を運ぶようになり、
 		その稜線や沢、森の表情に魅せられてきました。
 		このページでは、写真集に登場する主な山々の概要や特徴、季節ごとの魅力を、
@@ -193,8 +192,8 @@ export default function MountainsPage() {
 		</p>
 		</div>
 		
-		{/* 右：イメージ写真 */}
-		<div className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden bg-black/5">
+		{/* 右：イメージ写真（各山のメイン画像とほぼ同じ高さ） */}
+		<div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-2xl overflow-hidden bg-black/5">
 		<Image
 		src="/images/mountains/kurikoma-iwakagami.jpg"
 		alt="初夏の栗駒山・イワカガミ咲く火山性の斜面"
