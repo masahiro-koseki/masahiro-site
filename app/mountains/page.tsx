@@ -90,7 +90,7 @@ export default function MountainsPage() {
 		<Link href="/#book" className="hover:opacity-70">
 		写真集
 		</Link>
-		<span className="text-gray-900 font-medium">山紹介（JP）</span>
+		<span className="text-gray-900 font-medium">山紹介</span>
 		</nav>
 		
 		{/* PC用 言語切り替え（EN へジャンプ） */}
@@ -254,10 +254,7 @@ export default function MountainsPage() {
 		写真集
 		</Link>
 		<Link href="/mountains" className="hover:text-gray-900">
-		山の紹介（JP）
-		</Link>
-		<Link href="/en/mountains" className="hover:text-gray-900">
-		Mountains (EN)
+		山の紹介
 		</Link>
 		<Link href="/#contact" className="hover:text-gray-900">
 		Contact
