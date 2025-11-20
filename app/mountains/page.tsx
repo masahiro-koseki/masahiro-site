@@ -82,23 +82,21 @@ export default function MountainsPage() {
 		try {
 			localStorage.setItem(LANG_KEY, "en");
 		} catch {
-			// 失敗しても特に問題なし
+			// ignore
 		}
 		router.push("/en/mountains");
 	};
 	
 	return (
 		<div className="min-h-screen bg-slate-50 text-gray-900">
-		{/* ▼ ヘッダー（トップと同系デザイン） */}
+		{/* ヘッダー */}
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
 		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-		{/* 左：ロゴ */}
 		<div className="flex items-center gap-2 font-semibold">
 		<GalleryVerticalEnd className="h-5 w-5" />
 		<span>Masahiro Koseki</span>
 		</div>
 		
-		{/* PC用ナビ */}
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
 		ホーム
@@ -109,7 +107,6 @@ export default function MountainsPage() {
 		<span className="text-gray-900 font-medium">山紹介（JP）</span>
 		</nav>
 		
-		{/* PC用 EN ボタン（英語版ページへジャンプ） */}
 		<div className="hidden md:flex items-center gap-2">
 		<Button
 		variant="outline"
@@ -120,7 +117,6 @@ export default function MountainsPage() {
 		</Button>
 		</div>
 		
-		{/* モバイル用ハンバーガー */}
 		<button
 		className="md:hidden flex items-center justify-center px-2 py-2 border border-neutral-300 rounded-lg bg-white"
 		onClick={() => setMenuOpen((v) => !v)}
@@ -134,7 +130,6 @@ export default function MountainsPage() {
 		</button>
 		</div>
 		
-		{/* モバイルメニュー */}
 		{menuOpen && (
 				<nav className="md:hidden border-t border-neutral-300 bg-white text-sm">
 				<Link
@@ -154,8 +149,6 @@ export default function MountainsPage() {
 				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
 				山紹介（JP）
 				</div>
-				
-				{/* モバイル用 EN ボタン */}
 				<div className="border-t border-neutral-200 px-4 py-3">
 				<Button
 				variant="outline"
@@ -172,10 +165,10 @@ export default function MountainsPage() {
 		)}
 		</header>
 		
-		{/* ▼ メインコンテンツ */}
+		{/* メインコンテンツ */}
 		<main className="min-h-screen bg-slate-50 text-gray-900 pt-10 pb-16">
 		<div className="mx-auto max-w-6xl px-4">
-		{/* ヘッダーセクション */}
+		{/* 導入文 */}
 		<section className="mb-12 md:mb-16">
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
@@ -196,17 +189,18 @@ export default function MountainsPage() {
 		</p>
 		</section>
 		
-		{/* 山ごとのセクション（2列レイアウト） */}
+		{/* 各山セクション（英語版と同じ 5fr:7fr レイアウト） */}
 		<section className="space-y-10 md:space-y-12">
 		{mountains.map((mt) => (
 					<article
 					key={mt.id}
-					className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+					id={mt.id}
+					className="rounded-2xl border border-gray-200 bg-white shadow-sm"
 					>
-					<div className="flex flex-col gap-6 p-4 md:flex-row md:p-6">
-					{/* 左カラム：メイン画像＋サムネイル */}
-					<div className="md:w-1/2 space-y-3">
-					{/* メイン画像 */}
+					<div className="grid gap-0 md:grid-cols-[5fr,7fr]">
+					{/* 左：メイン画像＋サムネイル */}
+					<div className="p-5 md:p-6 md:pr-3 flex flex-col gap-3">
+					{/* メイン画像（英語版と同じ高さ指定） */}
 					<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
 					<Image
 					src={mt.image}
@@ -214,21 +208,21 @@ export default function MountainsPage() {
 					fill
 					className="object-cover"
 					/>
-					</div>					
-					{/* サムネイル */}
-					{mt.subImages && mt.subImages.length > 0 && (
-							<div className="grid grid-cols-3 gap-2">
+					</div>
+					
+					{/* サムネイル 3枚を均等配置（キャプションなし・画像のみ） */}
+					{mt.subImages.length > 0 && (
+							<div className="grid grid-cols-3 gap-3 w-full">
 							{mt.subImages.map((src, idx) => (
 										<div
 										key={idx}
-										className="relative aspect-[4/3] overflow-hidden rounded-lg bg-black/5"
+										className="relative w-full aspect-[1.166] rounded-md overflow-hidden bg-black/5 border border-gray-200"
 										>
 										<Image
 										src={src}
 										alt={`${mt.nameJa} サムネイル ${idx + 1}`}
 										fill
 										className="object-cover"
-										sizes="(min-width: 1024px) 150px, 33vw"
 										/>
 										</div>
 							))}
@@ -236,12 +230,12 @@ export default function MountainsPage() {
 					)}
 					</div>
 					
-					{/* 右カラム：テキスト */}
-					<div className="md:w-1/2 flex flex-col">
-					<div className="text-xs uppercase tracking-[0.18em] text-gray-500">
+					{/* 右：テキスト */}
+					<div className="p-5 md:p-6 md:pl-3 flex flex-col">
+					<div className="text-xs uppercase tracking-[0.2em] text-gray-500">
 					{mt.nameEn}
 					</div>
-					<h2 className="mt-1 text-lg font-semibold text-gray-900 md:text-xl">
+					<h2 className="mt-1 text-xl font-semibold text-gray-900">
 					{mt.nameJa}
 					</h2>
 					
@@ -271,7 +265,7 @@ export default function MountainsPage() {
 		</div>
 		</main>
 		
-		{/* ▼ フッター */}
+		{/* フッター */}
 		<footer className="border-t bg-white">
 		<div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm text-gray-600 md:flex-row md:items-center md:justify-between">
 		<div>
