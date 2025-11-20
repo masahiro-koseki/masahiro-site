@@ -176,13 +176,13 @@ export default function MountainsPage() {
 		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
 		地元の山々の紹介
 		</h1>
-		<p className="mt-6 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
+		<p className="mt-6 text-sm leading-relaxed text-gray-700 md:text-base">
 		焼石岳、栗駒山、早池峰山――。中学時代の渓流釣りをきっかけに足を運ぶようになり、
 		その稜線や沢、森の表情に魅せられてきました。
 		このページでは、写真集に登場する主な山々の概要や特徴、季節ごとの魅力を、
 		写真とともに簡単にご紹介します。
 		</p>
-		<p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700 md:text-base">
+		<p className="mt-4 text-sm leading-relaxed text-gray-700 md:text-base">
 		ここで紹介する山々は、主に岩手県とその周辺に位置しています。
 		北上山地の主峰・早池峰山、湿原と池塘が点在する焼石岳、紅葉の名所として知られる栗駒山など、
 		いずれも四季折々に表情を変えながら、山と自然の魅力を見せてくれます。
