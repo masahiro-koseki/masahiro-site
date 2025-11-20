@@ -248,7 +248,7 @@ export default function MountainsPage() {
 		</div>
 		<div className="flex flex-wrap items-center gap-4 text-xs">
 		<Link href="/" className="hover:text-gray-900">
-		Home
+		ホーム
 		</Link>
 		<Link href="/#book" className="hover:text-gray-900">
 		写真集
@@ -257,7 +257,7 @@ export default function MountainsPage() {
 		山の紹介
 		</Link>
 		<Link href="/#contact" className="hover:text-gray-900">
-		Contact
+		コンタクト
 		</Link>
 		</div>
 		</div>
