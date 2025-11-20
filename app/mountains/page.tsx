@@ -207,16 +207,14 @@ export default function MountainsPage() {
 					{/* 左カラム：メイン画像＋サムネイル */}
 					<div className="md:w-1/2 space-y-3">
 					{/* メイン画像 */}
-					<div className="relative w-full aspect-[4/3] bg-black/5 rounded-xl overflow-hidden">
+					<div className="relative w-full h-56 md:h-64 lg:h-72 bg-black/5 rounded-xl overflow-hidden">
 					<Image
 					src={mt.image}
 					alt={`${mt.nameJa} / ${mt.nameEn}`}
 					fill
 					className="object-cover"
-					sizes="(min-width: 1024px) 480px, 100vw"
 					/>
-					</div>
-					
+					</div>					
 					{/* サムネイル */}
 					{mt.subImages && mt.subImages.length > 0 && (
 							<div className="grid grid-cols-3 gap-2">
