@@ -58,9 +58,9 @@ const mountains: Mountain[] = [
 	},
 	],
 	summary:
-	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Famous for endemic alpine flowers and wide-open views.",
+	"A symbolic peak of the Kitakami Mountains and one of Japan’s 100 Famous Mountains. Known as a treasure house of alpine flora, the mountain offers panoramic views toward the Kitakami Mountains and the distant Ōu Range.",
 	character:
-	"Trails climb through forest and dwarf pine to a rocky summit. In early summer the slopes are covered with alpine plants, including several rare and endemic species. On a clear day, you can see the Kitakami Mountains and the Ou Range stretching into the distance.",
+	"Mt. Hayachine also contains some of the oldest exposed rock layers in Japan, including Paleozoic strata and extensive serpentine areas. This unique geological environment supports many rare and endemic species, such as Hayachine-usuyukisō and Nanbu-toranoo. While the southern slopes are open and grassy, the northern slopes are covered with coniferous forests of Hinoki-asunaro, Aomori-todomatsu, and Kometsuga, which extend close to the summit and reflect the harsh, cool climate of the region.",
 	bestSeason:
 	"Late June to early August for alpine flowers; late September to early October for autumn colors; clear winter days for a distant, snow-covered profile.",
 	difficulty:
