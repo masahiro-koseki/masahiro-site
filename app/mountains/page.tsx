@@ -40,7 +40,7 @@ const mountains: Mountain[] = [
 	height: "1,548 m",
 	area: "岩手県 奥州市・秋田県 東成瀬村",
 	seasons: "新緑〜初夏・紅葉・初冬",
-	image: "/images/mountains/yakeishi-kaminuma.jpg",
+	image: "/images/mountains/Yakeishi-main.jpg",
 	description:
 	"湿原や池塘、高山植物が彩る山として知られ、とくに新緑と残雪が重なる初夏の風景が印象的です。中沼周辺や山上の湿原では、静かな水面に空や雲が映り込み、柔らかな光の変化を楽しむことができます。",
 },
