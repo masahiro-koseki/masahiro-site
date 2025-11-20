@@ -100,9 +100,9 @@ const mountains: Mountain[] = [
 	},
 	],
 	summary:
-	"A mountain known for its wetlands, ponds, and rich alpine vegetation. The contrast of fresh green and lingering snow in early summer is especially striking.",
+	"Mt. Yakeishi is known for its wetlands, ponds, and colorful alpine vegetation, with beautiful scenery especially in early summer when fresh greenery contrasts with lingering snowfields.",
 	character:
-	"Around Nakanuma and Kaminuma you will find quiet highland marshes, ponds, and gentle ridges. In summer the wetlands are filled with flowers, while autumn brings warm colors to the grass and shrubs. The area is less crowded than major tourist mountains, offering a quieter experience.",
+	"Listed among Japan’s “100 Flower Mountains,” it hosts a remarkable variety of alpine plants, including large fields of Anemone narcissiflora and Geum pentapetalum. Surrounding the mountain are more than ten peaks over 1,000 meters, forming a compact range suitable for enjoyable ridge traverses. Despite its modest elevation, the mountain offers a concentrated taste of northern Japan’s wetlands, snow patches, and quiet highland landscapes.",
 	bestSeason:
 	"Late May to July for fresh green and flowers; late September to mid-October for autumn colors.",
 	difficulty:
@@ -141,9 +141,9 @@ const mountains: Mountain[] = [
 	},
 	],
 	summary:
-	"One of Tohoku’s best-known mountains for autumn foliage. The wide slopes are covered with colorful dwarf shrubs and beech forests.",
+	"Mt. Kurikoma is one of northeastern Japan’s most famous mountains for autumn colors, with broad slopes turning vivid red and gold in fall.",
 	character:
-	"The upper slopes are open and rounded, giving wide views in many directions. In autumn the entire mountain turns red, orange, and yellow, attracting many visitors. In other seasons, you can enjoy wetlands, small ponds, and quiet forest trails.",
+	"The mountain is celebrated for its dramatic fall scenery, often called “the carpet of the gods.” In summer, wetlands and ponds add a softer palette, offering different landscapes each season. Hot springs such as Sukawa Onsen lie at the mountain’s base, reflecting its volcanic origins. Mt. Kurikoma also has several traditional names: “Kurikoma” on the Miyagi side, “Sukawa-dake” on the Iwate side, and “Dainichi-dake” on the Akita side—each reflecting local history and geography.",
 	bestSeason:
 	"Late September to mid-October is the peak autumn season, but also the most crowded. Early summer offers fresh green and remaining snow patches.",
 	difficulty:
