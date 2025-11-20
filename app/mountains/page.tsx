@@ -174,6 +174,12 @@ export default function MountainsPage() {
 		<div className="grid gap-8 md:grid-cols-[3fr,2fr] items-center">
 		{/* 左：テキスト */}
 		<div>
+		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+		Mountains &amp; Nature
+		</p>
+		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+		地元の山々の紹介
+		</h1>
 		<p className="mt-0 text-sm leading-relaxed text-gray-700 md:text-base">
 		焼石岳、栗駒山、早池峰山――。中学時代の渓流釣りをきっかけに足を運ぶようになり、
 		その稜線や沢、森の表情に魅せられてきました。
