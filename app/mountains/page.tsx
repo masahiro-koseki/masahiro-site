@@ -104,7 +104,7 @@ export default function MountainsPage() {
 		<Link href="/#book" className="hover:opacity-70">
 		写真集
 		</Link>
-		<span className="text-gray-900 font-medium">山紹介（JP）</span>
+		<span className="text-gray-900 font-medium">山紹介</span>
 		</nav>
 		
 		<div className="hidden md:flex items-center gap-2">
