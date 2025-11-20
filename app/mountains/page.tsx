@@ -46,13 +46,13 @@ const mountains: Mountain[] = [
 	height: "1,548 m",
 	area: "岩手県 奥州市・秋田県 東成瀬村",
 	seasons: "新緑〜初夏・紅葉・初冬",
-	image: "/images/mountains/yakeishi-kaminuma.jpg",
+	image: "/images/mountains/Yakeishi-main.jpg",
 	description:
-	"湿原や池塘、高山植物が彩る山として知られ、とくに新緑と残雪が重なる初夏の風景が印象的です。中沼周辺や山上の湿原では、静かな水面に空や雲が映り込み、柔らかな光の変化を楽しむことができます。",
+	"焼石岳は、湿原や池塘、高山植物が彩る山として知られ、とくに新緑と残雪が重なる初夏の風景が印象的です。中沼周辺や山上の湿原では、静かな水面に空や雲が映り込み、柔らかな光の変化をゆっくり味わうことができます。「花の百名山」に数えられるほど高山植物の種類が豊富で、ハクサンイチゲやチングルマなどが一面を埋め尽くします。周囲には1,000m級の山々が10座以上連なる小さな連峰が形成されており、コースを組み合わせれば縦走も楽しめます。標高自体はそれほど高くないものの、湿原・池塘・残雪・草原がコンパクトに詰まった、東北らしい静けさと奥深さを味わえる山です。",
 	subImages: [
-	"/images/mountains/yakeishi-kaminuma-01.jpg",
-	"/images/mountains/yakeishi-honnnai-01.jpg",
-	"/images/mountains/yakeishi-honnnai-02.jpg",
+	"/images/mountains/Yakeishi-kaminuma-01.jpg",
+	"/images/mountains/Yakeishi-honnnai-01.jpg",
+	"/images/mountains/Yakeishi-honnnai-02.jpg",
 	],
 },
 {
@@ -64,7 +64,7 @@ const mountains: Mountain[] = [
 	seasons: "夏〜秋（紅葉の名所）",
 	image: "/images/mountains/kurikoma-autumn.jpg",
 	description:
-	"東北屈指の紅葉の名山。広大な裾野に草紅葉とブナ林が広がり、秋には山全体が燃えるような色彩に包まれます。夏は湿原や池塘の花が楽しめ、季節ごとに歩くたびに違った表情を見せてくれる山です。",
+	"栗駒山は東北屈指の紅葉の名山で、広い裾野に草紅葉とブナ林が広がり、秋には山全体が燃えるような色彩に包まれます。その光景は「神の絨毯」とも呼ばれ、多くの登山者や写真愛好家を惹きつけています。夏には湿原や池塘の花が楽しめ、季節ごとに歩くたびに違った表情を見せてくれる山です。山麓には須川温泉をはじめ、火山地形を活かした温泉が点在し、登山と湯めぐりを合わせて楽しめるのも魅力のひとつです。また、この山には地域によって異なる呼び名があり、宮城県側では「栗駒山」、岩手県側では「須川岳」、秋田県側では「大日岳」と呼ばれてきました。複雑な地形と気候のもと、それぞれの斜面が異なる植生と景観を持ち、多彩な表情を見せてくれます。",
 	subImages: [
 	"/images/mountains/kurikoma-sekaiyachi-01.jpg",
 	"/images/mountains/iwakagami.jpg",
