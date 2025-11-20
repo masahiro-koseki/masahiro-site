@@ -62,11 +62,11 @@ const mountains: Mountain[] = [
 	height: "1,626 m",
 	area: "宮城・岩手・秋田 三県境",
 	seasons: "夏〜秋（紅葉の名所）",
-	image: "/images/mountains/kurikoma-sekaiyach-01.jpg",
+	image: "/images/mountains/kurikoma-sekaiyachi-01.jpg",
 	description:
 	"栗駒山は東北屈指の紅葉の名山で、広い裾野に草紅葉とブナ林が広がり、秋には山全体が燃えるような色彩に包まれます。その光景は「神の絨毯」とも呼ばれ、多くの登山者や写真愛好家を惹きつけています。夏には湿原や池塘の花が楽しめ、季節ごとに歩くたびに違った表情を見せてくれる山です。\n\n山麓には須川温泉をはじめ、火山地形を活かした温泉が点在し、登山と湯めぐりを合わせて楽しめるのも魅力のひとつです。また、この山には地域によって異なる呼び名があり、宮城県側では「栗駒山」、岩手県側では「須川岳」、秋田県側では「大日岳」と呼ばれてきました。複雑な地形と気候のもと、それぞれの斜面が異なる植生と景観を持ち、多彩な表情を見せてくれます。",
 	subImages: [
-	"/images/mountains/kurikoma-sekaiyachi-01.jpg",
+	"/images/mountains/kurikoma-showako.jpg",
 	"/images/mountains/iwakagami.jpg",
 	"/images/mountains/kurikoma-autumn.jpg",
 	],
@@ -281,7 +281,7 @@ export default function MountainsPage() {
 		写真集
 		</Link>
 		<Link href="/#contact" className="hover:text-gray-900">
-		Contact
+		コンタクト
 		</Link>
 		</div>
 		</div>
