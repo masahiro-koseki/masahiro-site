@@ -107,15 +107,6 @@ export default function MountainsPage() {
 		<span className="text-gray-900 font-medium">山紹介</span>
 		</nav>
 		
-		<div className="hidden md:flex items-center gap-2">
-		<Button
-		variant="outline"
-		className="rounded-full"
-		onClick={goToEnglish}
-		>
-		EN
-		</Button>
-		</div>
 		
 		<button
 		className="md:hidden flex items-center justify-center px-2 py-2 border border-neutral-300 rounded-lg bg-white"
@@ -148,18 +139,6 @@ export default function MountainsPage() {
 				</Link>
 				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
 				山紹介
-				</div>
-				<div className="border-t border-neutral-200 px-4 py-3">
-				<Button
-				variant="outline"
-				className="w-full rounded-full"
-				onClick={() => {
-						setMenuOpen(false);
-						goToEnglish();
-				}}
-				>
-				Mountains
-				</Button>
 				</div>
 				</nav>
 		)}

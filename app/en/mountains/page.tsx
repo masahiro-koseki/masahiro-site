@@ -190,16 +190,6 @@ export default function EnMountainsPage() {
 		<span className="text-gray-900 font-medium">Mountains (EN)</span>
 		</nav>
 		
-		{/* --- PC 用 JP ボタン（日本語版山ページへ） --- */}
-		<div className="hidden md:flex items-center gap-2">
-		<Button
-		variant="outline"
-		className="rounded-full"
-		onClick={goToJapanese}
-		>
-		JP
-		</Button>
-		</div>
 		
 		{/* --- モバイル用ハンバーガーボタン --- */}
 		<button
@@ -237,19 +227,6 @@ export default function EnMountainsPage() {
 				Mountains (EN)
 				</div>
 				
-				{/* 日本語版へのリンク（ボタン） */}
-				<div className="border-t border-neutral-200 px-4 py-3">
-				<Button
-				variant="outline"
-				className="w-full rounded-full"
-				onClick={() => {
-						setMenuOpen(false);
-						goToJapanese();
-				}}
-				>
-				山の紹介（JP）
-				</Button>
-				</div>
 				</nav>
 		)}
 		</header>
