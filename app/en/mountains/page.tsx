@@ -181,13 +181,32 @@ export default function EnMountainsPage() {
 		
 		{/* --- PC 用ナビ --- */}
 		<nav className="hidden md:flex items-center gap-6 text-sm">
+		
 		<Link href="/" className="hover:opacity-70">
 		Home
 		</Link>
+		
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
-		<span className="text-gray-900 font-medium">Mountains (EN)</span>
+		
+		<Link href="/#portfolio" className="hover:opacity-70">
+		Portfolio
+		</Link>
+		
+		<span className="text-gray-900 font-medium">Mountains</span>
+		
+		<Link href="/#about" className="hover:opacity-70">
+		About
+		</Link>
+		
+		<Link href="/#news" className="hover:opacity-70">
+		News
+		</Link>
+		
+		<Link href="/#contact" className="hover:opacity-70">
+		Contact
+		</Link>
 		</nav>
 		
 		
@@ -208,25 +227,34 @@ export default function EnMountainsPage() {
 		{/* --- モバイルメニュー本体 --- */}
 		{menuOpen && (
 				<nav className="md:hidden border-t border-neutral-300 bg-white text-sm">
-				<Link
-				href="/"
-				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
-				onClick={() => setMenuOpen(false)}
-				>
+				
+				<Link href="/" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				Home
 				</Link>
-				<Link
-				href="/#book"
-				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
-				onClick={() => setMenuOpen(false)}
-				>
+				
+				<Link href="/#book" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				Photo Book
 				</Link>
 				
+				<Link href="/#portfolio" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				Portfolio
+				</Link>
+				
 				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
-				Mountains (EN)
+				Mountains
 				</div>
 				
+				<Link href="/#about" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				About
+				</Link>
+				
+				<Link href="/#news" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				News
+				</Link>
+				
+				<Link href="/#contact" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				Contact
+				</Link>
 				</nav>
 		)}
 		</header>

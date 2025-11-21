@@ -111,6 +111,8 @@ export default function MountainsPage() {
 		ポートフォリオ
 		</Link>
 		
+		<span className="text-gray-900 font-medium">山紹介</span>
+		
 		<Link href="/#about" className="hover:opacity-70">
 		プロフィール
 		</Link>
@@ -122,9 +124,7 @@ export default function MountainsPage() {
 		<Link href="/#contact" className="hover:opacity-70">
 		コンタクト
 		</Link>
-		
-		<span className="text-gray-900 font-medium">山紹介</span>
-		
+				
 		</nav>
 		
 		
@@ -156,6 +156,10 @@ export default function MountainsPage() {
 				ポートフォリオ
 				</Link>
 				
+				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
+				山紹介
+				</div>
+				
 				<Link href="/#about" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				プロフィール
 				</Link>
@@ -167,11 +171,6 @@ export default function MountainsPage() {
 				<Link href="/#contact" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				コンタクト
 				</Link>
-				
-				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
-				山紹介
-				</div>
-				
 				</nav>
 		)}
 		</header>
