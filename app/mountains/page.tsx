@@ -98,13 +98,33 @@ export default function MountainsPage() {
 		</div>
 		
 		<nav className="hidden md:flex items-center gap-6 text-sm">
+		
 		<Link href="/" className="hover:opacity-70">
 		ホーム
 		</Link>
+		
 		<Link href="/#book" className="hover:opacity-70">
 		写真集
 		</Link>
+		
+		<Link href="/#portfolio" className="hover:opacity-70">
+		ポートフォリオ
+		</Link>
+		
+		<Link href="/#about" className="hover:opacity-70">
+		プロフィール
+		</Link>
+		
+		<Link href="/#news" className="hover:opacity-70">
+		お知らせ
+		</Link>
+		
+		<Link href="/#contact" className="hover:opacity-70">
+		コンタクト
+		</Link>
+		
 		<span className="text-gray-900 font-medium">山紹介</span>
+		
 		</nav>
 		
 		
@@ -123,23 +143,35 @@ export default function MountainsPage() {
 		
 		{menuOpen && (
 				<nav className="md:hidden border-t border-neutral-300 bg-white text-sm">
-				<Link
-				href="/"
-				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
-				onClick={() => setMenuOpen(false)}
-				>
+				
+				<Link href="/" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				ホーム
 				</Link>
-				<Link
-				href="/#book"
-				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
-				onClick={() => setMenuOpen(false)}
-				>
+				
+				<Link href="/#book" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				写真集
 				</Link>
+				
+				<Link href="/#portfolio" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				ポートフォリオ
+				</Link>
+				
+				<Link href="/#about" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				プロフィール
+				</Link>
+				
+				<Link href="/#news" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				お知らせ
+				</Link>
+				
+				<Link href="/#contact" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				コンタクト
+				</Link>
+				
 				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
 				山紹介
 				</div>
+				
 				</nav>
 		)}
 		</header>
