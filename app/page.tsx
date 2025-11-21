@@ -540,7 +540,7 @@ const gallerySources = [
 				className="block w-full text-left px-4 py-2 hover:bg-neutral-100"
 				onClick={() => setMenuOpen(false)}
 				>
-				{lang === "ja" ? "山の紹介" : "Mountains (EN)"}
+				{lang === "ja" ? "山の紹介" : "Mountains"}
 				</Link>
 
 				<button
