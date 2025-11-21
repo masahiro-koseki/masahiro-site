@@ -156,6 +156,7 @@ const mountains: Mountain[] = [
 export default function EnMountainsPage() {
 	const router = useRouter();
 	const [mapOpen, setMapOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false); // ← これを追加
 	const year = new Date().getFullYear();
 	
 	const goToJapanese = () => {
@@ -172,11 +173,13 @@ export default function EnMountainsPage() {
 		{/* ▼ 英語版ナビゲーション */}
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
 		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+		{/* 左：ロゴ */}
 		<div className="flex items-center gap-2 font-semibold">
 		<GalleryVerticalEnd className="h-5 w-5" />
 		<span>Masahiro Koseki</span>
 		</div>
 		
+		{/* --- PC 用ナビ --- */}
 		<nav className="hidden md:flex items-center gap-6 text-sm">
 		<Link href="/" className="hover:opacity-70">
 		Home
@@ -184,9 +187,10 @@ export default function EnMountainsPage() {
 		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
-		<span className="text-gray-900 font-medium">Mountains</span>
+		<span className="text-gray-900 font-medium">Mountains (EN)</span>
 		</nav>
 		
+		{/* --- PC 用 JP ボタン（日本語版山ページへ） --- */}
 		<div className="hidden md:flex items-center gap-2">
 		<Button
 		variant="outline"
@@ -196,7 +200,58 @@ export default function EnMountainsPage() {
 		JP
 		</Button>
 		</div>
+		
+		{/* --- モバイル用ハンバーガーボタン --- */}
+		<button
+		className="md:hidden flex items-center justify-center px-2 py-2 border border-neutral-300 rounded-lg bg-white"
+		onClick={() => setMenuOpen((v) => !v)}
+		aria-label="menu"
+		>
+		<div className="flex flex-col gap-[4px]">
+		<span className="w-5 h-[2px] bg-neutral-800" />
+		<span className="w-5 h-[2px] bg-neutral-800" />
+		<span className="w-5 h-[2px] bg-neutral-800" />
 		</div>
+		</button>
+		</div>
+		
+		{/* --- モバイルメニュー本体 --- */}
+		{menuOpen && (
+				<nav className="md:hidden border-t border-neutral-300 bg-white text-sm">
+				<Link
+				href="/"
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => setMenuOpen(false)}
+				>
+				Home
+				</Link>
+				<Link
+				href="/#book"
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => setMenuOpen(false)}
+				>
+				Photo Book
+				</Link>
+				
+				<div className="block px-4 py-3 w-full text-left text-gray-900 font-medium">
+				Mountains (EN)
+				</div>
+				
+				{/* 日本語版へのリンク（ボタン） */}
+				<div className="border-t border-neutral-200 px-4 py-3">
+				<Button
+				variant="outline"
+				className="w-full rounded-full"
+				onClick={() => {
+						setMenuOpen(false);
+						goToJapanese();
+				}}
+				>
+				山の紹介（JP）
+				</Button>
+				</div>
+				</nav>
+		)}
 		</header>
 		
 		{/* ▼ メインコンテンツ */}
