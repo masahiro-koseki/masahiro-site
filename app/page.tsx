@@ -667,8 +667,8 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.news.title}</H2>
+		
 		<div id="NewsSection">
-
 		<NewsSection lang={lang} news={t.news} />
 		</div>
 		</Section>
@@ -685,9 +685,10 @@ const gallerySources = [
 		>
 		<H2>{t.contact.title}</H2>
 		
+		<div id="ContactSection">
 		<ContactSection texts={t.contact} />
+		</div>
 		</Section>
-		<div id="ContactSection"></div>
 
 		{lbOpen && Array.isArray(gallerySources[lbCat]) && gallerySources[lbCat][lbIndex] && (
 				<Lightbox
