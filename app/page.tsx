@@ -598,7 +598,7 @@ const gallerySources = [
         <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
-		<Section id="book" className="section-spacing scroll-mt-20">
+		<Section id="book" className="section-spacing scroll-mt-16 scroll-mt-20">
 		<H2>{t.book.lead}</H2>
 		
 		<BookSection
@@ -610,7 +610,7 @@ const gallerySources = [
 		/>
 		</Section>
 		
-		<Section id="portfolio" className="section-spacing scroll-mt-20">
+		<Section id="portfolio" className="section-spacing scroll-mt-16 scroll-mt-20">
 		<H2>{t.portfolio.lead}</H2>
 		
 		<PortfolioSection
@@ -621,17 +621,17 @@ const gallerySources = [
 		/>
 		</Section>
 
-		<Section id="about" className="section-spacing scroll-mt-20">
+		<Section id="about" className="section-spacing scroll-mt-16 scroll-mt-20">
 		<H2>{t.about.title}</H2>
 		<AboutSection lang={lang} about={t.about} />
 		</Section>
 
-		<Section id="news" className="section-spacing scroll-mt-20">
+		<Section id="news" className="section-spacing scroll-mt-16 scroll-mt-20">
 		<H2>{t.news.title}</H2>
 		<NewsSection lang={lang} news={t.news} />
 		</Section>
 
-		<Section id="contact" className="section-spacing scroll-mt-20">
+		<Section id="contact" className="section-spacing scroll-mt-16 scroll-mt-20">
 		<H2>{t.contact.title}</H2>
 		<ContactSection texts={t.contact} />
 		</Section>
