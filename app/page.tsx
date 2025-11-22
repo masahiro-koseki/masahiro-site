@@ -672,6 +672,7 @@ const gallerySources = [
 		<H2>{t.news.title}</H2>
 		
 		<NewsSection lang={lang} news={t.news} />
+		<div id="NewsSection"></div>
 		</Section>
 		
 		
@@ -684,7 +685,6 @@ const gallerySources = [
 				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
-		<div id="NewsSection"></div>
 		
 		<H2>{t.contact.title}</H2>
 		
