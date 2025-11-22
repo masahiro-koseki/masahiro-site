@@ -186,7 +186,7 @@ export default function EnMountainsPage() {
 		Home
 		</Link>
 		
-		<Link href="/#BookSection" className="hover:opacity-70">
+		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
 		
@@ -232,7 +232,7 @@ export default function EnMountainsPage() {
 				Home
 				</Link>
 				
-				<Link href="/#book" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				<Link href="/#BookSection" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				Photo Book
 				</Link>
 				
