@@ -32,7 +32,7 @@ export default function NewsSection({ lang, news }: NewsSectionProps) {
 	
 	const latestNews = [...news.items]
 	.sort((a, b) => b.date.localeCompare(a.date))
-	.slice(0, 4);
+	.slice(0, 10);
 	
 	return (
 		<>
