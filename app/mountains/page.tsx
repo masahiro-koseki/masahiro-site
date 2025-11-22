@@ -185,7 +185,7 @@ export default function MountainsPage() {
 		<p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
 		Mountains &amp; Nature
 		</p>
-		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+		<h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-3xl">
 		地元の山々の紹介
 		</h1>
 		
