@@ -686,8 +686,8 @@ const gallerySources = [
 		<H2>{t.contact.title}</H2>
 		
 		<ContactSection texts={t.contact} />
-		<div id="ContactSection"></div>
 		</Section>
+		<div id="ContactSection"></div>
 
 		{lbOpen && Array.isArray(gallerySources[lbCat]) && gallerySources[lbCat][lbIndex] && (
 				<Lightbox
