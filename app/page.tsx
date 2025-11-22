@@ -631,11 +631,11 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.portfolio.lead}</H2>
-		<div id="PortfolioSection"></div>
 		
 		<PortfolioSection
 		lang={lang}
 		desc={t.portfolio.desc}
+		<div id="PortfolioSection"></div>
 		categories={t.portfolio.categories}
 		openGallery={openGallery}
 		/>
