@@ -630,9 +630,9 @@ const gallerySources = [
 				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
-		<div id="PortfolioSection">
 		<H2>{t.portfolio.lead}</H2>
 		
+		<div id="PortfolioSection">
 		<PortfolioSection
 		lang={lang}
 		desc={t.portfolio.desc}
