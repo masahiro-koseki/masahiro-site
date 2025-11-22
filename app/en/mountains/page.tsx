@@ -527,7 +527,7 @@ export default function EnMountainsPage() {
 		</Link>
 		</div>
 		</div>
-		<p className="mt-8 text-center text-[11px] text-gray-400 italic">
+		<p className="mt-0 mb-4 text-center text-[11px] text-gray-400 italic">
 		* Some descriptions on this page were prepared with assistance from ChatGPT
 		and may include inaccuracies.
 		</p>

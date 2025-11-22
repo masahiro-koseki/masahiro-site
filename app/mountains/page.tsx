@@ -310,7 +310,7 @@ export default function MountainsPage() {
 		</Link>
 		</div>
 		</div>
-		<p className="mt-0 mb-8 text-center text-[11px] text-gray-400 italic">
+		<p className="mt-0 mb-4 text-center text-[11px] text-gray-400 italic">
 		※ 本ページの説明文は、著者の記録と写真に基づき、ChatGPT のアシスタンスを受けて作成しています。
 		内容には不正確な情報が含まれる可能性があります。
 		</p>
