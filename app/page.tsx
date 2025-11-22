@@ -313,6 +313,13 @@ const gallerySources = [
 	
 	const NEWS_ITEMS = [
 	{
+		date: "2025-11-21",
+		title_ja: "Websiteに山の紹介ページ追加",
+		title_en: "Mountain Introduction Pages Added to Website",
+		body_ja: "写真集に登場する主な山々の紹介ページを日本語版と訪日客または海外の方のために英語版も作成しました。",
+		body_en: "New mountain introduction pages have been added to the website, featuring detailed information in both Japanese and English for domestic visitors and international audiences."
+	},
+	{
 		date: "2025-11-16",
 		title_ja: "Website完成・公開",
 		title_en: "Website Completed & Officially Launched",
