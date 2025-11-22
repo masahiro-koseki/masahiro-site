@@ -622,7 +622,7 @@ const gallerySources = [
 		
 		
 		{/* ---- PORTFOLIO ---- */}
-		<div id="PortfolioSection">
+		<div id="PortfolioSection"></div>
 		<Section
 		id="portfolio"
 		className={`section-spacing ${
@@ -639,7 +639,6 @@ const gallerySources = [
 		categories={t.portfolio.categories}
 		openGallery={openGallery}
 		/>
-		</div>
 		</Section>
 		
 		
