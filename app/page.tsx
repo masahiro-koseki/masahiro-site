@@ -631,8 +631,8 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.portfolio.lead}</H2>
-		<div id="PortfolioSection">
 		
+		<div id="PortfolioSection">
 		<PortfolioSection
 		lang={lang}
 		desc={t.portfolio.desc}
@@ -653,8 +653,8 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.about.title}</H2>
-		<div id="AboutSection">
 		
+		<div id="AboutSection">
 		<AboutSection lang={lang} about={t.about} />
 		</div>
 		</Section>
