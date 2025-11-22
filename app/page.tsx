@@ -653,8 +653,10 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.about.title}</H2>
-		<div id="AboutSection"></div>
+		<div id="AboutSection">
+		
 		<AboutSection lang={lang} about={t.about} />
+		</div>
 		</Section>
 		
 		
