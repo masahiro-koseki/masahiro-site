@@ -604,7 +604,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[80px] md:scroll-mt-20"
+				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
 		<div id="BookSection">
@@ -631,11 +631,11 @@ const gallerySources = [
 		}`}
 		>
 		<H2>{t.portfolio.lead}</H2>
+		<div id="PortfolioSection"></div>
 		
 		<PortfolioSection
 		lang={lang}
 		desc={t.portfolio.desc}
-		<div id="PortfolioSection"></div>
 		categories={t.portfolio.categories}
 		openGallery={openGallery}
 		/>
@@ -648,10 +648,11 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[80px] md:scroll-mt-20"
+				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.about.title}</H2>
+		<div id="AboutSection"></div>
 		<AboutSection lang={lang} about={t.about} />
 		</Section>
 		

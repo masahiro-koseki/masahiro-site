@@ -244,7 +244,7 @@ export default function EnMountainsPage() {
 				Mountains
 				</div>
 				
-				<Link href="/#about" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				<Link href="/#AboutSection" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				About
 				</Link>
 				
