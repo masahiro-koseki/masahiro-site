@@ -666,7 +666,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-20 md:scroll-mt-20"
-				: "scroll-mt-16 md:scroll-mt-20"
+				: "scroll-mt-0 md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.news.title}</H2>
