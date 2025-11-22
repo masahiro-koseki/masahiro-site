@@ -604,7 +604,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[140px] md:scroll-mt-20"
+				: "scroll-mt-[40px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.book.lead}</H2>
