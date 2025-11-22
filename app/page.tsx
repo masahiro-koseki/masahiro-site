@@ -609,6 +609,7 @@ const gallerySources = [
 		>
 		<H2>{t.book.lead}</H2>
 		
+		<div id="BookSection">
 		<BookSection
 		lang={lang}
 		book={t.book}
@@ -616,6 +617,7 @@ const gallerySources = [
 		amazonJp={AMAZON_JP}
 		amazonEn={AMAZON_EN}
 		/>
+		</div>
 		</Section>
 		
 		
