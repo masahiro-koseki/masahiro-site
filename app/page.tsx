@@ -604,7 +604,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[-40px] md:scroll-mt-20"
+				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.book.lead}</H2>
@@ -625,7 +625,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[160px] md:scroll-mt-20"
+				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.portfolio.lead}</H2>
@@ -645,7 +645,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[180px] md:scroll-mt-20"
+				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.about.title}</H2>
@@ -659,7 +659,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[200px] md:scroll-mt-20"
+				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.news.title}</H2>
@@ -673,7 +673,7 @@ const gallerySources = [
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[220px] md:scroll-mt-20"
+				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.contact.title}</H2>
