@@ -24,8 +24,6 @@ body {
 /* ==== 共通レイアウト・タイポ調整 ==== */
 @layer utilities {
   /* セクション間の余白（少し狭めに統一） */
-  .section-spacing {
-		@apply mt-4 md:mt-8; /* 4=モバイル16px / 8=PC32px 相当 */
   }
 
   /* セクションタイトル（H2想定） */
