@@ -598,8 +598,6 @@ const gallerySources = [
         <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
-		<div id="book-top"></div>
-		
 		<Section id="book" className="section-spacing">
 		<H2>{t.book.lead}</H2>
 		

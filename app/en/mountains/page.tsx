@@ -186,7 +186,7 @@ export default function EnMountainsPage() {
 		Home
 		</Link>
 		
-		<Link href="/#book-top" className="hover:opacity-70">
+		<Link href="/#book" className="hover:opacity-70">
 		Photo Book
 		</Link>
 		
