@@ -516,13 +516,13 @@ export default function EnMountainsPage() {
 		<Link href="/" className="hover:text-gray-900">
 		Home
 		</Link>
-		<Link href="/#book" className="hover:text-gray-900">
+		<Link href="/#BookSection" className="hover:text-gray-900">
 		Photo Book
 		</Link>
 		<Link href="/en/mountains" className="hover:text-gray-900">
 		Mountains
 		</Link>
-		<Link href="/?lang=en#contact" className="hover:text-gray-900">
+		<Link href="/?lang=en#ContactSection" className="hover:text-gray-900">
 		Contact
 		</Link>
 		</div>
