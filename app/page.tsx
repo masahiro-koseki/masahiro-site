@@ -671,9 +671,8 @@ const gallerySources = [
 		>
 		<H2>{t.news.title}</H2>
 		
-		<div id="NewsSection">
+		<div id="NewsSection"></div>
 		<NewsSection lang={lang} news={t.news} />
-		</div>
 		</Section>
 		
 		
