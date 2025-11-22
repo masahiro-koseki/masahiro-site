@@ -236,7 +236,7 @@ export default function EnMountainsPage() {
 				Photo Book
 				</Link>
 				
-				<Link href="/#portfolio" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				<Link href="/#PortfolioSection" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				Portfolio
 				</Link>
 				

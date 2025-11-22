@@ -607,9 +607,9 @@ const gallerySources = [
 				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
+		<div id="BookSection">
 		<H2>{t.book.lead}</H2>
 		
-		<div id="BookSection">
 		<BookSection
 		lang={lang}
 		book={t.book}
@@ -630,6 +630,7 @@ const gallerySources = [
 				: "scroll-mt-[80px] md:scroll-mt-20"
 		}`}
 		>
+		<div id="PortfolioSection">
 		<H2>{t.portfolio.lead}</H2>
 		
 		<PortfolioSection
@@ -638,6 +639,7 @@ const gallerySources = [
 		categories={t.portfolio.categories}
 		openGallery={openGallery}
 		/>
+		</div>
 		</Section>
 		
 		
