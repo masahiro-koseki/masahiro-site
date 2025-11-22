@@ -622,15 +622,15 @@ const gallerySources = [
 		
 		
 		{/* ---- PORTFOLIO ---- */}
-		<div id="PortfolioSection"></div>
 		<Section
 		id="portfolio"
 		className={`section-spacing ${
 				lang === "ja"
 				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[80px] md:scroll-mt-20"
+				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
+		<div id="PortfolioSection"></div>
 		<H2>{t.portfolio.lead}</H2>
 		
 		<PortfolioSection
