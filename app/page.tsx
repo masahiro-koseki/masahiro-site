@@ -354,7 +354,7 @@ const gallerySources = [
       ({
         ja: {
           nav: { home: "ホーム", book: "写真集", portfolio: "ポートフォリオ", about: "プロフィール", news: "お知らせ", contact: "お問い合わせ" },
-					hero: { title: "山と自然に魅せられて", subtitle: "東北・岩手の山と四季を写した日本の自然風景写真。", poem: "朝の光に導かれ、山の息づかいに心を寄せる。静けさに包まれた森の気配や、移ろう季節の色を感じながら、出会った瞬間のままにそっと写しとった記録。", cta1: "写真集を見る", cta2: "作品をみる" },
+					hero: { title: "山と自然に魅せられて", subtitle: "東北・岩手の山と四季を写した日本の自然風景写真。", poem: "朝の光に導かれ、山の息づかいに心を寄せる。<br />静けさに包まれた森の気配や、移ろう季節の色を感じながら、出会った瞬間のままにそっと写しとった記録。", cta1: "写真集を見る", cta2: "作品をみる" },
           book: {
             lead: "写真集『山と自然に魅せられて』",
             desc: "焼石岳、栗駒山、早池峰山――地元の山と沢で出会った光景を、静けさと臨場感を大切に編み上げた一冊。",
@@ -386,7 +386,7 @@ const gallerySources = [
         },
         en: {
           nav: { home: "Home", book: "Photo Book", portfolio: "Portfolio", about: "About", news: "News", contact: "Contact" },
-					hero: { title: "Fascinated by Mountains and Nature", subtitle: "A Landscape Photography Journey through the Mountains and Four Seasons of Northern Japan.", poem: "Guided by the morning light, I lean into the quiet breath of the mountains.Surrounded by the forest’s stillness and the shifting colors of the seasons, these photographs gently preserve the moments just as they appeared.", cta1: "View Photo Book", cta2: "View Portfolio" },
+					hero: { title: "Fascinated by Mountains and Nature", subtitle: "A Landscape Photography Journey through the Mountains and Four Seasons of Northern Japan.", poem: "Guided by the morning light, I lean into the quiet breath of the mountains.<br />Surrounded by the forest’s stillness and the shifting colors of the seasons, these photographs gently preserve the moments just as they appeared.", cta1: "View Photo Book", cta2: "View Portfolio" },
           book: {
 						lead: "Photo Book ｢ Fascinated by Mountains and Nature 」",
             desc: "Yakeishidake, Kurikomayama, and Hayachine—quiet moments gathered from home mountains and streams.",
