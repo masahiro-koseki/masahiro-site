@@ -43,7 +43,7 @@ export default function BookSection({
 	return (
 		<>
 		{/* リードテキスト＋説明 */}
-		<p className="mt-2 text-neutral-700 section-body max-w-3xl">
+		<p className="mt-2 text-neutral-700 section-body">
 		{lang === "ja"
 			? "夜明け前の静かな登山道、沢音の響く森、霧に包まれた湿原――そんな瞬間を一冊にまとめました。"
 		: "Before dawn on the trail, the sound of streams in the forest, wetlands wrapped in fog — this book gathers those quiet moments into one volume."}
