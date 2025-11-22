@@ -49,7 +49,7 @@ export default function BookSection({
 		: "Before dawn on the trail, the sound of streams in the forest, wetlands wrapped in fog — this book gathers those quiet moments into one volume."}
 		</p>
 		
-		<p className="mt-3 text-neutral-600 section-body max-w-3xl">
+		<p className="mt-3 text-neutral-600 section-body">
 		{book.desc}
 		</p>
 		
