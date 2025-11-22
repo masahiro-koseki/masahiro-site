@@ -603,7 +603,7 @@ const gallerySources = [
 		id="book"
 		className={`section-spacing ${
 				lang === "ja"
-				? "scroll-mt-16 md:scroll-mt-20"
+				? "scroll-mt-20 md:scroll-mt-20"
 				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
@@ -626,7 +626,7 @@ const gallerySources = [
 		id="portfolio"
 		className={`section-spacing ${
 				lang === "ja"
-				? "scroll-mt-16 md:scroll-mt-20"
+				? "scroll-mt-20 md:scroll-mt-20"
 				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
@@ -647,7 +647,7 @@ const gallerySources = [
 		id="about"
 		className={`section-spacing ${
 				lang === "ja"
-				? "scroll-mt-16 md:scroll-mt-20"
+				? "scroll-mt-20 md:scroll-mt-20"
 				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
@@ -662,11 +662,12 @@ const gallerySources = [
 		id="news"
 		className={`section-spacing ${
 				lang === "ja"
-				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[80px] md:scroll-mt-20"
+				? "scroll-mt-20 md:scroll-mt-20"
+				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.news.title}</H2>
+		<div id="NewsSection"></div>
 		<NewsSection lang={lang} news={t.news} />
 		</Section>
 		
@@ -676,11 +677,12 @@ const gallerySources = [
 		id="contact"
 		className={`section-spacing ${
 				lang === "ja"
-				? "scroll-mt-16 md:scroll-mt-20"
-				: "scroll-mt-[80px] md:scroll-mt-20"
+				? "scroll-mt-20 md:scroll-mt-20"
+				: "scroll-mt-16 md:scroll-mt-20"
 		}`}
 		>
 		<H2>{t.contact.title}</H2>
+		<div id="ContactSection"></div>
 		<ContactSection texts={t.contact} />
 		</Section>
 

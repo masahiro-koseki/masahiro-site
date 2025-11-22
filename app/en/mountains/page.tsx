@@ -248,11 +248,11 @@ export default function EnMountainsPage() {
 				About
 				</Link>
 				
-				<Link href="/#news" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				<Link href="/#NewsSection" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				News
 				</Link>
 				
-				<Link href="/#contact" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
+				<Link href="/#ContactSection" className="block px-4 py-3 w-full text-left hover:bg-neutral-100" onClick={() => setMenuOpen(false)}>
 				Contact
 				</Link>
 				</nav>
