@@ -157,7 +157,16 @@ export default function BookSection({
 		</p>
 		</CardContent>
 		</Card>
-		</div>		
+		</div>
+		
+		{/* カラーマネジメント注意書き */}
+		<p className="mt-6 text-xs text-neutral-500 leading-relaxed">
+		{lang === "ja"
+			? "※ご覧の環境（モニター・スマートフォン）によって、明るさや色味が印刷版と異なる場合があります。印刷版では紙の質感に合わせた自然なトーンで再現しています。"
+			: "Please note that colors and brightness may vary depending on your monitor or mobile device. The printed edition is reproduced with tones optimized for paper."
+		}
+		</p>
+
 		{/* セクション下の区切り線：下方向の余白を抑える */}
 		<div className="w-full h-px bg-neutral-200 mt-8 mb-0" />
 		</>
