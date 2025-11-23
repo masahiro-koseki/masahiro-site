@@ -43,7 +43,7 @@ const mountains: Mountain[] = [
 	id: "yakeishi",
 	nameJa: "焼石岳",
 	nameEn: "Mt. Yakeishi",
-	height: "1,548 m",
+	height: "1,547 m",
 	area: "岩手県 奥州市・秋田県 東成瀬村",
 	seasons: "新緑〜初夏・紅葉・初冬",
 	image: "/images/mountains/Yakeishi-main.jpg",

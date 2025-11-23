@@ -71,7 +71,7 @@ const mountains: Mountain[] = [
 {
 	id: "yakeishi",
 	name: "Mt. Yakeishi",
-	height: "1,548 m",
+	height: "1,547 m",
 	area: "Oshu, Iwate & Higashinaruse, Akita Prefecture",
 	mainImage: "/images/mountains/Yakeishi-main.jpg",
 	mainCaption:
