@@ -706,35 +706,79 @@ const gallerySources = [
 				/>
 		)}
 
-      <footer className="border-t">
+		<footer className="border-t">
 		<Section id="footer" className="section-spacing py-10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-neutral-600">
-              {t.footer.rights} — {new Date().getFullYear()}
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-600">
-              <span>{t.footer.lang}:</span>
-              <button onClick={() => changeLang("ja")} className={`px-2 py-1 rounded-full ${lang === "ja" ? "bg-neutral-900 text-white" : "bg-neutral-100"}`}>
-                {t.footer.jp}
-              </button>
-              <button onClick={() => changeLang("en")} className={`px-2 py-1 rounded-full ${lang === "en" ? "bg-neutral-900 text-white" : "bg-neutral-100"}`}>
-                {t.footer.en}
-              </button>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 mt-4 text-neutral-600 text-sm">
-            <a href="https://www.instagram.com/mkoseki423/" target="_blank" className="underline underline-offset-4 hover:opacity-70" rel="noopener noreferrer">
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/mkoseki/" target="_blank" className="underline underline-offset-4 hover:opacity-70" rel="noopener noreferrer">
-              Facebook
-            </a>
-            <a href="https://www.threads.com/@mkoseki423" target="_blank" className="underline underline-offset-4 hover:opacity-70" rel="noopener noreferrer">
-              Threads
-            </a>
-          </div>
-			</Section>
-			</footer>
+		<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+		<div className="text-sm text-neutral-600">
+		{t.footer.rights} — {new Date().getFullYear()}
+		</div>
+		<div className="flex items-center gap-2 text-sm text-neutral-600">
+		<span>{t.footer.lang}:</span>
+		<button
+		onClick={() => changeLang("ja")}
+		className={`px-2 py-1 rounded-full ${
+				lang === "ja" ? "bg-neutral-900 text-white" : "bg-neutral-100"
+		}`}
+		>
+		{t.footer.jp}
+		</button>
+		<button
+		onClick={() => changeLang("en")}
+		className={`px-2 py-1 rounded-full ${
+				lang === "en" ? "bg-neutral-900 text-white" : "bg-neutral-100"
+		}`}
+		>
+		{t.footer.en}
+		</button>
+		</div>
+		</div>
+		
+		{/* ▼▼▼ 関連サイトリンク（追加部分） ▼▼▼ */}
+		<div className="flex items-center gap-6 mt-6 text-neutral-600 text-sm">
+		<a
+		href="https://www.masahiro-koseki.com"
+		className="underline underline-offset-4 hover:opacity-70"
+		>
+		Masahiro Koseki Photography
+		</a>
+		
+		<a
+		href="https://books.masahiro-koseki.com"
+		className="underline underline-offset-4 hover:opacity-70"
+		>
+		Masahiro Books（絵本・塗り絵）
+		</a>
+		</div>
+		{/* ▲▲▲ 関連サイトリンク（ここまで） ▲▲▲ */}
+		
+		<div className="flex items-center gap-4 mt-4 text-neutral-600 text-sm">
+		<a
+		href="https://www.instagram.com/mkoseki423/"
+		target="_blank"
+		className="underline underline-offset-4 hover:opacity-70"
+		rel="noopener noreferrer"
+		>
+		Instagram
+		</a>
+		<a
+		href="https://www.facebook.com/mkoseki/"
+		target="_blank"
+		className="underline underline-offset-4 hover:opacity-70"
+		rel="noopener noreferrer"
+		>
+		Facebook
+		</a>
+		<a
+		href="https://www.threads.com/@mkoseki423"
+		target="_blank"
+		className="underline underline-offset-4 hover:opacity-70"
+		rel="noopener noreferrer"
+		>
+		Threads
+		</a>
+		</div>
+		</Section>
+		</footer>
 		</div>
 	);
 }
