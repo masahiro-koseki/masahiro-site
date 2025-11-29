@@ -746,7 +746,7 @@ const gallerySources = [
 		href="https://books.masahiro-koseki.com"
 		className="underline underline-offset-4 hover:opacity-70"
 		>
-		Masahiro Books（絵本・塗り絵）制作中
+		Masahiro Books（絵本・塗り絵）
 		</a>
 		</div>
 		{/* ▲▲▲ 関連サイトリンク（ここまで） ▲▲▲ */}
