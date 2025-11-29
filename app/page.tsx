@@ -18,7 +18,7 @@ import Link from "next/link";
 
 // --- Amazon Links ---
 const AMAZON_JP = "https://www.amazon.co.jp/dp/B0G1CNPJ1L";
-const AMAZON_EN = "https://www.amazon.com/Fascinated-Mountains-Nature-Landscape-Photography/dp/B0G1GZVWKW?ref_=ast_author_dp&th=1&psc=1";
+const AMAZON_EN = "https://www.amazon.com/dp/B0G1GZVWKW";
 
 const LANG_KEY = "mk_lang";
 type Lang = "ja" | "en";
