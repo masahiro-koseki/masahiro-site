@@ -19,7 +19,7 @@ export default function PrintsPage() {
 		</section>
 
 		{/* Hero */}
-		<section className="max-w-5xl mx-auto px-4 py-16 text-center">
+		<section className="max-w-5xl mx-auto px-4 py-8 text-center">
 		<p className="text-sm tracking-wide text-neutral-500 uppercase">
 		Prints
 		</p>
@@ -121,8 +121,8 @@ export default function PrintsPage() {
 		<Image
 		src="/images/forest-stream-logo.png"
 		alt="Forest & Stream Photography"
-		width={180}
-		height={180}
+		width={220}
+		height={220}
 		className="opacity-90"
 		/>
 		</div>
