@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 
-const GA_ID = G-B3W4BL798N;
+const GA_ID = "G-B3W4BL798N";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://masahiro-koseki.com"),
