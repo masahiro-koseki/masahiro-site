@@ -85,7 +85,7 @@ export const PRINT_WORKS: PrintWork[] = [
 {
 	id: "morning-beech-forest-in-spring-light",
 	titleEn: "Morning Beech Forest in Spring Light",
-	titleJa: "春の光を浴びて萌葱色に輝くブナの森",
+	titleJa: "春の光を浴びて輝くブナの森",
 	locationEn: "Near Geto Hot Springs, Iwate, Japan",
 	locationJa: "岩手県 北上市・夏油温泉近く",
 	descriptionEn:

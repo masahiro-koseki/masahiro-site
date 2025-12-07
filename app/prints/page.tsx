@@ -82,7 +82,7 @@ export default function PrintsPage() {
 					</div>
 					
 					{/* Button */}
-					<div className="mt-4 pt-2 border-t border-neutral-100">
+					<div className="mt-4 pt-2 border-t border-neutral-100 flex justify-center">
 					<Link
 					href={work.shopifyUrl}
 					target="_blank"
