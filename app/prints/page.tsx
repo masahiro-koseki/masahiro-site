@@ -23,6 +23,20 @@ export default function PrintsPage() {
 		<p className="text-sm tracking-wide text-neutral-500 uppercase">
 		Prints
 		</p>
+		
+		{/* ▼ ロゴ表示 */}
+		<div className="flex justify-center mb-10">
+		<Image
+		src="/images/forest-stream-logo.png"
+		alt="Forest & Stream Photography"
+		width={220}          // 好みで調整
+		height={220}
+		className="opacity-90"
+		priority
+		/>
+		</div>
+		{/* ▲ ロゴ表示ここまで */}
+
 		<h1 className="mt-2 text-3xl md:text-4xl font-semibold text-neutral-900">
 		Fine Art Prints
 		</h1>
@@ -101,6 +115,19 @@ export default function PrintsPage() {
 		{/* Purchase Guide */}
 		<section className="border-t border-neutral-200 bg-white">
 		<div className="max-w-5xl mx-auto px-4 py-12">
+		
+		{/* ▼ ロゴ */}
+		<div className="flex justify-center mb-8">
+		<Image
+		src="/images/forest-stream-logo.png"
+		alt="Forest & Stream Photography"
+		width={180}
+		height={180}
+		className="opacity-90"
+		/>
+		</div>
+		{/* ▲ ロゴ */}
+
 		<h2 className="text-xl font-semibold text-neutral-900">
 		About the prints / プリントについて
 		</h2>
