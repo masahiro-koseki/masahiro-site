@@ -37,7 +37,7 @@ export default function PrintsPage() {
 		</div>
 		{/* ▲ ロゴ表示ここまで */}
 
-		<h1 className="mt-2 text-3xl md:text-4xl font-semibold text-neutral-700">
+		<h1 className="mt-2 text-3xl md:text-4xl font-medium text-neutral-700">
 		Fine Art Prints
 		</h1>
 		<p className="mt-4 text-neutral-700 leading-relaxed">
@@ -73,7 +73,7 @@ export default function PrintsPage() {
 					
 					<div className="p-4 flex flex-col flex-1">
 					{/* Titles */}
-					<h2 className="font-semibold text-neutral-700 leading-tight">
+					<h2 className="font-medium text-neutral-700 leading-tight">
 					{work.titleEn}
 					</h2>
 					<p className="text-sm text-neutral-600">{work.titleJa}</p>
