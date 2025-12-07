@@ -114,10 +114,10 @@ export default function PrintsPage() {
 		
 		{/* Purchase Guide */}
 		<section className="border-t border-neutral-200 bg-white">
-		<div className="max-w-5xl mx-auto px-4 py-12">
+		<div className="max-w-5xl mx-auto px-4 py-4">
 		
 		{/* ▼ ロゴ */}
-		<div className="flex justify-center mb-8">
+		<div className="flex justify-center mb-0">
 		<Image
 		src="/images/forest-stream-logo.png"
 		alt="Forest & Stream Photography"
