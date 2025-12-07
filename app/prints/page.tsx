@@ -19,7 +19,7 @@ export default function PrintsPage() {
 		</section>
 
 		{/* Hero */}
-		<section className="max-w-5xl mx-auto px-4 py-8 text-center">
+		<section className="max-w-5xl mx-auto px-4 pt-8 pb-16 text-center">
 		<p className="text-sm tracking-wide text-neutral-500 uppercase">
 		Prints
 		</p>
