@@ -15,6 +15,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { GalleryVerticalEnd, BookOpen, Camera, Mail, ExternalLink, ArrowRight, MapPin, Calendar, Globe } from "lucide-react";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
+import { pageview } from "@/lib/gtag";
+
 
 // --- Amazon Links ---
 const AMAZON_JP = "https://www.amazon.co.jp/dp/B0G1CNPJ1L";
@@ -132,6 +135,16 @@ export default function Page() {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbCat, setLbCat] = useState(0);
   const [lbIndex, setLbIndex] = useState(0);
+	
+  const pathname = usePathname();
+	
+	useEffect(() => {
+			const pathname = usePathname();
+			
+			useEffect(() => {
+					if (!pathname) return;
+					pageview(pathname);
+			}, [pathname]);
 
 	
 	useEffect(() => {
