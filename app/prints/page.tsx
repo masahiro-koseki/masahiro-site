@@ -25,12 +25,12 @@ export default function PrintsPage() {
 		</p>
 		
 		{/* ▼ ロゴ表示 */}
-		<div className="flex justify-center mb-10">
+		<div className="flex justify-center mb-0">
 		<Image
 		src="/images/forest-stream-logo.png"
 		alt="Forest & Stream Photography"
-		width={220}          // 好みで調整
-		height={220}
+		width={240}          // 好みで調整
+		height={240}
 		className="opacity-90"
 		priority
 		/>
@@ -46,7 +46,7 @@ export default function PrintsPage() {
 		are available as high-quality fine art prints.
 		</p>
 		<p className="mt-2 text-neutral-700 leading-relaxed">
-		写真集『山と自然に魅せられて』から選んだ作品を、高品質なアートプリントとしてお届けします。
+		写真集『山と自然に魅せられて』から選んだ作品を、高品質なアートプリントとしてお届けします。<br />
 		静かな渓流や森の光景を、お部屋の中でもゆっくりと眺めていただけたら嬉しく思います。
 		</p>
 		</section>
