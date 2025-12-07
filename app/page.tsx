@@ -480,6 +480,9 @@ const gallerySources = [
 		<button onClick={() => scrollTo("portfolio")} className="hover:opacity-70">
 		{t.nav.portfolio}
 		</button>
+		<Link href="/prints" className="hover:opacity-70">
+		{lang === "ja" ? "プリント" : "Prints"}
+		</Link>
 		<Link href={mountainsHref} className="hover:opacity-70">
 		{lang === "ja" ? "山の紹介" : "Mountains"}
 		</Link>		
@@ -542,6 +545,14 @@ const gallerySources = [
 				{t.nav.portfolio}
 				</button>
 				
+				<Link
+				href="/prints"
+				className="block px-4 py-3 w-full text-left hover:bg-neutral-100"
+				onClick={() => setMenuOpen(false)}
+				>
+				{lang === "ja" ? "プリント" : "Prints"}
+				</Link>
+
 				<Link
 				href={mountainsHref}
 				className="block w-full text-left px-4 py-2 hover:bg-neutral-100"
