@@ -139,13 +139,10 @@ export default function Page() {
   const pathname = usePathname();
 	
 	useEffect(() => {
-			const pathname = usePathname();
-			
-			useEffect(() => {
-					if (!pathname) return;
-					pageview(pathname);
-			}, [pathname]);
-		}
+			if (!pathname) return;
+			pageview(pathname);
+	}, [pathname]);
+
 	
 	useEffect(() => {
 			if (!lbOpen) return;
