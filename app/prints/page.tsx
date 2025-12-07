@@ -32,8 +32,8 @@ export default function PrintsPage() {
 		</section>
 		
 		{/* Works grid */}
-		<section className="max-w-6xl mx-auto px-4 pb-16">
-		<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+		<section className="max-w-7xl mx-auto px-4 pb-16">
+		<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-5">
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
