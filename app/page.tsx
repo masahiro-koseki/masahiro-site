@@ -313,6 +313,14 @@ const gallerySources = [
 	
 	const NEWS_ITEMS = [
 	{
+		date: "2025-12-07",
+		title_ja: "Websiteにプリント販売ページを追加",
+		title_en: "Print Sales Page Added to Website",
+		body_ja: "写真集『山と自然に魅せられて』から選んだ作品を、高品質なアートプリントとしてご注文いただける専用ページを新たに公開しました。ブランド名「Forest & Stream Photography」として、静かな渓流や森の光景をお部屋で楽しめるプリント作品をご紹介しています。",
+		body_en: "A new print sales page is now available, featuring selected works from my photo book *Fascinated by Mountains and Nature* as high-quality fine art prints. Under the name “Forest & Stream Photography,” this page offers a curated collection of tranquil forest and stream landscapes for your living space."
+	},
+
+	{
 		date: "2025-11-21",
 		title_ja: "Websiteに山の紹介ページ追加",
 		title_en: "Mountain Introduction Pages Added to Website",
