@@ -119,7 +119,7 @@ export default function PrintsPage() {
 		
 		<div className="mt-6">
 		<Link
-		href="https://YOUR-SHOPIFY-STORE.myshopify.com"
+		href="https://prints.masahiro-koseki.com"
 		target="_blank"
 		rel="noopener noreferrer"
 		className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium border border-neutral-800 text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors"
