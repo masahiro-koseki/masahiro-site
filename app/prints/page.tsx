@@ -37,14 +37,14 @@ export default function PrintsPage() {
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
-					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col"
+					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col max-w-xs mx-auto"
 					>
-					<div className="relative aspect-[4/3]">
+					<div className="relative aspect-[3/2]">
 					<Image
 					src={work.imageSrc}
 					alt={`${work.titleEn} / ${work.titleJa}`}
 					fill
-					className="object-cover"
+					className="object-contain"
 					sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
 					/>
 					</div>
