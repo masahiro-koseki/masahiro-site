@@ -43,22 +43,35 @@ export default function PrintsPage() {
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
-					className="
-					bg-white shadow-sm rounded-lg overflow-hidden
-					flex flex-col max-w-xs mx-auto h-full
+					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col max-w-xs mx-auto
 					transform transition duration-200 ease-out
-					hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02]
-					"
+					hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02]"
 					>
-					<div className="relative mt-3 aspect-[2/1] bg-neutral-100">
-					{/* Image */}
+					<div className="relative mt-3 aspect-[2/1]">
+					<Image
+					src={work.imageSrc}
+					alt={`${work.titleEn} / ${work.titleJa}`}
+					fill
+					className="object-contain"
+					sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+					/>
 					</div>
 					
 					<div className="p-4 flex flex-col flex-1">
-					{/* タイトル */}
-					{/* ロケーション */}
+					{/* Titles */}
+					<h2 className="text-lg font-semibold text-neutral-900">
+					{work.titleEn}
+					</h2>
+					<p className="text-sm text-neutral-600">{work.titleJa}</p>
 					
-					{/* 説明文エリアをまとめて flex-1 に */}
+					{/* Location */}
+					<p className="mt-2 text-xs text-neutral-500">
+					{work.locationEn}
+					<br />
+					{work.locationJa}
+					</p>
+					
+					{/* Descriptions */}
 					<div className="mt-3 flex-1">
 					<p className="text-sm text-neutral-700 leading-snug line-clamp-2">
 					{work.descriptionEn}
@@ -68,9 +81,16 @@ export default function PrintsPage() {
 					</p>
 					</div>
 					
-					{/* ボタンは常に下寄せ */}
+					{/* Button */}
 					<div className="mt-4 pt-2 border-t border-neutral-100">
-					{/* Link ボタン */}
+					<Link
+					href={work.shopifyUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium border border-neutral-800 text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors"
+					>
+					View on Shopify
+					</Link>
 					</div>
 					</div>
 					</article>
