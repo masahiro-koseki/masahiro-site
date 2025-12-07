@@ -145,7 +145,7 @@ export default function Page() {
 					if (!pathname) return;
 					pageview(pathname);
 			}, [pathname]);
-
+		}
 	
 	useEffect(() => {
 			if (!lbOpen) return;
