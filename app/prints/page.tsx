@@ -41,7 +41,7 @@ export default function PrintsPage() {
 					transform transition duration-200 ease-out
 					hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02]"
 					>
-					<div className="relative mt-3 aspect-[3/2]">
+					<div className="relative mt-3 aspect-[2/1]">
 					<Image
 					src={work.imageSrc}
 					alt={`${work.titleEn} / ${work.titleJa}`}
