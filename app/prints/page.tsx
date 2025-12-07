@@ -39,7 +39,7 @@ export default function PrintsPage() {
 					key={work.id}
 					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col max-w-xs mx-auto"
 					>
-					<div className="relative mt-2 aspect-[3/2]">
+					<div className="relative mt-3 aspect-[3/2]">
 					<Image
 					src={work.imageSrc}
 					alt={`${work.titleEn} / ${work.titleJa}`}
