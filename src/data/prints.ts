@@ -69,9 +69,9 @@ export const PRINT_WORKS: PrintWork[] = [
 },
 
 {
-	id: "snowy-cedar-forest",
+	id: "frosted-trees-under-blue-sky",
 	titleEn: "Frosted Trees under Blue Sky",
-	titleJa: "雪に包まれた杉林",
+	titleJa: "青空の下、白く輝く霧氷",
 	locationEn: "At the base of Mt. Hayachine in Tono, Iwate, Japan",
 	locationJa: "岩手県 遠野市・早池峰山麓",
 	descriptionEn:
