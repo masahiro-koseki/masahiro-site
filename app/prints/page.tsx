@@ -37,7 +37,9 @@ export default function PrintsPage() {
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
-					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col max-w-xs mx-auto"
+					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col max-w-xs mx-auto
+					transform transition duration-200 ease-out
+					hover:-translate-y-1 hover:shadow-lg hover:scale-[1.02]"
 					>
 					<div className="relative mt-3 aspect-[3/2]">
 					<Image
