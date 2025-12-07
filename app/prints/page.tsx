@@ -33,18 +33,18 @@ export default function PrintsPage() {
 		
 		{/* Works grid */}
 		<section className="max-w-7xl mx-auto px-4 pb-16">
-		<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-5">
+		<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4">
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
 					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col"
 					>
-					<div className="relative aspect-[4/3]">
+					<div className="relative aspect-[2/3]">
 					<Image
 					src={work.imageSrc}
 					alt={`${work.titleEn} / ${work.titleJa}`}
 					fill
-					className="object-cover"
+					className="object-contain"
 					sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
 					/>
 					</div>
