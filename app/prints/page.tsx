@@ -73,7 +73,7 @@ export default function PrintsPage() {
 					
 					<div className="p-4 flex flex-col flex-1">
 					{/* Titles */}
-					<h2 className="font-medium text-neutral-800 leading-tight">
+					<h2 className="font-medium text-neutral-800 leading-snug">
 					{work.titleEn}
 					</h2>
 					<p className="text-sm text-neutral-600">{work.titleJa}</p>
