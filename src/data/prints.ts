@@ -44,7 +44,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "spring-valley-with-cherry-blossoms",
 	titleEn: "Spring Valley with Cherry Blossoms",
 	titleJa: "桜と新緑の春の胆沢川",
-	locationEn: "Yakeishi Mountains in Oshu, Iwate, Japan",
+	locationEn: "Yakeishi Mountains, Iwate, Japan",
 	locationJa: "岩手県 奥州市",
 	descriptionEn:
 	"Fresh spring greens and soft cherry blossoms color the mountain valley of the Isawa River, flowing from the Yakeishi Mountains in Oshu, Iwate, Japan.",
@@ -72,7 +72,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "frosted-trees-under-blue-sky",
 	titleEn: "Frosted Trees under Blue Sky",
 	titleJa: "青空の下、白く輝く霧氷",
-	locationEn: "At the base of Mt. Hayachine in Tono, Iwate, Japan",
+	locationEn: "At the base of Mt. Hayachine, Iwate, Japan",
 	locationJa: "岩手県 遠野市・早池峰山麓",
 	descriptionEn:
 	"Frost-covered trees shining brightly beneath a clear blue sky on the Arakawa Highlands at the base of Mt. Hayachine in Tono, Iwate, Japan.",
@@ -86,7 +86,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "morning-beech-forest-in-spring-light",
 	titleEn: "Morning Beech Forest in Spring Light",
 	titleJa: "春の光を浴びて萌葱色に輝くブナの森",
-	locationEn: "Near Geto Hot Springs in Kitakami, Iwate, Japan",
+	locationEn: "Near Geto Hot Springs, Iwate, Japan",
 	locationJa: "岩手県 北上市・夏油温泉近く",
 	descriptionEn:
 	"Step into a serene beech forest glowing in the soft morning light. Captured near Geto Hot Springs in Iwate, Japan.",
@@ -100,7 +100,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "misty-summer-primeval-forest",
 	titleEn: "Misty Summer Primeval Forest",
 	titleJa: "霧に包まれた夏の原生林",
-	locationEn: "On the northern slopes of Mount Hayachine, Iwate, Japan",
+	locationEn: "Mount Hayachine, Iwate, Japan",
 	locationJa: "岩手県 宮古市川井・早池峰山北側原生林",
 	descriptionEn:
 	"This atmospheric photograph captures a mist-filled primeval forest on the northern slopes of Mount Hayachine in Iwate, Japan. Soft light, ancient trees, and drifting fog create an almost mythical mood.",
@@ -128,7 +128,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "summer-beech-tree-in-mountain-mist",
 	titleEn: "Summer Beech Tree in Mountain Mist",
 	titleJa: "雨上がりのブナ",
-	locationEn: "Along the Komagatake hiking trailr in Kanegasaki, Iwate, Japan",
+	locationEn: "Along the Komagatake hiking trail, Iwate, Japan",
 	locationJa: "岩手県 金ケ崎町・駒ヶ岳中腹",
 	descriptionEn:
 	"Photographed along the Komagatake hiking trail, this beech tree stands in a lush, rain-soaked summer forest filled with deep greens and soft humidity.",
