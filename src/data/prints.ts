@@ -72,7 +72,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "frosted-trees-under-blue-sky",
 	titleEn: "Frosted Trees under Blue Sky",
 	titleJa: "青空の下、白く輝く霧氷",
-	locationEn: "At the base of Mt. Hayachine, Iwate, Japan",
+	locationEn: "Mt. Hayachine, Iwate, Japan",
 	locationJa: "岩手県 遠野市・早池峰山麓",
 	descriptionEn:
 	"Frost-covered trees shining brightly beneath a clear blue sky on the Arakawa Highlands at the base of Mt. Hayachine in Tono, Iwate, Japan.",
@@ -114,7 +114,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "early-spring-riverside-trees",
 	titleEn: "Early Spring Riverside Trees",
 	titleJa: "北上川沿いの芽吹き始めた樹木",
-	locationEn: "Along the Kitakami River in Kanegasaki, Iwate, Japan",
+	locationEn: "Along the Kitakami River, Iwate, Japan",
 	locationJa: "岩手県 金ケ崎町・北上川にて",
 	descriptionEn:
 	"Captured along the Kitakami River in early May, this peaceful landscape showcases budding trees in soft spring light.",
@@ -128,7 +128,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "summer-beech-tree-in-mountain-mist",
 	titleEn: "Summer Beech Tree in Mountain Mist",
 	titleJa: "雨上がりのブナ",
-	locationEn: "Along the Komagatake hiking trail, Iwate, Japan",
+	locationEn: "Komagatake in Kanegasaki, Iwate, Japan",
 	locationJa: "岩手県 金ケ崎町・駒ヶ岳中腹",
 	descriptionEn:
 	"Photographed along the Komagatake hiking trail, this beech tree stands in a lush, rain-soaked summer forest filled with deep greens and soft humidity.",
@@ -142,7 +142,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	id: "summer-beech-tree-in-mountain-mist",
 	titleEn: "Moss-Covered Boulder and Mountain Stream",
 	titleJa: "苔に覆われた岩と清らかな流れ",
-	locationEn: "In the Kitamata River of Oshu, Iwate, Japan",
+	locationEn: "Oshu, Iwate, Japan",
 	locationJa: "岩手県 奥州市衣川・北股川上流",
 	descriptionEn:
 	"This refreshing photograph captures a moss-covered boulder surrounded by clear flowing water in the Kitamata River of Iwate, Japan.",
