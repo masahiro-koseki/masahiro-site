@@ -160,7 +160,10 @@ export default function PrintsPage() {
 		href="https://prints.masahiro-koseki.com"
 		target="_blank"
 		rel="noopener noreferrer"
-		className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium border border-neutral-800 text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors"
+		className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium
+		border border-neutral-300 text-neutral-600
+		hover:bg-neutral-800 hover:text-white hover:border-neutral-800
+		transition-colors"
 		>
 		Visit Shopify Store
 		</Link>
