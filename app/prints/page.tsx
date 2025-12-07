@@ -32,14 +32,14 @@ export default function PrintsPage() {
 		</section>
 		
 		{/* Works grid */}
-		<section className="max-w-7xl mx-auto px-4 pb-16">
+		<section className="max-w-6xl mx-auto px-4 pb-16">
 		<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4">
 		{PRINT_WORKS.map((work) => (
 					<article
 					key={work.id}
 					className="bg-white shadow-sm rounded-lg overflow-hidden flex flex-col"
 					>
-					<div className="relative aspect-[2/3]">
+					<div className="relative aspect-[4/3]">
 					<Image
 					src={work.imageSrc}
 					alt={`${work.titleEn} / ${work.titleJa}`}
