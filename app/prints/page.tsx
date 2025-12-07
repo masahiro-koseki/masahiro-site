@@ -14,7 +14,7 @@ export default function PrintsPage() {
 		<main className="min-h-screen bg-neutral-50">
 		<section className="max-w-6xl mx-auto px-4 pt-6">
 		<Link href="/" className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline">
-		← {lang === "ja" ? "← ホームへ戻る" : "← Back to Home"}
+		← Back to Home / ホームへ戻る
 		</Link>
 		</section>
 
@@ -139,7 +139,7 @@ export default function PrintsPage() {
 		{/* ▼ 下部のHomeリンク追加 */}
 		<section className="max-w-6xl mx-auto px-4 py-8">
 		<Link href="/" className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline">
-		← {lang === "ja" ? "← ホームへ戻る" : "← Back to Home"}
+		← Back to Home / ホームへ戻る
 		</Link>
 		</section>
 		{/* ▲ Homeリンクここまで */}
