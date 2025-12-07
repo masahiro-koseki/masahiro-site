@@ -103,8 +103,7 @@ export const PRINT_WORKS: PrintWork[] = [
 	locationEn: "On the northern slopes of Mount Hayachine, Iwate, Japan",
 	locationJa: "岩手県 宮古市川井・早池峰山北側原生林",
 	descriptionEn:
-	"This atmospheric photograph captures a mist-filled primeval forest on the northern slopes of Mount Hayachine in Iwate, Japan.
-	Soft light, ancient trees, and drifting fog create an almost mythical mood.",
+	"This atmospheric photograph captures a mist-filled primeval forest on the northern slopes of Mount Hayachine in Iwate, Japan. Soft light, ancient trees, and drifting fog create an almost mythical mood.",
 	descriptionJa:
 	"岩手県の名峰・早池峰山北側の中腹に広がる、霧に包まれた夏の原生林。",
 	imageSrc: "/images/prints/misty-summer-primeval-forest.webp", // 実際のパスに合わせて変更
