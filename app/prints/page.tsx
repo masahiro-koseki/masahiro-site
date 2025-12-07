@@ -12,7 +12,7 @@ export const metadata = {
 export default function PrintsPage() {
 	return (
 		<main className="min-h-screen bg-neutral-50">
-		<section className="max-w-6xl mx-auto px-4 pt-6">
+		<section className="max-w-6xl mx-auto px-4 pt-6 text-center">
 		<Link href="/" className="text-sm text-neutral-600 hover:text-neutral-900 hover:underline">
 		← Back to Home / ホームへ戻る
 		</Link>
@@ -25,7 +25,7 @@ export default function PrintsPage() {
 		</p>
 		
 		{/* ▼ ロゴ表示 */}
-		<div className="flex justify-center mb-10">
+		<div className="flex justify-center mb-1">
 		<Image
 		src="/images/forest-stream-logo.png"
 		alt="Forest & Stream Photography"
