@@ -107,6 +107,10 @@ export default function MountainsPage() {
 		写真集
 		</Link>
 		
+		<Link href="/prints" className="hover:opacity-70">
+		プリント
+		</Link>
+
 		<Link href="/#portfolio" className="hover:opacity-70">
 		ポートフォリオ
 		</Link>

@@ -194,6 +194,10 @@ export default function EnMountainsPage() {
 		Portfolio
 		</Link>
 		
+		<Link href="/prints" className="hover:opacity-70">
+		Prints
+		</Link>
+
 		<span className="text-gray-900 font-medium">Mountains</span>
 		
 		<Link href="/#about" className="hover:opacity-70">
