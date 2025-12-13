@@ -15,6 +15,8 @@ type HeroTexts = {
 type HeroSectionProps = {
 	texts: HeroTexts;
 	scrollTo: (id: string) => void;
+	lang: "ja" | "en";
+	changeLang: (l: "ja" | "en") => void;
 };
 
 export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
@@ -58,6 +60,30 @@ export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
 		<div className="grid md:grid-cols-2 gap-8 items-center">
 		{/* 左側：タイトル＋テキスト＋ボタン */}
 		<div>
+		{/* --- Mobile language switch (Hero top) --- */}
+		<div className="mb-2 flex gap-2 md:hidden">
+		<button
+		onClick={() => changeLang("ja")}
+		className={`px-3 py-1 rounded-full text-xs border ${
+				lang === "ja"
+				? "bg-neutral-900 text-white border-neutral-900"
+				: "bg-white text-neutral-700 border-neutral-300"
+		}`}
+		>
+		JP
+		</button>
+		<button
+		onClick={() => changeLang("en")}
+		className={`px-3 py-1 rounded-full text-xs border ${
+				lang === "en"
+				? "bg-neutral-900 text-white border-neutral-900"
+				: "bg-white text-neutral-700 border-neutral-300"
+		}`}
+		>
+		EN
+		</button>
+		</div>
+
 		<motion.h1
 		initial={{ opacity: 0, y: 8 }}
 		animate={{ opacity: 1, y: 0 }}

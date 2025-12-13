@@ -633,7 +633,12 @@ const gallerySources = [
 
 
       <Section id="home" className="pt-12 pb-0">
-		<HeroSection texts={t.hero} scrollTo={scrollTo} />
+		<HeroSection
+		texts={t.hero}
+		scrollTo={scrollTo}
+		lang={lang}
+		changeLang={changeLang}
+		/>
         <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
