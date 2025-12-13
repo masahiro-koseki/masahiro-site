@@ -12,14 +12,16 @@ type HeroTexts = {
 	cta2: string;
 };
 
+type Lang = "ja" | "en";
+
 type HeroSectionProps = {
 	texts: HeroTexts;
 	scrollTo: (id: string) => void;
-	lang: "ja" | "en";
-	changeLang: (l: "ja" | "en") => void;
+	lang: Lang;
+	changeLang: (l: Lang) => void;
 };
 
-export default function HeroSection({ texts, scrollTo }: HeroSectionProps) {
+export default function HeroSection({ texts, scrollTo, lang, changeLang }: HeroSectionProps) {
 	const hero = useMemo(
 		() => ({
 				srcs: [

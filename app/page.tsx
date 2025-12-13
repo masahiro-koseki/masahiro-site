@@ -639,7 +639,7 @@ const gallerySources = [
 		lang={lang}
 		changeLang={changeLang}
 		/>
-        <div className="w-full h-px bg-neutral-200 my-8"></div>
+       <div className="w-full h-px bg-neutral-200 my-8"></div>
 	  </Section>
 		
 		{/* ---- BOOK ---- */}
