@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PRINT_WORKS } from "@/data/prints";
+import { event } from "@/lib/gtag";
+
 
 export const metadata = {
 	title: "Fine Art Prints | Masahiro Koseki",
