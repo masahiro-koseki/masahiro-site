@@ -105,6 +105,16 @@ export default function PrintsPage() {
 					border border-neutral-300 text-neutral-600
 					hover:bg-neutral-800 hover:text-white hover:border-neutral-800
 					transition-colors"
+					onClick={() =>
+						event("shopify_click", {
+								site: "photo",
+								page: "prints",
+								work_id: work.id,
+								work_title_en: work.titleEn,
+								work_title_ja: work.titleJa,
+								link_url: work.shopifyUrl,
+						})
+					}
 					>
 					View on Shopify
 					</Link>
@@ -160,10 +170,15 @@ export default function PrintsPage() {
 		href="https://prints.masahiro-koseki.com"
 		target="_blank"
 		rel="noopener noreferrer"
-		className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium
-		border border-neutral-300 text-neutral-600
-		hover:bg-neutral-800 hover:text-white hover:border-neutral-800
-		transition-colors"
+		className="inline-flex ..."
+		onClick={() =>
+			event("shopify_click", {
+					site: "photo",
+					page: "prints",
+					destination: "shop_home",
+					link_url: "https://prints.masahiro-koseki.com",
+			})
+		}
 		>
 		Visit Shopify Store
 		</Link>
