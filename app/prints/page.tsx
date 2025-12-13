@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PRINT_WORKS } from "@/data/prints";
-import { event } from "@/lib/gtag";
+import ShopifyClickLink from "@/components/ShopifyClickLink";
 
 
 export const metadata = {
@@ -99,27 +99,22 @@ export default function PrintsPage() {
 					
 					{/* Button */}
 					<div className="mt-4 pt-2 border-t border-neutral-100 flex justify-center">
-					<Link
+					<ShopifyClickLink
 					href={work.shopifyUrl}
-					target="_blank"
-					rel="noopener noreferrer"
 					className="inline-flex items-center justify-center px-3 py-2 text-sm font-medium
 					border border-neutral-300 text-neutral-600
 					hover:bg-neutral-800 hover:text-white hover:border-neutral-800
 					transition-colors"
-					onClick={() =>
-						event("shopify_click", {
-								site: "photo",
-								page: "prints",
-								work_id: work.id,
-								work_title_en: work.titleEn,
-								work_title_ja: work.titleJa,
-								link_url: work.shopifyUrl,
-						})
-					}
+					payload={{
+							site: "photo",
+							page: "prints",
+							work_id: work.id,
+							work_title_en: work.titleEn,
+							work_title_ja: work.titleJa,
+					}}
 					>
 					View on Shopify
-					</Link>
+					</ShopifyClickLink>
 					</div>
 					</div>
 					</article>
@@ -168,22 +163,17 @@ export default function PrintsPage() {
 		</ul>
 		
 		<div className="mt-6">
-		<Link
+		<ShopifyClickLink
 		href="https://prints.masahiro-koseki.com"
-		target="_blank"
-		rel="noopener noreferrer"
 		className="inline-flex ..."
-		onClick={() =>
-			event("shopify_click", {
-					site: "photo",
-					page: "prints",
-					destination: "shop_home",
-					link_url: "https://prints.masahiro-koseki.com",
-			})
-		}
+		payload={{
+				site: "photo",
+				page: "prints",
+				destination: "shop_home",
+		}}
 		>
 		Visit Shopify Store
-		</Link>
+		</ShopifyClickLink>
 		</div>
 		</div>
 		</section>
