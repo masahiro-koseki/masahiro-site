@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BookOpen, Camera, ExternalLink } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { event } from "@/lib/gtag";
 
 type BookTexts = {
 	lead: string;
@@ -102,6 +103,14 @@ export default function BookSection({
 		target="_blank"
 		rel="noopener noreferrer nofollow"
 		className="inline-flex"
+		onClick={() =>
+			event("amazon_click", {
+					site: "photo",                         // ← 写真集サイト
+					lang,
+					marketplace: lang === "ja" ? "jp" : "com",
+					link_url: lang === "ja" ? amazonJp : amazonEn,
+			})
+		}
 		>
 		<Button
 		variant="outline"
