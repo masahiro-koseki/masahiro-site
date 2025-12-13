@@ -1,23 +1,26 @@
 // src/lib/gtag.ts
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+export const GA_ID = "G-B3W4BL798N";
 
-// GA ID が設定されているか確認
-export const existsGaId = GA_ID !== "";
-
-// window.gtag の型を TypeScript に教える
 declare global {
 	interface Window {
-		gtag: (...args: any[]) => void;
+		gtag?: (...args: any[]) => void;
 	}
 }
 
-// ページビュー送信用
-export const pageview = (url: string) => {
-	if (!existsGaId) return;
-	if (typeof window === "undefined") return;
+export function pageview(url: string, params?: Record<string, any>) {
 	if (!window.gtag) return;
-	
 	window.gtag("config", GA_ID, {
-			page_path: url,
+			page_location: url,
+			...params,
 	});
-};
+}
+
+export function event(name: string, params?: Record<string, any>) {
+	if (!window.gtag) return;
+	window.gtag("event", name, params || {});
+}
+
+export function setUserProperties(props: Record<string, any>) {
+	if (!window.gtag) return;
+	window.gtag("set", "user_properties", props);
+}

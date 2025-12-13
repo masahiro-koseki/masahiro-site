@@ -17,6 +17,9 @@ import { GalleryVerticalEnd, BookOpen, Camera, Mail, ExternalLink, ArrowRight, M
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { pageview } from "@/lib/gtag";
+import { event } from "@/lib/gtag";
+import Analytics from "@/components/Analytics";
+import { Suspense } from "react";
 
 
 // --- Amazon Links ---
@@ -139,12 +142,6 @@ export default function Page() {
   const pathname = usePathname();
 	
 	useEffect(() => {
-			if (!pathname) return;
-			pageview(pathname);
-	}, [pathname]);
-
-	
-	useEffect(() => {
 			if (!lbOpen) return;
 			const onKey = (e: KeyboardEvent) => {
 				if (e.key === "Escape") closeGallery();
@@ -183,6 +180,16 @@ export default function Page() {
 	}, []);
 	
 	const changeLang = (l: Lang) => {
+		// すでに同じ言語なら何もしない（無駄なイベント防止）
+		if (l === lang) return;
+		
+		// ✅ 言語切り替えイベント
+		event("language_change", {
+				from_lang: lang,
+				to_lang: l,
+				site: "photo",
+		});
+		
 		setLang(l);
 		try {
 			localStorage.setItem(LANG_KEY, l);
@@ -477,7 +484,10 @@ const gallerySources = [
  
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+		<div className="min-h-screen bg-white text-neutral-900">
+		<Suspense fallback={null}>
+		<Analytics site="books" lang={lang} />
+		</Suspense>
 		<header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
 		<div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
 		
