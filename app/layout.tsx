@@ -9,16 +9,6 @@ import { GA_ID } from "@/lib/gtag";
 export const metadata: Metadata = {
 	metadataBase: new URL("https://masahiro-koseki.com"),
 	
-	title: {
-		default:
-		"山と自然に魅せられて / Fascinated by Mountains and Nature | Masahiro Koseki Photography",
-		template:
-		"%s | 山と自然に魅せられて / Fascinated by Mountains and Nature | Masahiro Koseki Photography",
-	},
-	
-	description:
-	"岩手の山々、渓流、森の静寂をテーマにした写真集「山と自然に魅せられて（Fascinated by Mountains and Nature）」の公式サイト。焼石岳・栗駒山・早池峰山など、四季の表情を写し取った風景写真を紹介します。",
-	
 	icons: {
 		icon: [
 		{ url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
@@ -29,6 +19,16 @@ export const metadata: Metadata = {
 		],
 		apple: "/apple-touch-icon.png",
 	}
+
+	title: {
+		default:
+		"山と自然に魅せられて / Fascinated by Mountains and Nature | Masahiro Koseki Photography",
+		template:
+		"%s | 山と自然に魅せられて / Fascinated by Mountains and Nature | Masahiro Koseki Photography",
+	},
+	
+	description:
+	"岩手の山々、渓流、森の静寂をテーマにした写真集「山と自然に魅せられて（Fascinated by Mountains and Nature）」の公式サイト。焼石岳・栗駒山・早池峰山など、四季の表情を写し取った風景写真を紹介します。",
 	
 	keywords: [
 	// 日本語
