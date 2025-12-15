@@ -19,6 +19,17 @@ export const metadata: Metadata = {
 	description:
 	"岩手の山々、渓流、森の静寂をテーマにした写真集「山と自然に魅せられて（Fascinated by Mountains and Nature）」の公式サイト。焼石岳・栗駒山・早池峰山など、四季の表情を写し取った風景写真を紹介します。",
 	
+	icons: {
+		icon: [
+		{ url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+		{ url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+		{ url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+		{ url: "/favicon-64.png", sizes: "64x64", type: "image/png" },
+		{ url: "/favicon.ico" },
+		],
+		apple: "/apple-touch-icon.png",
+	}
+	
 	keywords: [
 	// 日本語
 	"山と自然に魅せられて",
